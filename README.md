@@ -1,2 +1,2 @@
 # python-tutorial
-Yet another python tutorial
+Yet another Python tutorial.
