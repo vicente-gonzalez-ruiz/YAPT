@@ -1,8 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import pydb, sys
-sys.excepthook = pydb.exception_hook
-#import pdb
+#import pydb, sys
+#sys.excepthook = pydb.exception_hook
 
 def call_me():
     print("Debug me with \"python -i debug_me.py\"")
@@ -14,4 +13,5 @@ def call_me():
     a=2
 
 b=1
+
 call_me()
