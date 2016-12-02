@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+import pdb, sys
+sys.excepthook = pdb.exception_hook
 
 def call_me():
     print("Debug me with \"python -i debug_me.py\"")
