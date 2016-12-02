@@ -3,6 +3,9 @@
 import pdb, sys
 sys.excepthook = pdb.exception_hook
 
+import pydb, sys
+sys.excepthook = pydb.exception_hook
+
 def call_me():
     print("Debug me with \"python -i debug_me.py\"")
     print("After the run-time error, you should have access to the \"a\" variable")
