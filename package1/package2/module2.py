@@ -1,4 +1,4 @@
 print("module2 imported")
 
-b=2
+b = 2
 
