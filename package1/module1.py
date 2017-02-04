@@ -1,3 +1,3 @@
 a = 1
-print("module1 imported")
+print("package1/module1.py executed")
 

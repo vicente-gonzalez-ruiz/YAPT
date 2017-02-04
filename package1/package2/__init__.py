@@ -1,3 +1,3 @@
-from package1.package2 import module2
+print("package1/package2/__init__.py excuted")
+from . import module2
 
-print("package2 imported")
