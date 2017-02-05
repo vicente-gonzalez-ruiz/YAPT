@@ -1,6 +1,4 @@
-# python-tutorial
-
-Yet another Python tutorial.
+# Yet another Python tutorial.
 
 Contents:
 
