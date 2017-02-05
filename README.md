@@ -21,7 +21,7 @@ Contents:
 15. [Commenting code](14-commenting_code.ipynb).
 16. [Containers](15-containers.ipynb).
 17. [Mutability](16-mutability.ipynb).
-18. [Concurrency(17-concurrency.ipynb).
+18. [Concurrency](17-concurrency.ipynb).
 19. [I/O](18-IO.ipynb).
 20. [Asserting](19-assertions.ipynb).
 21. [Logging](20-logging.ipynb).
