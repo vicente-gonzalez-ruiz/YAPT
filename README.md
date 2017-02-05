@@ -4,7 +4,7 @@ Yet another Python tutorial.
 
 Contens:
 
-1. Introduction. 00-intro.ipynb
+1. [Introduction.](00-intro.ipynb)
 2. Installation. 01-installation.ipynb
 3. Using virtual environments. 02-virtual_environments.ipynb
 4. Hello world! 03-hello_world.ipynb
