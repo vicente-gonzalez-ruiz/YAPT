@@ -12,16 +12,16 @@ Contens:
 6. Numbers and strings. 05-numbers_and_strings.ipynb
 7. Control flow. 06-control_flow.ipynb
 8. Functions. 07-functions.ipynb
-9. Corrutines. 16-corrutines.ipynb
-10. Generators. 17-generators.ipynb
-11. Object Oriented Programming. 08-OOP.ipynb
-12. Exceptions. 09-exceptions.ipynb
-13. Modules. 10-modules.ipynb
-14. Packages. 11-packages.ipynb
-15. Commenting code. 12-commenting_code.ipynb
-16. Containers. 13-containers.ipynb
-17. Mutability. 14-mutability.ipynb
-18. Concurrency. 15-concurrency.ipynb
+9. Corrutines. 08-corrutines.ipynb
+10. Generators. 09-generators.ipynb
+11. Object Oriented Programming. 10-OOP.ipynb
+12. Exceptions. 11-exceptions.ipynb
+13. Modules. 12-modules.ipynb
+14. Packages. 13-packages.ipynb
+15. Commenting code. 14-commenting_code.ipynb
+16. Containers. 15-containers.ipynb
+17. Mutability. 16-mutability.ipynb
+18. Concurrency. 17-concurrency.ipynb
 19. I/O. 18-IO.ipynb
 20. Asserting. 19-assertions.ipynb
 21. Logging. 20-logging.ipynb
