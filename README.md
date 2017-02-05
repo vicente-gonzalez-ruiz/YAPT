@@ -34,5 +34,3 @@ Contents:
 Appendices:
 
 * [Edditing with Emacs](A0-edditing_with_emacs.ipynb)
-
-Untitled.ipynb
