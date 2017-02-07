@@ -8,16 +8,16 @@ Contents:
 4. [Hello world!](03-hello_world.ipynb).
 5. [Structuring your code](04-structuring_code.ipynb).
 6. [Numbers and strings](05-numbers_and_strings.ipynb).
-7. [Control flow](06-control_flow.ipynb).
-8. [Functions](07-functions.ipynb).
-9. [Corrutines](08-corrutines.ipynb).
-10. [Generators](09-generators.ipynb).
-11. [Object Oriented Programming](10-OOP.ipynb).
-12. [Exceptions](11-exceptions.ipynb).
-13. [Modules](12-modules.ipynb).
-14. [Packages](13-packages.ipynb).
-15. [Commenting code](14-commenting_code.ipynb).
-16. [Containers](15-containers.ipynb).
+7. [Containers](06-containers.ipynb).
+8. [Control flow](07-control_flow.ipynb).
+9. [Functions](08-functions.ipynb).
+10. [Corrutines](09-corrutines.ipynb).
+11. [Generators](10-generators.ipynb).
+12. [Object Oriented Programming](11-OOP.ipynb).
+13. [Exceptions](12-exceptions.ipynb).
+14. [Modules](13-modules.ipynb).
+15. [Packages](14-packages.ipynb).
+16. [Commenting code](15-commenting_code.ipynb).
 17. [Mutability](16-mutability.ipynb).
 18. [Concurrency](17-concurrency.ipynb).
 19. [I/O](18-IO.ipynb).
