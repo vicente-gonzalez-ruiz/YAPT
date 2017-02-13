@@ -9,12 +9,11 @@ Contents:
 5. [Structuring your code](04-structuring_code.ipynb).
 6. [Numbers and strings](05-numbers_and_strings.ipynb).
 7. [Containers](06-containers.ipynb).
-8. [Control flow](07-control_flow.ipynb).
-9. [Functions](08-functions.ipynb).
-10. [Corrutines](09-corrutines.ipynb).
-11. [Generators](10-generators.ipynb).
-12. [Object Oriented Programming](11-OOP.ipynb).
-13. [Exceptions](12-exceptions.ipynb).
+8. [Functions](07-functions.ipynb).
+9. [Control flow](08-control_flow.ipynb).
+10. [Object Oriented Programming](09-OOP.ipynb).
+11. [Exceptions](10-exceptions.ipynb).
+12. [Iterators](11-iterators.ipynb).
 14. [Modules](13-modules.ipynb).
 15. [Packages](14-packages.ipynb).
 16. [Commenting code](15-commenting_code.ipynb).
