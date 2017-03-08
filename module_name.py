@@ -1,1 +1,1 @@
-print('Module name = ', __name__)
+print('Module name =', __name__)
