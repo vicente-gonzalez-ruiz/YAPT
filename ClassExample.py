@@ -15,7 +15,7 @@ There must be ONLY one logical line in this overview.
         '''A summary about the constructor. This is an example of a one-line docstring.'''
         print(self.x)
         
-    def set(self, x: int) -> None:
+    def set(self, x):
         '''A summary about \"set\".
         
         Arguments:
@@ -26,7 +26,7 @@ There must be ONLY one logical line in this overview.
         '''
         self.x = x
         
-    def get(self) -> int:
+    def get(self):
         '''A summary about \"get\".
         
         Arguments:
