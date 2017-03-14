@@ -41,4 +41,4 @@ Level 2
 Appendices:
 
 * [Edditing with Emacs](A0-edditing_with_emacs.ipynb)
-* [Using Jupyter notebook](A1-jypyter.ipynb)
+* [Using Jupyter notebook](A1-jupyter.ipynb)
