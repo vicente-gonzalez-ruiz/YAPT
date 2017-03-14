@@ -14,10 +14,11 @@ Contents:
 10. [Object Oriented Programming](09-OOP.ipynb).
 11. [Exceptions](10-exceptions.ipynb).
 12. [Iterators](11-iterators.ipynb).
-14. [Modules](13-modules.ipynb).
-15. [Packages](14-packages.ipynb).
-16. [Commenting code](15-commenting_code.ipynb).
-17. [Mutability](16-mutability.ipynb).
+13. [Mutability](12-mutability.ipynb).
+14. [Scientific computation](13-scientific_computation.ipynb).
+15. [Modules](14-modules.ipynb).
+16. [Packages](15-packages.ipynb).
+17. [Commenting code](16-commenting_code.ipynb).
 18. [Concurrency](17-concurrency.ipynb).
 19. [I/O](18-IO.ipynb).
 20. [Asserting](19-assertions.ipynb).
@@ -27,9 +28,9 @@ Contents:
 24. [Flask](23-flask.ipynb).
 25. [PyAudio](24-pyaudio.ipynb).
 26. [PyGame](25-pygame.ipynb).
-27. [Scientific computation](26-scientific_computation.ipynb).
-28. [OpenCV](27-OpenCV.ipynb).
+27. [OpenCV](26-OpenCV.ipynb).
 
 Appendices:
 
 * [Edditing with Emacs](A0-edditing_with_emacs.ipynb)
+* [Using Jupyter notebook](A1-jypyter.ipynb)
