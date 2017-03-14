@@ -6,7 +6,7 @@ Level 0
 
 1. [Introduction](00-intro.ipynb).
 2. [Installation](01-installation.ipynb).
-3. [Using virtual environments](02-virtual_environments.ipynb)
+3. [Using virtual environments](02-virtual_environments.ipynb).
 4. [Hello world!](03-hello_world.ipynb).
 5. [Structuring your code](04-structuring_code.ipynb).
 6. [Numbers and strings](05-numbers_and_strings.ipynb).
@@ -36,7 +36,7 @@ Level 2
 2. [Flask](23-flask.ipynb).
 3. [PyAudio](24-pyaudio.ipynb).
 4. [PyGame](25-pygame.ipynb).
-5. [OpenCV](27-OpenCV.ipynb).
+5. [OpenCV](26-OpenCV.ipynb).
 
 Appendices:
 
