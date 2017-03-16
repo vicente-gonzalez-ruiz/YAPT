@@ -1,0 +1,10 @@
+1. Virtual environments
+
+sudo -H pip3 install --upgrade pip     # Upgrade pip
+sudo -H pip3 install virtualenvwrapper # Install virtualenvwrapper
+cd                                     # Go to the home directory
+mkdir .python_environments             # Create a folder for the environments
+cat YAPT/bashrc_adds >> ~/.bashrc      # Add configuration lines to .bashrc
+source ~/.bashrc                       # Activate the use of Python environments
+mkvirtualenv yapt                      # Create an environment for this course
+
