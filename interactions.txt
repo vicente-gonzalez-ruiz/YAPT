@@ -24,5 +24,7 @@ python -m ipykernel install --user --name=yapt # Install "yapt" in Jupyter
 
 3. Hello world!
 
+4. Structuring code
+
 sudo apt-get install tree # Install the tree tool
 
