@@ -1,4 +1,8 @@
-1. Virtual environments
+0. Introduction
+
+1. Installation
+
+2. Virtual environments
 
 sudo -H pip3 install --upgrade pip     # Upgrade pip
 sudo -H pip3 install virtualenvwrapper # Install virtualenvwrapper
@@ -7,4 +11,18 @@ mkdir .python_environments             # Create a folder for the environments
 cat YAPT/bashrc_adds >> ~/.bashrc      # Add configuration lines to .bashrc
 source ~/.bashrc                       # Activate the use of Python environments
 mkvirtualenv yapt                      # Create an environment for this course
+
+# "yapt" is a new enviroment with few packages and tools installed.
+# Let's start populating it by installing Jupyter and enabling in it
+# the new environment.
+
+pip install jupyter                            # Install Jupyter notebook
+python -m ipykernel install --user --name=yapt # Install "yapt" in Jupyter
+
+# Remember to switch to "yapt" before using a new kernel.
+# Kernel -> Change kernel -> yapt
+
+3. Hello world!
+
+sudo apt-get install tree # Install the tree tool
 
