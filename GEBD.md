@@ -11,9 +11,8 @@ Level 0
 5. [Structuring your code](04-structuring_code.ipynb).
 6. [Numbers and strings](05-numbers_and_strings.ipynb).
 7. [Containers](06-containers.ipynb).
-8. [Mutability](07-mutability.ipynb).
-9. [Functions](08-functions.ipynb).
-10. [Control flow](09-control_flow.ipynb).
+8. [Functions](08-functions.ipynb).
+9. [Control flow](09-control_flow.ipynb).
 
 Level 1
 
