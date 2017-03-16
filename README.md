@@ -14,21 +14,20 @@ Contents:
 10. [Object Oriented Programming](09-OOP.ipynb).
 11. [Exceptions](10-exceptions.ipynb).
 12. [Iterators](11-iterators.ipynb).
-13. [Mutability](12-mutability.ipynb).
-14. [Scientific computation](13-scientific_computation.ipynb).
-15. [Modules](14-modules.ipynb).
-16. [Packages](15-packages.ipynb).
-17. [Commenting code](16-commenting_code.ipynb).
-18. [Concurrency](17-concurrency.ipynb).
-19. [I/O](18-IO.ipynb).
-20. [Asserting](19-assertions.ipynb).
-21. [Logging](20-logging.ipynb).
-22. [Debugging](21-debugging.ipynb).
-23. [Parsing the command line](22-parsing_command_line.ipynb).
-24. [Flask](23-flask.ipynb).
-25. [PyAudio](24-pyaudio.ipynb).
-26. [PyGame](25-pygame.ipynb).
-27. [OpenCV](26-OpenCV.ipynb).
+13. [Modules](12-modules.ipynb).
+14. [Packages](13-packages.ipynb).
+15. [Commenting code](14-commenting_code.ipynb).
+16. [Asserting](15-assertions.ipynb).
+17. [Logging](16-logging.ipynb).
+18. [Debugging](17-debugging.ipynb).
+19. [Concurrency](18-concurrency.ipynb).
+20. [I/O](19-IO.ipynb).
+21. [Parsing the command line](20-parsing_command_line.ipynb).
+22. [Scientific computation](21-scientific_computation.ipynb).
+23. [Flask](22-flask.ipynb).
+24. [PyAudio](23-pyaudio.ipynb).
+25. [PyGame](24-pygame.ipynb).
+26. [OpenCV](25-OpenCV.ipynb).
 
 Appendices:
 
