@@ -46,4 +46,38 @@ sudo apt-get install tree # Install the tree tool
 
 13. Packages.
 
-14.
+14. Commenting code.
+
+pip install Sphinx
+sphinx-quickstart
+
+cat > extra_documentation.rst << EOF
+Extra Documentation
+===================
+
+Your extra documentation which has not been included in the code could
+be placed here.
+EOF
+
+cat > code.rst << EOF
+Code Documentation
+==================
+
+.. automodule:: ClassExample
+    :members:
+EOF
+
+gedit index.rst
+(Include the lines:)
+   code
+   extra_documentation
+
+(Uncomment the lines in conf.py:)
+  import os
+  import sys
+  sys.path.insert(0, os.path.abspath('.'))
+
+
+
+make clean
+make html
