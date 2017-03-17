@@ -84,3 +84,5 @@ make html
 
 15. Assertions.
 
+16. Logging.
+
