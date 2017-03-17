@@ -40,3 +40,6 @@ sudo apt-get install tree # Install the tree tool
 
 10. Exceptions.
 
+11. Iterators
+
+12. 
