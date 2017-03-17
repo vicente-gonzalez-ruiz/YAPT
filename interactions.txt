@@ -32,3 +32,5 @@ sudo apt-get install tree # Install the tree tool
 
 6. Containers
 
+7. Functions
+
