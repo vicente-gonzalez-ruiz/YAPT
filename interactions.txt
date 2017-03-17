@@ -36,3 +36,7 @@ sudo apt-get install tree # Install the tree tool
 
 8. Control flow.
 
+9. OOP.
+
+10. Exceptions.
+
