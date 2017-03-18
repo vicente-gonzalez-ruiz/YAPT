@@ -103,6 +103,13 @@ pip install fire
 21. Database access.
 
 pip install pymysql
+mysql-workbench &
+(Clic on "Local instance 3306")
+(Password = "gebd")
+(Clic on "File" -> "New Query Tab")
+(Copy the code from https://github.com/ualmtorres/GEBD_BD/blob/master/scripts/RRHH/RRHH.sql in the tab)
+(Clic on "Query" -> "Execute (All or Selection)"
+(quit mysql-workbench)
 
 22. Scientific computation.
 
