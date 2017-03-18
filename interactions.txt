@@ -86,3 +86,11 @@ make html
 
 16. Logging.
 
+17. Debugging.
+
+pip install ipdb
+
+(Interact as explained in the 17-debugging.ipynb document)
+
+18. Concurrency.
+
