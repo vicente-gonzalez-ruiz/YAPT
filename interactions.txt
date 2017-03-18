@@ -94,3 +94,7 @@ pip install ipdb
 
 18. Concurrency.
 
+19. Parsing the command line.
+
+pip install fire
+
