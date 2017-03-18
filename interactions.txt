@@ -102,7 +102,27 @@ pip install fire
 
 21. Database access.
 
-pip install pymysql.
+pip install pymysql
 
 22. Scientific computation.
 
+pip install numpy
+
+22. Flask.
+
+pip install flask
+
+23. PyGame.
+
+pip install pygame
+
+24. PyAudio.
+
+sudo apt-get install portaudio19-dev
+pip install pyaudio
+
+25. OpenCV.
+
+sudo apt-get install libopencv-dev python-opencv
+pip install opencv-python
+pip install matplotlib
