@@ -102,5 +102,7 @@ pip install fire
 
 21. Database access.
 
-pip install pymysql
+pip install pymysql.
+
+22. Scientific computation.
 

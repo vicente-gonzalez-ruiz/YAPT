@@ -2,7 +2,7 @@
 
 Contents:
 
-Level 0
+*Level* 0
 
 1. [Introduction](00-intro.ipynb).
 2. [Installation](01-installation.ipynb).
@@ -14,7 +14,7 @@ Level 0
 8. [Functions](08-functions.ipynb).
 9. [Control flow](09-control_flow.ipynb).
 
-Level 1
+*Level* 1
 
 1. [Object Oriented Programming](10-OOP.ipynb).
 2. [Exceptions](11-exceptions.ipynb).
@@ -29,13 +29,14 @@ Level 1
 11. [I/O](20-IO.ipynb).
 12. [Parsing the command line](21-parsing_command_line.ipynb).
 
-Level 2
+*Level* 2
 
-1. [Scientific computation](22-scientific_computation.ipynb).
-2. [Flask](23-flask.ipynb).
-3. [PyAudio](24-pyaudio.ipynb).
-4. [PyGame](25-pygame.ipynb).
-5. [OpenCV](26-OpenCV.ipynb).
+1. [Database access](22-database_access.ipynb).
+2. [Scientific computation](23-scientific_computation.ipynb).
+3. [Flask](24-flask.ipynb).
+4. [PyAudio](25-pyaudio.ipynb).
+5. [PyGame](26-pygame.ipynb).
+6. [OpenCV](27-OpenCV.ipynb).
 
 Appendices:
 
