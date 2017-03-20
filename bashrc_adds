@@ -1,5 +1,5 @@
 
 # To use Python environments
-export VIRTUALENVWRAPPER_PYTHON=`/usr/bin/python3`
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.python_environments
 source `which virtualenvwrapper.sh`
