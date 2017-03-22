@@ -112,6 +112,7 @@ mysql-workbench &
 21. Scientific computation.
 
 pip install numpy
+pip install pandas
 
 22. Flask.
 
