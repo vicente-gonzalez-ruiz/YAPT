@@ -96,11 +96,9 @@ pip install ipdb
 
 19. I/O.
 
-20. Parsing the command line.
-
 pip install fire
 
-21. Database access.
+20. Database access.
 
 pip install pymysql
 mysql-workbench &
@@ -111,7 +109,7 @@ mysql-workbench &
 (Clic on "Query" -> "Execute (All or Selection)"
 (quit mysql-workbench)
 
-22. Scientific computation.
+21. Scientific computation.
 
 pip install numpy
 
