@@ -22,13 +22,12 @@ Contents:
 18. [Debugging](17-debugging.ipynb).
 19. [Concurrency](18-concurrency.ipynb).
 20. [I/O](19-IO.ipynb).
-21. [Parsing the command line](20-parsing_command_line.ipynb).
-22. [Database access](21-database_access.ipynb).
-23. [Scientific computation](22-scientific_computation.ipynb).
-24. [Flask](23-flask.ipynb).
-25. [PyAudio](24-pyaudio.ipynb).
-26. [PyGame](25-pygame.ipynb).
-27. [OpenCV](26-OpenCV.ipynb).
+21. [Database access](20-database_access.ipynb).
+22. [Scientific computation](21-scientific_computation.ipynb).
+23. [Flask](22-flask.ipynb).
+24. [PyAudio](23-pyaudio.ipynb).
+25. [PyGame](24-pygame.ipynb).
+26. [OpenCV](25-OpenCV.ipynb).
 
 Appendices:
 
