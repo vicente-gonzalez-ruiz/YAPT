@@ -31,5 +31,5 @@ Contents:
 
 Appendices:
 
-* [Editing with Emacs](A0-edditing_with_emacs.ipynb)
-* [Using Jupyter notebook](A1-jypyter.ipynb)
+* [Editing with Emacs](A0-edditing_with_emacs.ipynb).
+* [Using Jupyter notebook](A1-jypyter.ipynb).
