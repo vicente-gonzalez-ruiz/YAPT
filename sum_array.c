@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include "sum_array_lib.c"
 
 #define N 100000
 
@@ -12,10 +13,7 @@ int main() {
     a[i] = i;
   }
   start = clock();
-  long int sum = 0;
-  for(i=0; i<N; i++) {
-    sum += *a+i;
-  }
+  long int sum = sum_array(a,N);
   end = clock();
   printf("%ld ", sum);
   cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
