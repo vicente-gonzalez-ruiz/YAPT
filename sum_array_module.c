@@ -1,4 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <Python.h>
 #include "sum_array_lib.c"
 
@@ -7,6 +9,9 @@ static PyObject* sum_array_func(PyObject* self, PyObject* args) {
   long int sum;
   int* a;
   
+  clock_t start, end;
+  double cpu_time;
+
   /*  parse the input, from python float to c double */
   if (!PyArg_ParseTuple(args, "i", &N))
     return NULL;
@@ -21,8 +26,12 @@ static PyObject* sum_array_func(PyObject* self, PyObject* args) {
     a[i] = i;
   }
 
-  /* call cos from libm */
+  start = clock();
   sum = sum_array(a, N);
+  end = clock();
+  cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+  cpu_time *= 1000000;
+  printf("%f usegs\n", cpu_time);
   
   /*  construct the output, from c double to python float */
   return Py_BuildValue("li", sum);
