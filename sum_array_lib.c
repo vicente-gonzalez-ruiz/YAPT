@@ -1,6 +1,6 @@
-long int sum_array(int a[], int N) {
+long int sum_array(double* a, int N) {
   int i;
-  long int sum = 0;
+  double sum = 0;
   for(i=0; i<N; i++) {
     sum += *a+i;
   }

@@ -5,7 +5,7 @@
 #define N 100000
 
 int main() {
-  int a[N];
+  double a[N];
   int i;
   clock_t start, end;
   double cpu_time;
@@ -13,7 +13,7 @@ int main() {
     a[i] = i;
   }
   start = clock();
-  long int sum = sum_array(a,N);
+  double sum = sum_array(a,N);
   end = clock();
   printf("%ld ", sum);
   cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
