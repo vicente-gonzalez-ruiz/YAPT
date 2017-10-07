@@ -5,8 +5,8 @@
 #include <numpy/arrayobject.h> /* To interact with numpy arrays */
 #include "sum_array_lib.c"
 
-static PyObject* sum_array_wrapper(PyObject* self, PyObject* args) {
-  int N,i;
+static PyObject* sumArray(PyObject* self, PyObject* args) {
+  int N;
   long int sum;
   //int* a;
   PyArrayObject *in_array;
@@ -46,7 +46,7 @@ static PyObject* sum_array_wrapper(PyObject* self, PyObject* args) {
 
 /*  define functions in module */
 static PyMethodDef module_methods[] = {
-  {"sum_array_wrapper", sum_array_wrapper, METH_VARARGS, "Computes the sum of all elements of an array"},
+  {"sumArray", sumArray, METH_VARARGS, "Computes the sum of all elements of an array"},
   {NULL, NULL, 0, NULL}
 };
 
@@ -54,12 +54,13 @@ static PyMethodDef module_methods[] = {
 /* Python version 3*/
 static struct PyModuleDef cModPyDem = {
     PyModuleDef_HEAD_INIT,
-    "sum_array_module", "Computes the sum of all elements of an array",
+    "sumArray", "Computes the sum of all elements of an array",
     -1,
     module_methods
 };
 
 PyMODINIT_FUNC
 PyInit_sum_array_module(void) {
-    return PyModule_Create(&cModPyDem);
+  import_array();
+  return PyModule_Create(&cModPyDem);
 }

@@ -15,7 +15,7 @@ int main() {
   start = clock();
   double sum = sum_array(a,N);
   end = clock();
-  printf("%ld ", sum);
+  printf("%f ", sum);
   cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
   cpu_time *= 1000000;
   printf("%f usegs\n", cpu_time);
