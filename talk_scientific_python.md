@@ -4,5 +4,5 @@
 03-hello_world
 21-scientific_computation.ipynb
 profiling
-optimizing
 debugging
+optimizing
