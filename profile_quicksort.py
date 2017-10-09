@@ -1,5 +1,6 @@
 # http://cs231n.github.io/python-numpy-tutorial/#python
 
+@profile
 def quicksort(arr):
     if len(arr) <= 1:
         return arr
