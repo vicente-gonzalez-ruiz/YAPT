@@ -41,7 +41,6 @@ while (line != ""):
         splitted_line = line.split()
         x = float(splitted_line[0])
         y = float(splitted_line[1])
-        
         if not math.isnan(y_interp(x)):
             print(x, '\t', y-y_interp(x)) # print x, y-y_interp(x) # print (x, '\t', y-y_interp(x))
     line = f.readline()
