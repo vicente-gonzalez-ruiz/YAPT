@@ -1,0 +1,25 @@
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+pyenv update
+
+añadir:
+
+export PATH="/home/vruiz/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+a .bashrc
+
+source .bashrc
+
+pyenv install 3.6.3
+
+Uninstall:
+
+rm -fr ~/.pyenv
+
+and remove these three lines from .bashrc:
+
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
