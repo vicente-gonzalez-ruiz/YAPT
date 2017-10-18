@@ -19,17 +19,19 @@ Contents:
 15. [Commenting code](14-commenting_code.ipynb).
 16. [Asserting](15-assertions.ipynb).
 17. [Logging](16-logging.ipynb).
-18. [Debugging](17-debugging.ipynb).
-19. [Concurrency](18-concurrency.ipynb).
-20. [I/O](19-IO.ipynb).
-21. [Database access](20-database_access.ipynb).
-22. [Scientific computation](21-scientific_computation.ipynb).
-23. [Flask](22-flask.ipynb).
+18. [Concurrency](17-concurrency.ipynb).
+19. [I/O](18-IO.ipynb).
+20. [Database access](19-database_access.ipynb).
+21. [Scientific computation](20-scientific_computation.ipynb).
+22. [Flask](21-flask.ipynb).
+23. [PyGame](22-pygame.ipynb).
 24. [PyAudio](23-pyaudio.ipynb).
-25. [PyGame](24-pygame.ipynb).
-26. [OpenCV](25-OpenCV.ipynb).
+25. [OpenCV](24-OpenCV.ipynb).
+31. [Profilint](30-profiling.ipynb)
+32. [Debugging](17-debugging.ipynb).
+33. [Optimizing](32-optimizing.ipynb).
 
 Appendices:
 
-* [Edditing with Emacs](A0-edditing_with_emacs.ipynb)
-* [Using Jupyter notebook](A1-jypyter.ipynb)
+* [Editing with Emacs](A0-edditing_with_emacs.ipynb).
+* [Using Jupyter notebook](A1-jypyter.ipynb).
