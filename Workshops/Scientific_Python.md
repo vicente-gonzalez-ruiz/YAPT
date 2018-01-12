@@ -1,4 +1,4 @@
-YAPY in Scientific Compuptation
+YAPT in Scientific Compuptation
 
 Contents:
 
