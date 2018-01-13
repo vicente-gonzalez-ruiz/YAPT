@@ -1,5 +1,5 @@
 a = 1
-print("Hi from module.py!")
+print("Hi from package/module.py!")
 
 if __name__ == "__main__":
   print("I was invoked as a script.")
