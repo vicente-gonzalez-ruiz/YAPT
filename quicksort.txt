@@ -1,0 +1,71 @@
+// http://www.java2novice.com/java-sorting-algorithms/quick-sort/                       # http://codereview.stackexchange.com/questions/77782/quick-sort-implementation // http://www.comp.dit.ie/rlawlor/Alg_DS/sorting/quickSort.c # http://www.jason-french.com/blog/2014/07/26/recursion-in-r/ # http://cs231n.github.io/python-numpy-tutorial/#python
+
+package com.java2novice.sorting;							#include <iostream>								#include <stdio.h>					     #!/usr/bin/env Rscript					   def quicksort(arr):
+											using namespace std;															     # Author:  Jason A. French 				       if len(arr) <= 1:
+public class MyQuickSort {																		void quickSort( int[], int, int);											   	   return arr
+											void print(int *a, int n)							int partition( int[], int, int);			     quickSort <- function(vect) {				       pivot = arr[len(arr) // 2]
+    private int array[];								{																	       # Args:							       left = [x for x in arr if x < pivot]
+    private int length; 								    int i=0;									void main() 						       #  vect: Numeric Vector					       middle = [x for x in arr if x == pivot]
+											    while(i<n){ 								{															       right = [x for x in arr if x > pivot]
+    public void sort(int[] inputArr) {							        cout<<a[i]<<",";							    int a[] = { 7, 12, 1, -2, 0, 15, 4, 11, 9}; 	       # Stop if vector has length of 1 			       return quicksort(left) + middle + quicksort(right)
+											        i++;																       if (length(vect) <= 1) {
+        if (inputArr == null || inputArr.length == 0) { 				    }										    int i;						     	   return(vect) 					   print(quicksort([3,6,8,10,1,2,1]))
+            return;									}										    printf("\n\nUnsorted array is:  "); 		       }
+        }																				    for(i = 0; i < 9; ++i)				       # Pick an element from the vector
+        this.array = inputArr;								void swap(int i,int j, int *a){ 						        printf(" %d ", a[i]);				       element <- vect[1]
+        length = inputArr.length;							    int temp = a[i];															       partition <- vect[-1]
+        quickSort(0, length - 1);							    a[i] = a[j];								    quickSort( a, 0, 8);				       # Reorder vector so that integers less than element
+    }											    a[j] = temp;															       # come before, and all integers greater come after.
+											}										    printf("\n\nSorted array is:  ");			       v1 <- partition[partition < element]
+    private void quickSort(int lowerIndex, int higherIndex) {														    for(i = 0; i < 9; ++i)				       v2 <- partition[partition >= element]
+																					        printf(" %d ", a[i]);				       # Recursively apply steps to smaller vectors.
+        int i = lowerIndex;								void quicksort(int *arr, int left, int right){												       v1 <- quickSort(v1)
+        int j = higherIndex;								    int min = (left+right)/2;							}							       v2 <- quickSort(v2)
+        // calculate pivot number, I am taking pivot as middle index number		    cout<<"QS:"<<left<<","<<right<<"\n";												       return(c(v1, element, v2))
+        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];													void quickSort( int a[], int l, int r)			     }
+        // Divide into two arrays							    int i = left;								{
+        while (i <= j) {								    int j = right;								   int j;						     quickSort(c(4, 65, 2, -31, 0, 99, 83, 782, 1))
+            /** 									    int pivot = arr[min];
+             * In each iteration, we will identify a number from left side which 											   if( l < r ) 
+             * is greater then the pivot value, and also we will identify a number 	    while(left<j || i<right)							   {
+             * from right side which is less then the pivot value. Once the search 	    {										       // divide and conquer
+             * is done, then we exchange both numbers.					        while(arr[i]<pivot)							        j = partition( a, l, r);
+             */ 									        i++;									       quickSort( a, l, j-1);
+            while (array[i] < pivot) {							        while(arr[j]>pivot)							       quickSort( a, j+1, r);
+                i++;									        j--;									   }
+            }
+            while (array[j] > pivot) {							        if(i<=j){								}
+                j--;									            swap(i,j,arr);
+            }										            i++;								int partition( int a[], int l, int r) {
+            if (i <= j) {								            j--;								   int pivot, i, j, t;
+                exchangeNumbers(i, j);							        }									   pivot = a[l];
+                //move index to next position on both sides				        else{									   i = l; j = r+1;
+                i++;									            if(left<j)
+                j--;									                quicksort(arr, left, j);					   while( 1)
+            }										            if(i<right) 							   {
+        }										                quicksort(arr,i,right); 					       do ++i; while( a[i] <= pivot && i <= r );
+        // call quickSort() method recursively						            return;								       do --j; while( a[j] > pivot );
+        if (lowerIndex < j)								        }									       if( i >= j ) break;
+            quickSort(lowerIndex, j);							    }										       t = a[i]; a[i] = a[j]; a[j] = t;
+        if (i < higherIndex)								}										   }
+            quickSort(i, higherIndex);																	   t = a[l]; a[l] = a[j]; a[j] = t;
+    }																					   return j;
+											int main() {									}
+    private void exchangeNumbers(int i, int j) {					    int arr[8] = {110, 5, 10,3 ,22, 100, 1, 23};
+        int temp = array[i];								    quicksort(arr, 0, (sizeof(arr)/sizeof(arr[0]))-1);
+        array[i] = array[j];								    print(arr, (sizeof(arr)/sizeof(arr[0])));
+        array[j] = temp;								    return 0;
+    }											}
+
+    public static void main(String a[]){
+
+        MyQuickSort sorter = new MyQuickSort();
+        int[] input = {24,2,45,20,56,75,2,56,99,53,12};
+        sorter.sort(input);
+        for(int i:input){
+            System.out.print(i);
+            System.out.print(" ");
+        }
+    }
+}
+
