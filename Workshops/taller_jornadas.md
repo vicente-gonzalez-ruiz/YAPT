@@ -1,4 +1,4 @@
-YAPT in Python Programming 2-hours workshop 
+YAPT 2-hours workshop (Jornadas Informática)
 
 Contents:
 
