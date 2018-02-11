@@ -1,2 +1,2 @@
 print("package/__main__.py executed")
-import module
+import my_module
