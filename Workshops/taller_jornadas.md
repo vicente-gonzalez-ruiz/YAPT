@@ -2,11 +2,11 @@ YAPT 2-hours workshop (Jornadas Informática)
 
 Contents:
 
-1. [History programming](http://localhost:8888/notebooks/YAPT/00-history.ipynb#A-bit-of-programing-history).
-1. [Why Python?](../00-intro.ipynb).
-1. [Install Python](../01-installation.ipynb).
-2. [Install an IDE (Integrated Development Environment)](https://wiki.python.org/moin/IntegratedDevelopmentEnvironments).
-3. [Hello World](../03-hello_world.ipynb).
+1. [A bit of history](http://localhost:8888/notebooks/YAPT/00-history.ipynb#A-bit-of-history-about-computer-programing).
+2. [Why Python?](http://localhost:8888/notebooks/YAPT/01-intro.ipynb#Introducing-Python).
+3. [Installing Python](http://localhost:8888/notebooks/YAPT/02-installation.ipynb#Python-Installation).
+4. [Some IDEs (Integrated Development Environments)](https://wiki.python.org/moin/IntegratedDevelopmentEnvironments). Try [Thonny](http://thonny.org/).
+5. [Hello World](http://localhost:8888/notebooks/YAPT/03-hello_world.ipynb#Hello-world!).
 
 2. [Scientific Computation](21-scientific_computation.ipynb).
 3. [Profiling](30-profiling.ipynb).
