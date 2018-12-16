@@ -7,7 +7,7 @@
 
 static PyObject* sumArray(PyObject* self, PyObject* args) {
   int N;
-  long int sum;
+  double sum;
   //int* a;
   PyArrayObject *in_array;
   

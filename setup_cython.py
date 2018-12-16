@@ -1,7 +1,6 @@
-from distutils.core import setup, Extension
-from Cython.Distutils import build_ext
+from distutils.core import setup
+from Cython.Build import cythonize
 
 setup(
-    cmdclass={'build_ext': build_ext},
-    ext_modules=[Extension("sum_array_module", ["sum_array_module.pyx"])]
+    ext_modules=cythonize("sum_array_cython.pyx"),
 )
