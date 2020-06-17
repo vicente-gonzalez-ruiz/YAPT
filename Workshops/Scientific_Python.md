@@ -7,5 +7,3 @@ Contents:
 3. [Profiling](30-profiling.ipynb).
 4. [Debugging](31-debugging.ipynb).
 5. [Optimizing](32-optimizing.ipynb).
-
-
