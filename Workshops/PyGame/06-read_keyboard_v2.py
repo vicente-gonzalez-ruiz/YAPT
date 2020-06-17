@@ -6,7 +6,7 @@ width = 800
 height = 600
 
 screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption("Control of the image with the arrows")
+pygame.display.set_caption("Control of the image with the arrows of the keyboard (v2)")
 
 # https://freeicons.io/
 image = pygame.image.load("1169214951579330067-128.png")
@@ -33,10 +33,20 @@ while running:
                 new_y_coordinate -= 1
             elif event.key == pygame.K_DOWN:
                 new_y_coordinate += 1
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT:
+                new_x_coordinate -= 1
+            elif event.key == pygame.K_RIGHT:
+                new_x_coordinate += 1
+            elif event.key == pygame.K_UP:
+                new_y_coordinate -= 1
+            elif event.key == pygame.K_DOWN:
+                new_y_coordinate += 1
             
     screen.fill((100,200,100)) # RGB, 8 bits/component, values in [0, 255]
     screen.blit(image, (new_x_coordinate, new_y_coordinate))
     pygame.display.update()
+    
     if (new_x_coordinate + image.get_width()) > width:
         new_x_coordinate -= 1
     elif new_x_coordinate < 0:
