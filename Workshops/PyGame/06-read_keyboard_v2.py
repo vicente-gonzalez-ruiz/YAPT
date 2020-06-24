@@ -33,7 +33,7 @@ while running:
                 new_y_coordinate -= 1
             elif event.key == pygame.K_DOWN:
                 new_y_coordinate += 1
-        if event.type == pygame.KEYUP:
+        elif event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
                 new_x_coordinate -= 1
             elif event.key == pygame.K_RIGHT:
