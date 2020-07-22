@@ -1,4 +1,4 @@
-YAPT 2-hours workshop (Jornadas Inform&aacute;tica)
+# Programación en Python para estudiantes ESO
 
 Contents:
 
