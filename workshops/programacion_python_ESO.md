@@ -2,6 +2,12 @@
 
 Contenidos:
 
+Qué es un videojuego.
+
+Cuál fue el primer videojuego? Tenis for two.
+
+Cual fue la primera videoconsola?
+
 1. [¿Qué es una computadora y para qué se programan?]().
 
 la primera computadora
