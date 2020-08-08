@@ -1,5 +1,19 @@
 # Programación en Python para estudiantes ESO
 
+http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires
+
+## Historia del PC (Personal Computer)
+
+[Info en Wikipedia](https://es.wikipedia.org/wiki/El_triunfo_de_los_nerds).
+[El triunfo de los nerds Cap 1/3](https://www.youtube.com/watch?v=6KgYRX-cNxA).
+[El triunfo de los nerds Cap 2/3](https://www.youtube.com/watch?v=87EFyQN_Q-E).
+[El triunfo de los nerds Cap 3/3](https://www.youtube.com/watch?v=Ofli7d0mtOU).
+
+## Sobre el nacimiento de Internet
+
+[Nerds 2.0.1 - A Brief History of the Internet - Cap 1/2: Networking The Nerds](https://www.youtube.com/watch?v=L4D2nxQBmOM).
+[Nerds 2.0.1 - A Brief History of the Internet - Cap 2/2: Serving the Suits](https://www.youtube.com/watch?v=d0ya8DggDYs).
+
 Contenidos:
 
 Qué es un videojuego.
@@ -42,17 +56,16 @@ highest_number = 100
 random_number = Generate_an_integer_random_number_in_the_range(lowest_number, highest_number)
 print(range)
 guessed_number = input()
-tries = 0
+number_of_tries = 1
 while random_number != guessed_number:
   print("Wrong guess :-/")
-  print("Try again with a ")
-  if guessed_number < random_number:
-    print("higher number")
-  elif guessed_number > random_number:
-    print("lower number")
+  if guessed_number < random_number then:
+    print("Try again with a higher number")
+  else if guessed_number > random_number then:
+    print("Try again with a lower number")
   guessed_number = input()
-  tries = tries + 1
-print("Congratulations! You guessed the number in", tries, "attempts :-)")
+  number_of_tries = number_of_tries + 1
+print("Congratulations! You guessed the number in", number_of_tries, "attempts :-)")
 ```
 
 1. [¿Qué es un lenguaje de programación?]().
