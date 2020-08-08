@@ -32,6 +32,28 @@ pong python
 http://programarcadegames.com/index.php?chapter=example_code&lang=es
 http://programarcadegames.com/index.php?lang=en
 
+Instalar Python
+
+6. [Guess the number!](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi).
+
+```
+lowest_number = 0
+highest_number = 100
+random_number = Generate_an_integer_random_number_in_the_range(lowest_number, highest_number)
+print(range)
+guessed_number = input()
+tries = 0
+while random_number != guessed_number:
+  print("Wrong guess :-/")
+  print("Try again with a ")
+  if guessed_number < random_number:
+    print("higher number")
+  elif guessed_number > random_number:
+    print("lower number")
+  guessed_number = input()
+  tries = tries + 1
+print("Congratulations! You guessed the number in", tries, "attempts :-)")
+```
 
 1. [¿Qué es un lenguaje de programación?]().
 2. [¿Qué es Python?]().
@@ -40,6 +62,6 @@ http://programarcadegames.com/index.php?lang=en
 5. [Instalación de Python en Linux]().
 6. [Hello World en Python](http://localhost:8888/notebooks/YAPT/03-hello_world.ipynb#Hello-world!).
 7. [¿Qué es PyGame?](http://localhost:8888/notebooks/YAPT/04-structuring_code.ipynb#Structuring-code).
-6. [Guess the number!](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi).
+
 7. [PacMan](https://github.com/grantjenks/free-python-games/blob/master/freegames/pacman.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi). Extra info at [Using Turtle graphics: a Tkinter based turtle graphics module for Python](http://localhost:8888/notebooks/YAPT/A3-Turtle.ipynb#Using-Turtle-graphics:-a-Tkinter-based-turtle-graphics-module-for-Python).
 8. [I/O](http://localhost:8888/notebooks/YAPT/18-IO.ipynb).
