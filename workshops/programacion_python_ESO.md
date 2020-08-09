@@ -1,5 +1,31 @@
 # Programación en Python para estudiantes ESO
 
+## Aprovisionamiento
+
+1. Instalar Xubuntu.
+
+Usuario: ion
+Hostname: sirius
+Contraseña: curso
+
+2. Acceder a:
+
+https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/01-hello_world/02-installation.ipynb
+
+e instalar Python usando pyenv con:
+
+sudo apt install git
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+exec "$SHELL"
+sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+pyenv install 3.8.5
+
+
 http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires
 
 ## Historia del PC (Personal Computer)
