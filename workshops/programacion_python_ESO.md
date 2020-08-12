@@ -4,7 +4,7 @@
 
 1. Instalar [Xubuntu 20.04 (Focal
    Fossa)](https://xubuntu.org/download/) en un pendrive de al menos 8
-   GB. Xubuntu instalado ocupa aproximadamente 4GB.
+   GB. Xubuntu recién instalado ocupa aproximadamente 5 GB.
 	* En [Windows](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#1-overview).
 	* En [Ubuntu](https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu#1-overview).
 	* En [OSX](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos#1-overview).
@@ -34,9 +34,12 @@
 	* Hostname: "sirius".
     * Contraseña: "curso".
 
-2. [Instalar](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/01-hello_world/02-installation.ipynb)
+2. [Instalar (usando
+   pyenv)](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/01-hello_world/02-installation.ipynb)
    la versión 3.8.5 de CPython, y crear un entorno virtual llamado
    "curso_python".
+   
+3. Instalar pygame. Posiblemente es necesario instalar también 
 
 
 http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires
