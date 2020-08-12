@@ -2,11 +2,37 @@
 
 ## Aprovisionamiento
 
-1. Instalar [Xubuntu 20.04 (Focal Fossa)](https://xubuntu.org/download/) en un pendrive de al menos 8 GB.
-
-Usuario: ion
-Hostname: sirius
-Contraseña: curso
+1. Instalar [Xubuntu 20.04 (Focal
+   Fossa)](https://xubuntu.org/download/) en un pendrive de al menos 8
+   GB. Xubuntu instalado ocupa aproximadamente 4GB.
+	* En [Windows](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#1-overview).
+	* En [Ubuntu](https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu#1-overview).
+	* En [OSX](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos#1-overview).
+	* En [Linux](https://askubuntu.com/questions/372607/how-to-create-a-bootable-ubuntu-usb-flash-drive-from-terminal).
+    * Indicar que se quiere actualizar Xubuntu mientras se instala (si
+      hay conexión a Internet) y que se desea instalar software de
+      terceros (propietario).
+	* Es preferible seleccionar English como idioma, pero elegir el
+      teclado correspondiente (seguramente Español).
+    * En *Installation type* hay que seleccionar *Something else*,
+	  particionar el pendrive en 3 particiones: (1) /dev/sd<disk>1 de
+	  tipo EFI con 512 MB (aproximadamente), (2) /dev/sd<disk>2 de
+	  tipo swap con 8 GB (8192 MB, aproximadamente y dependiendo del
+	  tamaño del pendrive), y (3) /dev/sd<disk>3 de tipo ext4, con el
+	  resto del pendrive, y para montarse en /, que debería ser
+	  formateada. Finalmente, no olvidar indicar que el boot loader
+	  debe instalarse también en el pendrive /dev/sd<disk>, donde
+	  <disk> es una letra, seguramente "b" o "c", dependiendo del
+	  número de discos que tengamos instalados en nuestro
+	  ordenador. Ojo de no seleccionar, por ejemplo, /dev/sda, porque
+	  estaríamos particionando y formateando el primer disco de
+	  nuestro ordenador. Nota: es posible que aparezcan huecos
+	  pequeños con espacio libre al comienzo de espacio de
+	  almacenamiento del pendrive, al final y entre las
+	  particiones. Esto no importa y es irremediable.
+    * Usuario: "ion".
+	* Hostname: "sirius".
+    * Contraseña: "curso".
 
 2. [Instalar](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/01-hello_world/02-installation.ipynb)
    la versión 3.8.5 de CPython, y crear un entorno virtual llamado
