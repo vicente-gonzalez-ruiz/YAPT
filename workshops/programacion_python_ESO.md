@@ -45,10 +45,13 @@
 
 5. Instalar xosview.
 
+6. Instalar epiphany.
+
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
 http://programarcadegames.com/
 https://lorenzod8n.wordpress.com/2007/12/16/
+https://sites.google.com/site/thepythonpongtutorial/home
 
 http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires
 
