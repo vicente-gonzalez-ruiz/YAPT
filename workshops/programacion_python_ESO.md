@@ -43,6 +43,8 @@
 
 4. Instalar thommy con pip install thommy.
 
+5. Instalar xosview.
+
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
 http://programarcadegames.com/
