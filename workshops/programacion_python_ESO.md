@@ -47,6 +47,18 @@
 
 6. Instalar epiphany.
 
+Video Tennis For Two:
+https://www.youtube.com/watch?v=s2E9iSQfGdg
+https://www.youtube.com/watch?v=6QYNlPLzj90
+
+Vídeo pong
+https://www.youtube.com/watch?v=fiShX2pTz9A
+https://www.youtube.com/watch?v=pvX6Bv94M3M
+https://www.youtube.com/watch?v=9pSMU20bt2M
+
+Historia pong
+https://es.wikipedia.org/wiki/Atari_Pong
+
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
 http://programarcadegames.com/
@@ -107,7 +119,8 @@ Instalar Python
 lowest_number = 0
 highest_number = 100
 random_number = Generate_an_integer_random_number_in_the_range(lowest_number, highest_number)
-print(range)
+print("I have choosen an integer number between", lowest_number, "and", highest_number)
+print("Guess it!")
 guessed_number = input()
 number_of_tries = 1
 while random_number != guessed_number:
@@ -119,6 +132,37 @@ while random_number != guessed_number:
   guessed_number = input()
   number_of_tries = number_of_tries + 1
 print("Congratulations! You guessed the number in", number_of_tries, "attempts :-)")
+```
+
+```
++-----------------------------------------------------------+
+| +----------+                                              |
+| | computer |                                              |
+| +----------+                                              |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|                                                           |
+|                                                           |
+|                *                                          |
+|                                                           |
+|                                                           |
+|                                                           |
+|                 +----------+                              |
+|                 |  humman  |                              |
+|                 +----------+                              |
++-----------------------------------------------------------+
+```
+
+```
+computer_points_counter = 0
+humman_points_counter = 0
+while (computer_points_counter < 10) and (humman_points_counter < 10):
+  
 ```
 
 ## Open a window
