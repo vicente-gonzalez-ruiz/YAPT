@@ -135,34 +135,39 @@ print("Congratulations! You guessed the number in", number_of_tries, "attempts :
 ```
 
 ```
-+-----------------------------------------------------------+
-| +----------+                                              |
-| | computer |                                              |
-| +----------+                                              |
-|                                                           |
-|                                                           |
-|                                                           |
-|                                                           |
-|                                                           |
-|                                                           |
-| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|                                                           |
-|                                                           |
-|                *                                          |
-|                                                           |
-|                                                           |
-|                                                           |
-|                 +----------+                              |
-|                 |  humman  |                              |
-|                 +----------+                              |
-+-----------------------------------------------------------+
+<---------------------- screen_width ----------------------->
++-----------------------------------------------------------+ ^
+|    +----------+                                           | |
+| <- | computer | ->                                        | |
+|    +----------+                                           | |
+|                                                           | s
+|                                                           | c
+|                                                           | r
+|                                                           | e
+|                                                           | e
+|                                                           | n
+| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | _
+|                                                           | h
+|                                                           | e
+|                * <- the ball                              | i
+|                                                           | g
+|                                                           | h
+|                                                           | t
+|                 +----------+                              | |
+|              <- |  human   | ->                           | |
+|                 +----------+                              | |
++-----------------------------------------------------------+ v
 ```
 
 ```
-computer_points_counter = 0
-humman_points_counter = 0
-while (computer_points_counter < 10) and (humman_points_counter < 10):
-  
+main():
+  computer_points_counter = 0
+  human_points_counter = 0
+  while (computer_points_counter < 10) and (humman_points_counter < 10):
+    if ball_coordinate_y < 0:
+	  human_points_counter = human_points_counter + 1
+	else if ball_coordinate_y > screen_height:
+	  computer_points_counter = computer_points_counter + 1
 ```
 
 ## Open a window
