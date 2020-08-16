@@ -133,6 +133,25 @@ while random_number != guessed_number:
   number_of_tries = number_of_tries + 1
 print("Congratulations! You guessed the number in", number_of_tries, "attempts :-)")
 ```
+## Ejercicio: Crear una pantalla vacía (empty screen) usando Pygame
+1. Importar Pygame.
+2. Inicializar Pygame (usar `pygame.init()`).
+3. Crear una pantalla (usar `pygame.display.set_mode()`).
+4. Darle un título a la pantalla (usar `pygame.display.set_caption()`).
+5. Esperar a que el usuario cierre la pantalla (cosa que ocurre, cuando `pygame.event.wait().type` retorna un evento del tipo `pygame.QUIT`).
+6. Cerrar Pygame (usar `pygame.quit()`).
+
+
+## Ejercicio: Pintar un par de puntos
+1. Importar Pygame.
+2. Inicializar Pygame (usar `pygame.init()`).
+3. Crear una pantalla (usar `pygame.display.set_mode()`).
+4. Darle un título a la pantalla (usar `pygame.display.set_caption()`).
+5. Pintar un punto blanco en la coordenadas (x=1, y=1) (usar `screen.set_at()`).
+6. Pintar un punto verde en (x=10, y=100).
+7. Esperar a que el usuario cierre la pantalla (cosa que ocurre, cuando `pygame.event.wait().type` retorna un evento del tipo `pygame.QUIT`).
+8. Cerrar Pygame (usar `pygame.quit()`).
+```
 
 ```
 <---------------------- screen_width ----------------------->

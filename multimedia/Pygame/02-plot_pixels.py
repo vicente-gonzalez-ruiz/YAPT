@@ -13,7 +13,7 @@ while running:
     screen.set_at((1, 1), color.white)
     screen.set_at((10, 100), color.green)
     pygame.display.update()
-    event = pygame.event.wait()  # Wait for an (input) event
+    event = pygame.event.wait()
     if event.type == pygame.QUIT:
         running = False
 
