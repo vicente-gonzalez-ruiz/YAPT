@@ -134,14 +134,17 @@ while random_number != guessed_number:
 print("Congratulations! You guessed the number in", number_of_tries, "attempts :-)")
 ```
 ## Ejercicio 1: Crear una pantalla vacía (empty screen) usando Pygame
+El objetivo de este ejercicio es conocer cómo abrir y cerrar un *screen* (una ventana) de Pygame. 
 1. Importar Pygame.
 2. Inicializar Pygame (usar `pygame.init()`).
 3. Crear una pantalla (usar `pygame.display.set_mode()`).
 4. Darle un título a la pantalla (usar `pygame.display.set_caption()`).
 5. Esperar a que el usuario cierre la pantalla (cosa que ocurre, cuando `pygame.event.wait().type` retorna un evento del tipo `pygame.QUIT`).
 6. Cerrar Pygame (usar `pygame.quit()`).
+7. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_screen.py).
 
 ## Ejercicio 2: Pintar un par de puntos
+El objetivo de este ejercicio es averiguar cómo se distribuyen las coordenadas en una screen de Pygame, y aprender a dibujar puntos.
 1. Importar Pygame.
 2. Inicializar Pygame (usar `pygame.init()`).
 3. Crear una pantalla (usar `pygame.display.set_mode()`).
@@ -150,6 +153,16 @@ print("Congratulations! You guessed the number in", number_of_tries, "attempts :
 6. Pintar un punto verde en (x=10, y=100).
 7. Esperar a que el usuario cierre la pantalla (cosa que ocurre, cuando `pygame.event.wait().type` retorna un evento del tipo `pygame.QUIT`).
 8. Cerrar Pygame (usar `pygame.quit()`).
+9. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/plot_pixels.py).
+
+## Ejercicio 3: Pintar un rectángulo
+Simplemente aprendemos cómo dibujar un rectángulo.
+1. Este ejercicio es casi idéntico al Ejercicio 2, excepto que debemos pintar un rectángulo en lugar de un punto (usar `pygame.draw.rec()`).
+9. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
+
+## Ejercicio 4: Rebotar un rectángulo
+Hacemos que el rectángulo se mueva en diagonal, con velocidad constante. Cuando encontramos los límites del `screen`, el rectángulo debe rebotar.
+1. 
 
 ## Algo sobre programación orientada a objetos
 Los objetos son estructuras de código (técnicamente son instancias de
