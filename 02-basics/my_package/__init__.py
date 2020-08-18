@@ -1,2 +1,2 @@
-print("my_package/__init__.py executed")
-import my_package.my_module
+print("__init__.py: my_package/__init__.py was executed")
+import my_package.a_module

@@ -113,6 +113,32 @@ http://programarcadegames.com/index.php?lang=en
 
 Instalar Python
 
+## Ejercicio 0: Averigua si un número natural N es primo
+Una forma secilla de averiguar si un número natural (un número entero
+mayor o igual que 1) N es primo es comprobar que no es divisible entre
+los números naturales comprendidos entre 2 y N/2-1. Un número N es
+divisible entre un número I si el resto de dividir N entre I
+es 0. En programación, la operación matemática que calcula el resto de un cociente se llama *módulo* y en Python se representa con el símbolo `%`. Por ejemplo, 10 % 5 = 0, 10 % 2 = 0, y 10 % 6 = 4.
+
+Con toda esta información, podemos determinar si N es un número primo
+con el siguiente algoritmo:
+
+1. Introducir N.
+2. N_es_primo = Verdadero
+3. I = 2
+4. Mientras I <= parte_entera_de(N/2)-1:
+   1. Si N % I es igual a 0:
+	  1. N_es_primo = Falso
+	  2. I = parte_entera_de(N/2)
+   1. I = I + 1
+5. Imprimir(N_es_primo)
+
+En Python, la parte entera de una división de números (o lo que se
+conoce también como división entera) puede calcularse usando el
+operador `//`. Una posible solución a este ejercicio puede se
+encuentra en
+[aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/check_prime.py).
+
 6. [Guess the number!](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi).
 
 ```
@@ -133,6 +159,7 @@ while random_number != guessed_number:
   number_of_tries = number_of_tries + 1
 print("Congratulations! You guessed the number in", number_of_tries, "attempts :-)")
 ```
+
 ## Ejercicio 1: Crear una pantalla vacía (empty screen) usando Pygame
 El objetivo de este ejercicio es conocer cómo abrir y cerrar un *screen* (una ventana) de Pygame. 
 1. Importar Pygame.
@@ -144,7 +171,8 @@ El objetivo de este ejercicio es conocer cómo abrir y cerrar un *screen* (una v
 7. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_screen.py).
 
 ## Ejercicio 2: Pintar un par de puntos
-El objetivo de este ejercicio es averiguar cómo se distribuyen las coordenadas en una screen de Pygame, y aprender a dibujar puntos.
+El objetivo de este ejercicio es averiguar cómo se distribuyen las
+coordenadas en una screen de Pygame, y aprender a dibujar puntos.
 1. Importar Pygame.
 2. Inicializar Pygame (usar `pygame.init()`).
 3. Crear una pantalla (usar `pygame.display.set_mode()`).
@@ -161,8 +189,12 @@ Simplemente aprendemos cómo dibujar un rectángulo.
 9. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
 
 ## Ejercicio 4: Rebotar un rectángulo
-Hacemos que el rectángulo se mueva en diagonal, con velocidad constante. Cuando encontramos los límites del `screen`, el rectángulo debe rebotar.
-1. 
+Hacemos que el rectángulo se mueva en diagonal, a velocidad constante. Cuando encontramos los límites del `screen`, el rectángulo debe rebotar.
+1. Importar Pygame.
+2. Inicializar Pygame (usar `pygame.init()`).
+3. Crear una pantalla (usar `pygame.display.set_mode()`).
+4. Darle un título a la pantalla (usar `pygame.display.set_caption()`).
+5. 
 
 ## Algo sobre programación orientada a objetos
 Los objetos son estructuras de código (técnicamente son instancias de

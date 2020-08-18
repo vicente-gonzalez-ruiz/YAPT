@@ -1,5 +1,7 @@
 import pygame
-import my_colors as color
+#from .lib import colors as color
+import lib.colors as color
+#import my_colors as color
 
 pygame.init()
 screen_width = 800
