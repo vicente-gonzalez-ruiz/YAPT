@@ -126,8 +126,8 @@ con el siguiente algoritmo:
 1. Introducir N.
 2. N_es_primo = Verdadero
 3. I = 2
-4. Mientras I <= parte_entera_de(N/2)-1:
-   1. Si N % I es igual a 0:
+4. Mientras I <= (parte_entera_de(N/2) - 1):
+   1. Si (N % I) es igual a 0:
 	  1. N_es_primo = Falso
 	  2. I = parte_entera_de(N/2)
    1. I = I + 1
