@@ -196,12 +196,16 @@ Hacemos que el rectángulo se mueva en diagonal, a velocidad constante. Cuando e
 4. Darle un título a la pantalla (usar `pygame.display.set_caption()`).
 5. 
 
+## Ejercicio: Añadir sonido.
+
 ## Algo sobre programación orientada a objetos
 Los objetos son estructuras de código (técnicamente son instancias de
 clases) que contienen datos y métodos, que manejan dichos datos. La
 programación orientada a objetos es útil porque ayuda al programador a
 organizar el código de forma lógica, y a depurarlo/mantenerlo más
 eficientemente.
+
+## Ejercicio: Usar sprites
 
 ## Ejercicio: Reutilizar el código de la pantalla vacía para pintar puntos
 1. Distribuir el código del Ejercicio 1 en métodos (de una clase
