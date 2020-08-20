@@ -12,7 +12,7 @@ from lib import colors as color
 
 class Ball(pygame.sprite.Sprite):
 
-    def __init__(self, color, ball_width, ball_height, initial_x_coordinate, initial_y_coordinate):
+    def __init__(self, ball_color, ball_width, ball_height, initial_x_coordinate, initial_y_coordinate):
         # Compulsory.
         super().__init__()
 
@@ -20,20 +20,23 @@ class Ball(pygame.sprite.Sprite):
         self.image = pygame.Surface([ball_width, ball_height])
 
         # Color of the transparent pixels of the sprite.
-        self.image.fill(color)                                  
-        self.image.set_colorkey(color)
+        self.image.fill(color.black)                                  
+        self.image.set_colorkey(color.black)
 
         # Initial position of the ball in the screen.
         self.x_coordinate = initial_x_coordinate
         self.y_coordinate = initial_y_coordinate
-
-        # Draw the (squared) ball.
-        pygame.draw.rect(self.image, color, [self.x_coordinate, self.y_coordinate, ball_width, ball_height])
         
+        # Draw the (squared) ball.
+        pygame.draw.rect(self.image, ball_color, [self.x_coordinate, self.y_coordinate, ball_width, ball_height])
+        #pygame.draw.rect(self.image, ball_color, [0, 0, ball_width, ball_height])
+
         # Fetch the rectangle object that has the dimensions of the
         # image. This should return [ball_width, ball_height] (see
-        # https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect).
-        self.ball_rectangle = self.image.get_rect()
+        # https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect). Notice
+        # that "self.rect" is a attribute handled by the parent class,
+        # so, you cannot change its name.
+        self.rect = self.image.get_rect()
 
         # Initial direction of the ball.
         self.x_direction_step = 1 # Go to the right, one pixel
@@ -46,6 +49,7 @@ class Ball(pygame.sprite.Sprite):
     def update(self):
         self.x_coordinate += self.x_direction_step
         self.y_coordinate += self.y_direction_step
+        print(f"{self.x_coordinate} {self.y_coordinate}")
 
 # Basic initialization stuff (audio and video).
 pygame.mixer.pre_init(44100, -16, 1, 512)
@@ -62,12 +66,17 @@ ball_width = 16
 screen_width = 800
 screen_height = 600
 
+# Maximum FPS
+max_FPS = -1
+
 # Place of the starting ball.
-initial_x_coordinate = screen_width/2 - ball_width/2
-initial_y_coordinate = 3*screen_height/4 - ball_height/2
+initial_x_coordinate = screen_width//2 - ball_width//2
+initial_y_coordinate = 3*screen_height//4 - ball_height//2
+print(f"{initial_x_coordinate} {initial_y_coordinate}")
 
 # The ball sprite.
-ball = Ball(color.white, ball_width, ball_height, initial_x_coordinate, initial_y_coordinate)
+#ball = Ball(color.white, ball_width, ball_height, initial_x_coordinate, initial_y_coordinate)
+ball = Ball(color.white, ball_width, ball_height, 0, 0)
 
 # All sprites of this list are drawn by a single call of Sprite.call()
 # (see below).
@@ -91,23 +100,25 @@ print_outputs__thread = threading.Thread(target = print_outputs)
 print_outputs__thread.start()
 
 while running:
-    #screen.fill(color.black)
-    pygame.display.update()
-    if (ball.x_coordinate + ball.ball_width) > screen_width or ball.x_coordinate < 0:
-        ball.x_direction = -ball.x_direction_step
-        self.ping_sound.play()
-    elif (selfy_coordinate + self.ball_height) > self.screen_height or self.y_coordinate < 0:
-        self.y_direction = -self.y_direction_step
-        self.ping_sound.play()
+    screen.fill(color.black)
+    if (ball.x_coordinate + ball_width) > screen_width or ball.x_coordinate < 0:
+        ball.x_direction_step = -ball.x_direction_step
+        ping_sound.play()
+        print("Rebotando")
+    elif (ball.y_coordinate + ball_height) > screen_height or ball.y_coordinate < 0:
+        ball.y_direction_step = -ball.y_direction_step
+        ping_sound.play()
+        print("Rebotando")
 
     all_sprites_list.update()
     all_sprites_list.draw(screen) 
+    pygame.display.update()
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    clock.tick() # Necessary to compute the FPS value
+    clock.tick(max_FPS)  # Set max FPS
 
 print_outputs__thread.join() # Waits until the thread terminates
 pygame.quit()
