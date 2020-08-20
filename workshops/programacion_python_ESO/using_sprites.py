@@ -118,7 +118,8 @@ while running:
     pygame.display.update()
     #pygame.display.flip()
 
-    clock.tick(max_FPS)  # Set max FPS
+    #clock.tick(max_FPS)  # Set max FPS
+    clock.tick()
 
 print_outputs__thread.join() # Waits until the thread terminates
 pygame.quit()
