@@ -3,66 +3,76 @@ import threading
 import time
 from lib import colors as color
 
+# In Pygame, the Sprite class helps to detect collisions between
+# sprites. This is not our case (yet) because there is only a bouncing
+# ball in the screen, and the limits of the screen should not be
+# considered as an huge sprite with a big hole inside. However, we are
+# going to use it only to know how to instantiate the class (allocate
+# a sprite-ball).
+
 class Ball(pygame.sprite.Sprite):
 
-    def __init__(self, color, ball_width, ball_height, screen_width, screen_height):
+    def __init__(self, color, ball_width, ball_height, initial_x_coordinate, initial_y_coordinate):
+        # Compulsory.
         super().__init__()
-        self.image = pygame.Surface([width, height])
-        self.image.fill(BLACK)
-        self.image.set_colorkey(BLACK)
 
-        # Size of the screen
-        self.screen_width = screen_width
-        self.screen_height = screen_height
+        # Size of the sprite.
+        self.image = pygame.Surface([ball_width, ball_height])
 
-        # Place where the ball appears the first time in the screen.
-        initial_x_coordinate = screen_width/2 - ball_width/2
-        initial_y_coordinate = 3*screen_height/4 - ball_height/2
+        # Color of the transparent pixels of the sprite.
+        self.image.fill(color)                                  
+        self.image.set_colorkey(color)
 
-        # Coordinates of the ball.
+        # Initial position of the ball in the screen.
         self.x_coordinate = initial_x_coordinate
         self.y_coordinate = initial_y_coordinate
 
-        # Size of the ball.
-        self.ball_width = ball_width
-        self.ball_height = ball_height
-
-        # Draw the ball.
-        pygame.draw.rect(self.image, color, [initial_x_coordinate, initial_y_coordinate, ball_width, ball_height])
+        # Draw the (squared) ball.
+        pygame.draw.rect(self.image, color, [self.x_coordinate, self.y_coordinate, ball_width, ball_height])
         
-        # Fetch the rectangle object that has the dimensions of the image.
+        # Fetch the rectangle object that has the dimensions of the
+        # image. This should return [ball_width, ball_height] (see
+        # https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect).
         self.ball_rectangle = self.image.get_rect()
+        assert self.ball_rectangle == [ball_width, ball_height]
 
         # Initial direction of the ball.
-        self.x_direction = 1 # Go to right
-        self.y_direction = 1 # Go to bottom
+        self.x_direction_step = 1 # Go to the right, one pixel
+        self.y_direction_step = 1 # Go to bottom, one pixel
 
-        self.ping_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
-
+    # This method controls the sprite behaviour
+    # (https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update)
+    # and we will use it to control were to move (blit) the ball. It
+    # is called by Sprite.draw() (see below).
     def update(self):
-        
-        self.x_coordinate += self.x_direction
-        if (self.x_coordinate + self.ball_width) > self.screen_width or self.x_coordinate < 0:
-            self.x_direction = -self.x_direction
-            self.ping_sound.play()
-            
-        self.y_coordinate += self.y_direction
-        if (selfy_coordinate + self.ball_height) > self.screen_height or self.y_coordinate < 0:
-            self.y_direction = -self.y_direction
-            self.ping_sound.play()
+        self.x_coordinate += self.x_direction_step
+        self.y_coordinate += self.y_direction_step
 
+# Basic initialization stuff.
 pygame.mixer.pre_init(44100, -16, 1, 512)
 pygame.init()
-all_sprites_list = pygame.sprite.Group()
 
+# Sound of the ball when it bounces off the walls.
+self.ping_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
+
+# Create the (sprite) ball.
+# ball_height = 16
+# ball_width = 16
+initial_x_coordinate = screen_width/2 - ball_width/2
+initial_y_coordinate = 3*screen_height/4 - ball_height/2
+ball = Ball(color.white, ball_width = 16, ball_height = 16, initial_x_coordinate, initial_y_coordinate)
+
+# All sprites of this list are drawn by a single call of Sprite.call()
+# (see below).
+all_sprites_list = pygame.sprite.Group()
+all_sprites_list.add(ball)
+
+# Size of the screen.
 screen_width = 800
 screen_height = 600
 
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("A bouncing rectangle using a sprite")
-
-rectangle_width = 100
-rectangle_height = 50
+pygame.display.set_caption("A bouncing squared sprite")
 
 clock = pygame.time.Clock()
 running = True
@@ -77,16 +87,17 @@ def print_outputs():
 print_outputs__thread = threading.Thread(target = print_outputs)
 print_outputs__thread.start()
 
-# Create the ball
-ball = Ball(color = color.white, ball_width = 16, ball_height = 16, screen_width = screen_width, screen_height = screen_height)
-
-all_sprites_list = pygame.sprite.Group()
-all_sprites_list.add(ball)
-
 while running:
     #screen.fill(color.black)
     pygame.draw.rect(screen, color.blue, (new_x_coordinate, new_y_coordinate, rectangle_width, rectangle_height))
     pygame.display.update()
+    if (self.x_coordinate + self.ball_width) > self.screen_width or self.x_coordinate < 0:
+    self.x_direction = -self.x_direction
+    self.ping_sound.play()
+if (selfy_coordinate + self.ball_height) > self.screen_height or self.y_coordinate < 0:
+    self.y_direction = -self.y_direction
+    self.ping_sound.play()
+
     new_x_coordinate += x_direction
     if (new_x_coordinate + rectangle_width) > screen_width:
         x_direction = -1
