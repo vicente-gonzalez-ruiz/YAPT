@@ -3,10 +3,6 @@ import threading
 import time
 from lib import colors as color
 
-# Basic initialization stuff (audio and video).
-pygame.mixer.pre_init(44100, -16, 1, 512)
-pygame.init()
-
 # In Pygame, the Sprite class helps to detect collisions between
 # sprites. This is not our case (yet) because there is only a bouncing
 # ball in the screen, and the limits of the screen should not be
@@ -43,8 +39,8 @@ class Ball(pygame.sprite.Sprite):
         self.rect.y = initial_y_coordinate
         
         # Initial direction of the ball.
-        self.x_direction_step = 55 # Go to the right, one pixel
-        self.y_direction_step = 34 # Go to bottom, one pixel
+        self.x_direction_step = 1 # Go to the right, one pixel
+        self.y_direction_step = 1 # Go to bottom, one pixel
 
     # This method controls the sprite behaviour
     # (https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update)
@@ -54,6 +50,10 @@ class Ball(pygame.sprite.Sprite):
         self.rect.x += self.x_direction_step
         self.rect.y += self.y_direction_step
         #print(f"{self.x_coordinate} {self.y_coordinate}")
+
+# Basic initialization stuff (audio and video).
+pygame.mixer.pre_init(44100, -16, 1, 512)
+pygame.init()
 
 # Create the screen.
 screen_width = 800
@@ -116,10 +116,7 @@ while running:
     screen.fill(color.black)
     all_sprites_list.draw(screen) 
     pygame.display.update()
-    #pygame.display.flip()
-
-    #clock.tick(max_FPS)  # Set max FPS
-    clock.tick()
+    clock.tick(max_FPS)  # Set max FPS
 
 print_outputs__thread.join() # Waits until the thread terminates
 pygame.quit()
