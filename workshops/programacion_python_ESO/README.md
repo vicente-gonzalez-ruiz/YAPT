@@ -1,7 +1,7 @@
 # Programación de Computadoras con Python para estudiantes de ESO
 
 ## Aprovisionamiento
-
+{{{
 1. Instalar [Xubuntu 20.04 (Focal
    Fossa)](https://xubuntu.org/download/) en un pendrive de al menos 8
    GB. Xubuntu recién instalado ocupa aproximadamente 5 GB.
@@ -47,7 +47,32 @@
 
 6. Instalar epiphany.
 
+}}}
+
+## Ranking de los 28 lenguajes de programación más usados
+{{{
+
+http://pypl.github.io/PYPL.html
+
+}}}
+
+## Evolución de las computadoras y los coches
+{{{
+
+[La primera computadora (infobae)](https://www.infobae.com/america/tecno/2019/10/14/cual-fue-la-primera-computadora-de-la-historia/).
+[La primera generación de computadoras (wikipedia)](https://es.wikipedia.org/wiki/Primera_generaci%C3%B3n_de_computadoras).
+[Evolucion de las computadoras y coches](https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/).
+[El coche más potente del mundo](https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.)
+[El ordenador más potente del mundo](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
+
+}}}
+
+## El primer videojuego
+
+{{{
+
 Video Tennis For Two:
+https://www.youtube.com/watch?v=DABSRdpePr0
 https://www.youtube.com/watch?v=s2E9iSQfGdg
 https://www.youtube.com/watch?v=6QYNlPLzj90
 
@@ -67,40 +92,18 @@ https://sites.google.com/site/thepythonpongtutorial/home
 
 http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires
 
-## Historia del PC (Personal Computer)
+## Historia del PC (Personal Computer) y de Internet
+
+{{{
 
 [Info en Wikipedia](https://es.wikipedia.org/wiki/El_triunfo_de_los_nerds).
 [El triunfo de los nerds Cap 1/3](https://www.youtube.com/watch?v=6KgYRX-cNxA).
 [El triunfo de los nerds Cap 2/3](https://www.youtube.com/watch?v=87EFyQN_Q-E).
 [El triunfo de los nerds Cap 3/3](https://www.youtube.com/watch?v=Ofli7d0mtOU).
-
-## Sobre el nacimiento de Internet
-
 [Nerds 2.0.1 - A Brief History of the Internet - Cap 1/2: Networking The Nerds](https://www.youtube.com/watch?v=L4D2nxQBmOM).
 [Nerds 2.0.1 - A Brief History of the Internet - Cap 2/2: Serving the Suits](https://www.youtube.com/watch?v=d0ya8DggDYs).
+}}}
 
-Contenidos:
-
-Qué es un videojuego.
-
-Cuál fue el primer videojuego? Tenis for two.
-
-Cual fue la primera videoconsola?
-
-1. [¿Qué es una computadora y para qué se programan?]().
-
-la primera computadora
-
-https://www.infobae.com/america/tecno/2019/10/14/cual-fue-la-primera-computadora-de-la-historia/
-https://es.wikipedia.org/wiki/Primera_generaci%C3%B3n_de_computadoras
-
-el coche más potente del mundo
-
-https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.
-
-evolucion de las computadoras y coches
-
-https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/
 
 el primer videjuego
 
