@@ -43,8 +43,8 @@ class Ball(pygame.sprite.Sprite):
         self.rect.y = initial_y_coordinate
         
         # Initial direction of the ball.
-        self.x_direction_step = 1 # Go to the right, one pixel
-        self.y_direction_step = 1 # Go to bottom, one pixel
+        self.x_direction_step = 55 # Go to the right, one pixel
+        self.y_direction_step = 34 # Go to bottom, one pixel
 
     # This method controls the sprite behaviour
     # (https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update)
