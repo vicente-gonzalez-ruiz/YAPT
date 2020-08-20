@@ -34,7 +34,6 @@ class Ball(pygame.sprite.Sprite):
         # image. This should return [ball_width, ball_height] (see
         # https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect).
         self.ball_rectangle = self.image.get_rect()
-        assert self.ball_rectangle == [ball_width, ball_height]
 
         # Initial direction of the ball.
         self.x_direction_step = 1 # Go to the right, one pixel
@@ -48,28 +47,32 @@ class Ball(pygame.sprite.Sprite):
         self.x_coordinate += self.x_direction_step
         self.y_coordinate += self.y_direction_step
 
-# Basic initialization stuff.
+# Basic initialization stuff (audio and video).
 pygame.mixer.pre_init(44100, -16, 1, 512)
 pygame.init()
 
 # Sound of the ball when it bounces off the walls.
-self.ping_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
+ping_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
 
 # Create the (sprite) ball.
-# ball_height = 16
-# ball_width = 16
+ball_height = 16
+ball_width = 16
+
+# Size of the screen.
+screen_width = 800
+screen_height = 600
+
+# Place of the starting ball.
 initial_x_coordinate = screen_width/2 - ball_width/2
 initial_y_coordinate = 3*screen_height/4 - ball_height/2
-ball = Ball(color.white, ball_width = 16, ball_height = 16, initial_x_coordinate, initial_y_coordinate)
+
+# The ball sprite.
+ball = Ball(color.white, ball_width, ball_height, initial_x_coordinate, initial_y_coordinate)
 
 # All sprites of this list are drawn by a single call of Sprite.call()
 # (see below).
 all_sprites_list = pygame.sprite.Group()
 all_sprites_list.add(ball)
-
-# Size of the screen.
-screen_width = 800
-screen_height = 600
 
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("A bouncing squared sprite")
@@ -89,29 +92,16 @@ print_outputs__thread.start()
 
 while running:
     #screen.fill(color.black)
-    pygame.draw.rect(screen, color.blue, (new_x_coordinate, new_y_coordinate, rectangle_width, rectangle_height))
     pygame.display.update()
-    if (self.x_coordinate + self.ball_width) > self.screen_width or self.x_coordinate < 0:
-    self.x_direction = -self.x_direction
-    self.ping_sound.play()
-if (selfy_coordinate + self.ball_height) > self.screen_height or self.y_coordinate < 0:
-    self.y_direction = -self.y_direction
-    self.ping_sound.play()
+    if (ball.x_coordinate + ball.ball_width) > screen_width or ball.x_coordinate < 0:
+        ball.x_direction = -ball.x_direction_step
+        self.ping_sound.play()
+    elif (selfy_coordinate + self.ball_height) > self.screen_height or self.y_coordinate < 0:
+        self.y_direction = -self.y_direction_step
+        self.ping_sound.play()
 
-    new_x_coordinate += x_direction
-    if (new_x_coordinate + rectangle_width) > screen_width:
-        x_direction = -1
-        ping.play()
-    elif new_x_coordinate < 0:
-        x_direction = 1
-        ping.play()
-    new_y_coordinate += y_direction
-    if (new_y_coordinate + rectangle_height) > screen_height:
-        y_direction = -1
-        ping.play()
-    elif new_y_coordinate < 0:
-        y_direction = 1
-        ping.play()
+    all_sprites_list.update()
+    all_sprites_list.draw(screen) 
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

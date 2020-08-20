@@ -1,4 +1,4 @@
-# Programación en Python para estudiantes ESO
+# Programación de Computadoras con Python para estudiantes de ESO
 
 ## Aprovisionamiento
 
