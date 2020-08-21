@@ -1,9 +1,42 @@
-# Programación de Computadoras con Python para estudiantes de ESO
+# Programación con Python para estudiantes de ESO
 
-## Los lenguajes de programación más google-ados
+## ¿Sobre qué vamos a programar?
+
+Vamos progrmar sobre un [PC](https://es.wikipedia.org/wiki/Computadora_personal#:~:text=Una%20computadora%20personal%2C%20computador%20personal,las%20computadoras%20IBM%20PC%20compatibles.) con [Linux](https://es.wikipedia.org/wiki/GNU/Linux), en concreto una versión de Linux llamada [Xubuntu](https://xubuntu.org/).
+
+## ¿En qué vamos a programar?
 {{{
 
-[PYPL PopularitY of Programming Language](http://pypl.github.io/PYPL.html).
+Usaremos el lenguaje de programación [Python](https://www.python.org/) por ser fácil de aprender (básicamente, se diseñó con la idea de parecerse al lenguaje natural Inglés), ser [libre](https://empresas.blogthinkbig.com/las-5-razones-por-las-que-todo-el-mundo-quiere-aprender-python/) y [uno de los más demandados](http://pypl.github.io/PYPL.html), especialmente en el ámbito docente y científico.
+
+}}}
+
+## ¿Por qué podría sernos útil saber programar?
+
+{{{
+
+Porque:
+
+1. [Puede ser divertido](https://www.fluentu.com/blog/english-esp/wp-content/uploads/sites/33/2018/04/online-games-to-practice-english-e1522729897682.jpg).
+2. [Puede ser útil](https://es.euronews.com/2020/06/08/superordenadores-contra-el-coronavirus-identifican-moleculas-que-bloquean-su-progresion).
+3. [Puedes ganarte la vida con ello](https://www.revistagq.com/noticias/articulo/trabajos-mas-demandados-2020).
+
+}}}
+
+## ¿Qué vamos a programar?
+
+Vamos a diseñar e implementar 3 programas:
+
+{{{
+
+1. Un comprobador de números primos.
+2. Un juego de adivinanza de números.
+2. Una versión personalizada del juego [Pong](https://en.wikipedia.org/wiki/Pong).
+
+}}}
+
+## Historia de la computación
+{{{
 
 }}}
 
@@ -14,31 +47,9 @@
 [La primera generación de computadoras (wikipedia)](https://es.wikipedia.org/wiki/Primera_generaci%C3%B3n_de_computadoras).
 [Evolucion de las computadoras y coches](https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/).
 [El coche más potente del mundo](https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.)
-[El ordenador más potente del mundo](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
+[El ordenador más potente del mundo (ahora)](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
 
 }}}
-
-## Los primeros videojuegos
-
-{{{
-
-[Video Tennis For Two (1958)](https://www.youtube.com/watch?v=6PG2mdU_i8k).
-[Pong en una Magnavox Odyssey(1972)](https://www.youtube.com/watch?v=jLGBtkKPj2U)
-[Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
-https://www.youtube.com/watch?v=fiShX2pTz9A
-https://www.youtube.com/watch?v=pvX6Bv94M3M
-https://www.youtube.com/watch?v=9pSMU20bt2M
-
-Historia pong
-https://es.wikipedia.org/wiki/Atari_Pong
-
-Links pygame:
-https://pythonprogramming.net/pygame-python-3-part-1-intro/
-http://programarcadegames.com/
-https://lorenzod8n.wordpress.com/2007/12/16/
-https://sites.google.com/site/thepythonpongtutorial/home
-
-http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires
 
 ## Historia del PC (Personal Computer) y de Internet
 
@@ -51,6 +62,26 @@ http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-
 [Nerds 2.0.1 - A Brief History of the Internet - Cap 1/2: Networking The Nerds](https://www.youtube.com/watch?v=L4D2nxQBmOM).
 [Nerds 2.0.1 - A Brief History of the Internet - Cap 2/2: Serving the Suits](https://www.youtube.com/watch?v=d0ya8DggDYs).
 }}}
+
+## Los primeros videojuegos
+
+{{{
+
+[Video Tennis For Two (1958)](https://www.youtube.com/watch?v=6PG2mdU_i8k), diseñado por [William Higinbotham](https://en.wikipedia.org/wiki/William_Higinbotham) que unos años antes había colaborado en el diseño de la bomba atómica.
+[Pong en una Magnavox Odyssey(1972)](https://www.youtube.com/watch?v=jLGBtkKPj2U), la primera video-consola comercial.
+[Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
+[Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
+
+}}}
+
+Links pygame:
+https://pythonprogramming.net/pygame-python-3-part-1-intro/
+http://programarcadegames.com/
+https://lorenzod8n.wordpress.com/2007/12/16/
+https://sites.google.com/site/thepythonpongtutorial/home
+
+http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires
+
 
 
 el primer videjuego
