@@ -79,10 +79,10 @@ nuevo implementando el "Hello World!". Para ello:
    Esto sirve para usar una versión específica de Python (la 3.8.5, véase la sección de aprovisionamiento más abajo) y con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
 
 2. Ejecuta el [IDE (Integrated Development Environment)](https://en.wikipedia.org/wiki/Integrated_development_environment) que usaremos para programar y que se llama [Thonny](https://thonny.org/):
-```
-thonny &
-```
-
+   ```bash
+   thonny &
+   ```
+   El símbolo `&` indica que el comando (`thonny`) se va a ajecutar en [background](https://en.wikipedia.org/wiki/Background_process).
 
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
