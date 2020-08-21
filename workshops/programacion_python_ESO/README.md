@@ -2,18 +2,21 @@
 
 ## ¿Sobre qué vamos a programar?
 
-Vamos progrmar sobre un [PC](https://es.wikipedia.org/wiki/Computadora_personal#:~:text=Una%20computadora%20personal%2C%20computador%20personal,las%20computadoras%20IBM%20PC%20compatibles.) con [Linux](https://es.wikipedia.org/wiki/GNU/Linux), en concreto una versión de Linux llamada [Xubuntu](https://xubuntu.org/).
+Vamos progrmar sobre un
+[PC](https://es.wikipedia.org/wiki/Computadora_personal#:~:text=Una%20computadora%20personal%2C%20computador%20personal,las%20computadoras%20IBM%20PC%20compatibles.)
+con [Linux](https://es.wikipedia.org/wiki/GNU/Linux), en concreto una
+versión de Linux llamada [Xubuntu](https://xubuntu.org/).
 
 ## ¿En qué vamos a programar?
-{{{
 
-Usaremos el lenguaje de programación [Python](https://www.python.org/) por ser fácil de aprender (básicamente, se diseñó con la idea de parecerse al lenguaje natural Inglés), ser [libre](https://empresas.blogthinkbig.com/las-5-razones-por-las-que-todo-el-mundo-quiere-aprender-python/) y [uno de los más demandados](http://pypl.github.io/PYPL.html), especialmente en el ámbito docente y científico.
-
-}}}
+Usaremos el lenguaje de programación [Python](https://www.python.org/)
+por ser fácil de aprender (básicamente, se diseñó con la idea de
+parecerse al lenguaje natural Inglés), ser
+[libre](https://empresas.blogthinkbig.com/las-5-razones-por-las-que-todo-el-mundo-quiere-aprender-python/)
+y [uno de los más demandados](http://pypl.github.io/PYPL.html),
+especialmente en el ámbito docente y científico.
 
 ## ¿Por qué podría sernos útil saber programar?
-
-{{{
 
 Porque:
 
@@ -21,25 +24,15 @@ Porque:
 2. [Puede ser útil](https://es.euronews.com/2020/06/08/superordenadores-contra-el-coronavirus-identifican-moleculas-que-bloquean-su-progresion).
 3. [Puedes ganarte la vida con ello](https://www.revistagq.com/noticias/articulo/trabajos-mas-demandados-2020).
 
-}}}
-
 ## ¿Qué vamos a programar?
 
 Básicamente, vamos a diseñar e implementar 3 programas:
-
-{{{
 
 1. Un comprobador de números primos.
 2. Un juego de adivinanza de números.
 2. Una versión personalizada del juego [Pong](https://en.wikipedia.org/wiki/Pong).
 
-}}}
-
 ## Tecnicamente (desde el punto de vista de la programación) aprenderemos ...
-
-... a:
-
-{{{
 
 1. A distinguir y reconocer las partes básicas de una computadora.
 2. A comprender qué es un lenguaje de programación.
@@ -52,20 +45,13 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 9. Algunos conceptos sobre programación orientada a objetos.
 10. Algunos conceptos básicos sobre programación de vídeo-juegos.
 
-}}}
-
 ## Pero antes, una comparativa interesante
-
-{{{
 
 * [El coche más potente del mundo](https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.)
 * [El ordenador más potente del mundo (ahora)](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
 * [Evolucion de las computadoras y coches](https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/).
 
-}}}
-
 ## Otros links interesantes (para cuando estés aburrido)
-{{{
 
 * [La primera computadora (infobae)](https://www.infobae.com/america/tecno/2019/10/14/cual-fue-la-primera-computadora-de-la-historia/).
 * [La primera generación de computadoras (wikipedia)](https://es.wikipedia.org/wiki/Primera_generaci%C3%B3n_de_computadoras).
@@ -81,20 +67,21 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 * [Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
 * [Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
 
-}}}
-
 ## Ejercicio 0: Di: "¡Hola mundo!"
 
 Pues eso. Todos los programadores comienzan aprendiendo un lenguaje
 nuevo implementando el "Hello World!". Para ello:
 
 1. Abre un terminal y ejecuta:
-``` pyenv activate curso_python ```
+```bash
+pyenv activate curso_python
+```
 Esto sirve para usar una versión específica de Python (la 3.8.5) y con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
 
 2. Ejecuta el [IDE (Integrated Development Environment)](https://en.wikipedia.org/wiki/Integrated_development_environment) que usaremos para programar y que se llama [Thonny](https://thonny.org/):
 ```
-
+thonny &
+```
 
 
 Links pygame:
@@ -313,5 +300,7 @@ main():
 5. Instalar xosview.
 
 6. Instalar epiphany.
+
+6. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).
 
 }}}
