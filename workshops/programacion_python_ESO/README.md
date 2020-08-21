@@ -76,7 +76,7 @@ nuevo implementando el "Hello World!". Para ello:
    ```bash
    pyenv activate curso_python
    ```
-	Esto sirve para usar una versión específica de Python (la 3.8.5) y con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
+   Esto sirve para usar una versión específica de Python (la 3.8.5, véase la sección de aprovisionamiento más abajo) y con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
 
 2. Ejecuta el [IDE (Integrated Development Environment)](https://en.wikipedia.org/wiki/Integrated_development_environment) que usaremos para programar y que se llama [Thonny](https://thonny.org/):
 ```
