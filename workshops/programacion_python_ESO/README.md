@@ -98,6 +98,17 @@ nuevo implementando el "Hello World!". Para ello:
 ## Ejercicio 1: Compilación vs Interpretación
 En el Ejercicio 0 hemos interpretado el módulo (así es como se llaman los programas en Python) `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
 
+1. En un terminal ejecutar:
+   ```
+   gcc cpu_test.c -o cpu_test -lm
+   ```
+   
+2. El comando anterior genera un archivo ejecutable llamado `cpu_test`. Para ejecutarlo, escribir:
+   ```
+   ./cpu_test 100000000
+   ```
+   donde el parámetro `100000000` es el número de operaciones en punto flotante (raíces cuadradas) que se van a realizar. Tras efectuarlas, el programa mostrará cuántas (en millones) se han ejecutado durante un segundo. Los programas compilados (código máquina compilado) son dependientes de *la plataforma* (CPU + sistema operativo), se ejecutan más rápido que los interpretados porque la CPU ejcuta directamente el código máquina. Cuando se interpretan, la CPU en realidad ejecuta el intérprete, que es quien ejecuta el programa (en código fuente). Por contrapartida, los programas interpretados no tienen que compilarse y por tanto, no dependen de la plataforma. 
+
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
 http://programarcadegames.com/
