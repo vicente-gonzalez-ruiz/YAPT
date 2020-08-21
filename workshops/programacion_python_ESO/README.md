@@ -89,9 +89,7 @@ Pues eso. Todos los programadores comienzan aprendiendo un lenguaje
 nuevo implementando el "Hello World!". Para ello:
 
 1. Abre un terminal y ejecuta:
-
 ``` pyenv activate curso_python ```
-
 Esto sirve para usar una versión específica de Python (la 3.8.5) con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
 
 2. Ejecuta el IDE () que usaremos para programar y que se llama [Thonny]():
