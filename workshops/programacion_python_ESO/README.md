@@ -58,9 +58,9 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 
 {{{
 
-[El coche más potente del mundo](https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.)
-[El ordenador más potente del mundo (ahora)](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
-[Evolucion de las computadoras y coches](https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/).
+* [El coche más potente del mundo](https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.)
+* [El ordenador más potente del mundo (ahora)](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
+* [Evolucion de las computadoras y coches](https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/).
 
 }}}
 
@@ -77,7 +77,7 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 * [Nerds 2.0.1 - A Brief History of the Internet - Cap 2/2: Serving the Suits](https://www.youtube.com/watch?v=d0ya8DggDYs).
 * [¿Cuál fue el primer videojuego, quién lo creó y por qué?](https://plarium.com/es/blog/el-primer-videojuego/).
 * [Video Tennis For Two (1958)](https://www.youtube.com/watch?v=6PG2mdU_i8k), diseñado por [William Higinbotham](https://en.wikipedia.org/wiki/William_Higinbotham).
-* [Pong en una Magnavox Odyssey(1972)](https://www.youtube.com/watch?v=jLGBtkKPj2U), la primera video-consola comercial.
+* [Pong en una Magnavox Odyssey (1972)](https://www.youtube.com/watch?v=jLGBtkKPj2U), la primera video-consola comercial.
 * [Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
 * [Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
 
@@ -90,9 +90,9 @@ nuevo implementando el "Hello World!". Para ello:
 
 1. Abre un terminal y ejecuta:
 ``` pyenv activate curso_python ```
-Esto sirve para usar una versión específica de Python (la 3.8.5) con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
+Esto sirve para usar una versión específica de Python (la 3.8.5) y con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
 
-2. Ejecuta el IDE () que usaremos para programar y que se llama [Thonny]():
+2. Ejecuta el [IDE (Integrated Development Environment)](https://en.wikipedia.org/wiki/Integrated_development_environment) que usaremos para programar y que se llama [Thonny](https://thonny.org/):
 ```
 
 
