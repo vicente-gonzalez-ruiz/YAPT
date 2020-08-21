@@ -67,7 +67,7 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 * [Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
 * [Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
 
-## Ejercicio 0: Di: "¡Hola mundo!"
+## Ejercicio 0: Di: "¡Hola Mundo!"
 
 Pues eso. Todos los programadores comienzan aprendiendo un lenguaje
 nuevo implementando el "Hello World!". Para ello:
@@ -83,6 +83,20 @@ nuevo implementando el "Hello World!". Para ello:
    thonny &
    ```
    El símbolo `&` indica que el comando `thonny` se va a ajecutar en [background](https://en.wikipedia.org/wiki/Background_process).
+
+3. Escribir el siguiente código:
+   ```
+   print("¡Hola Mundo!")
+   ```
+   y almacenarlo en un archivo llamado `hello_world.py`.
+   
+4. Ejecutarlo. Esto lo podemos hacer de dos maneras diferentes:
+   1. Escribiendo en el terminal:
+	  ```python hello_world.py```
+   2. Pulsando en *Run* dentro de Thonny.
+
+## Ejercicio 1: Compilación vs Interpretación
+En el Ejercicio 0 hemos interpretado el módulo (así es como se llaman los programas en Python) `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
 
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/

@@ -1,6 +1,6 @@
 /*
-  Measure the number of floating point operations per second
-  (MFLOPS). The Square Root operation is performed.
+  Measure the number of millions of floating point operations per
+  second (MFLOPS). The Square Root operation is performed.
 
   Compile with: gcc cpu_test.c -o cpu_test -lm
   Try with: ./cpu_test 100000000
