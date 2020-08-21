@@ -96,7 +96,7 @@ nuevo implementando el "Hello World!". Para ello:
    2. Pulsando en *Run* dentro de Thonny.
 
 ## Ejercicio 1: Compilación vs Interpretación
-En el Ejercicio 0 hemos interpretado el módulo (así es como se llaman los programas en Python) `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
+En el Ejercicio 0 hemos interpretado el módulo (así es como se llaman los programas en Python) `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
 
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
