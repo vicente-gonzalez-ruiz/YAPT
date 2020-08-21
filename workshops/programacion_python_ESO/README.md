@@ -82,7 +82,7 @@ nuevo implementando el "Hello World!". Para ello:
    ```bash
    thonny &
    ```
-   El símbolo `&` indica que el comando (`thonny`) se va a ajecutar en [background](https://en.wikipedia.org/wiki/Background_process).
+   El símbolo `&` indica que el comando `thonny` se va a ajecutar en [background](https://en.wikipedia.org/wiki/Background_process).
 
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
