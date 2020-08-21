@@ -25,7 +25,7 @@ Porque:
 
 ## ¿Qué vamos a programar?
 
-Vamos a diseñar e implementar 3 programas:
+Básicamente, vamos a diseñar e implementar 3 programas:
 
 {{{
 
@@ -35,44 +35,67 @@ Vamos a diseñar e implementar 3 programas:
 
 }}}
 
-## Historia de la computación
+## Tecnicamente (desde el punto de vista de la programación) aprenderemos ...
+
+... a:
+
 {{{
+
+1. A distinguir y reconocer las partes básicas de una computadora.
+2. A comprender qué es un lenguaje de programación.
+3. A comprender qué es un algoritmo y a implementarlos.
+4. A distinguir entre lenguajes compilados e interpretados.
+5. A interpretar qué es la potencia de cómputo.
+6. A usar el intérprete de Python.
+7. La sintaxis básica de Python.
+8. Algo sobre la SPL (Standard Python Library) y cómo usarla.
+9. Algunos conceptos sobre programación orientada a objetos.
+10. Algunos conceptos básicos sobre programación de vídeo-juegos.
 
 }}}
 
-## Evolución de las computadoras y los coches
+## Pero antes, una comparativa interesante
+
 {{{
 
-[La primera computadora (infobae)](https://www.infobae.com/america/tecno/2019/10/14/cual-fue-la-primera-computadora-de-la-historia/).
-[La primera generación de computadoras (wikipedia)](https://es.wikipedia.org/wiki/Primera_generaci%C3%B3n_de_computadoras).
-[Evolucion de las computadoras y coches](https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/).
 [El coche más potente del mundo](https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.)
 [El ordenador más potente del mundo (ahora)](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
+[Evolucion de las computadoras y coches](https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/).
 
 }}}
 
-## Historia del PC (Personal Computer) y de Internet
-
+## Otros links interesantes (para cuando estés aburrido)
 {{{
 
-[Info en Wikipedia](https://es.wikipedia.org/wiki/El_triunfo_de_los_nerds).
-[El triunfo de los nerds Cap 1/3](https://www.youtube.com/watch?v=6KgYRX-cNxA).
-[El triunfo de los nerds Cap 2/3](https://www.youtube.com/watch?v=87EFyQN_Q-E).
-[El triunfo de los nerds Cap 3/3](https://www.youtube.com/watch?v=Ofli7d0mtOU).
-[Nerds 2.0.1 - A Brief History of the Internet - Cap 1/2: Networking The Nerds](https://www.youtube.com/watch?v=L4D2nxQBmOM).
-[Nerds 2.0.1 - A Brief History of the Internet - Cap 2/2: Serving the Suits](https://www.youtube.com/watch?v=d0ya8DggDYs).
-}}}
-
-## Los primeros videojuegos
-
-{{{
-
-[Video Tennis For Two (1958)](https://www.youtube.com/watch?v=6PG2mdU_i8k), diseñado por [William Higinbotham](https://en.wikipedia.org/wiki/William_Higinbotham) que unos años antes había colaborado en el diseño de la bomba atómica.
-[Pong en una Magnavox Odyssey(1972)](https://www.youtube.com/watch?v=jLGBtkKPj2U), la primera video-consola comercial.
-[Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
-[Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
+* [La primera computadora (infobae)](https://www.infobae.com/america/tecno/2019/10/14/cual-fue-la-primera-computadora-de-la-historia/).
+* [La primera generación de computadoras (wikipedia)](https://es.wikipedia.org/wiki/Primera_generaci%C3%B3n_de_computadoras).
+* [El triunfo de los nerds (Wikipedia)](https://es.wikipedia.org/wiki/El_triunfo_de_los_nerds).
+* [El triunfo de los nerds Cap 1/3](https://www.youtube.com/watch?v=6KgYRX-cNxA).
+* [El triunfo de los nerds Cap 2/3](https://www.youtube.com/watch?v=87EFyQN_Q-E).
+* [El triunfo de los nerds Cap 3/3](https://www.youtube.com/watch?v=Ofli7d0mtOU).
+* [Nerds 2.0.1 - A Brief History of the Internet - Cap 1/2: Networking The Nerds](https://www.youtube.com/watch?v=L4D2nxQBmOM).
+* [Nerds 2.0.1 - A Brief History of the Internet - Cap 2/2: Serving the Suits](https://www.youtube.com/watch?v=d0ya8DggDYs).
+* [¿Cuál fue el primer videojuego, quién lo creó y por qué?](https://plarium.com/es/blog/el-primer-videojuego/).
+* [Video Tennis For Two (1958)](https://www.youtube.com/watch?v=6PG2mdU_i8k), diseñado por [William Higinbotham](https://en.wikipedia.org/wiki/William_Higinbotham).
+* [Pong en una Magnavox Odyssey(1972)](https://www.youtube.com/watch?v=jLGBtkKPj2U), la primera video-consola comercial.
+* [Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
+* [Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
 
 }}}
+
+## Ejercicio 0: Di: "¡Hola mundo!"
+
+Pues eso. Todos los programadores comienzan aprendiendo un lenguaje
+nuevo implementando el "Hello World!". Para ello:
+
+1. Abre un terminal y ejecuta:
+
+``` pyenv activate curso_python ```
+
+Esto sirve para usar una versión específica de Python (la 3.8.5) con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
+
+
+
 
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
@@ -86,7 +109,6 @@ http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-
 
 el primer videjuego
 
-https://plarium.com/es/blog/el-primer-videojuego/
 
 pong python
 
