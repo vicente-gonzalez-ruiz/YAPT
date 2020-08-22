@@ -135,8 +135,8 @@ nuevo implementando el "Hello World!". Para ello:
 
 ## <a id="ejer_1"></a>Ejercicio 1: Compilación vs Interpretación
 En el [Ejercicio 0](#ejer_0) hemos interpretado el módulo
-`hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste
-le hemos pasado como argumento el nombre del módulo
+`hello_world.py`. Para ello, hemos ejecutado el intérprete ( `python`)
+y la éste le hemos pasado como argumento el nombre del módulo
 (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el
 lenguaje C, llamado
 [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como
@@ -153,19 +153,22 @@ de poderlo ejecutar.
    ```bash
    ./cpu_test 100000000
    ```
+   
    donde el parámetro `100000000` es el número de operaciones en punto
    flotante (raíces cuadradas en nuestro ejemplo) que se van a
    realizar. Tras efectuarlas, el programa mostrará cuántas (en
-   millones) se han ejecutado por segundo. Los archivos resultante de
-   una compilación (código máquina compilado) son dependientes de *la
-   plataforma*
+   millones) se han ejecutado por segundo. Los archivos resultantes de
+   una compilación ([código
+   máquina](https://en.wikipedia.org/wiki/Machine_code) compilado) son
+   dependientes de *la plataforma*
    ([CPU](https://en.wikipedia.org/wiki/Central_processing_unit) +
-   sistema operativo), se ejecutan más rápido que los interpretados
-   porque la CPU ejcuta directamente el código máquina. Cuando se
+   sistema operativo), pero corren más rápido que los interpretados
+   porque la CPU ejecuta directamente el código máquina. Cuando se
    interpretan, la CPU en realidad ejecuta el intérprete, que es quien
-   ejecuta el programa (en código fuente). Por contrapartida, los
-   programas interpretados (en código fuente) no tienen que compilarse
-   y por tanto, no dependen de la plataforma.
+   ejecuta las instrucciones del [código
+   fuente](https://en.wikipedia.org/wiki/Source_code) del
+   programa. Por contrapartida, los programas interpretados no tienen
+   que compilarse y por tanto, no dependen de la plataforma.
 
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
