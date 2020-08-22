@@ -51,8 +51,8 @@ Android e IOs).
 
 Básicamente, vamos a diseñar e implementar 3 programas:
 
-1. Un comprobador de números primos.
-2. Un juego de adivinanza de números.
+1. Un comprobador de [números primos](https://es.wikipedia.org/wiki/N%C3%BAmero_primo).
+2. Un juego de adivinanza de [números naturales](https://es.wikipedia.org/wiki/N%C3%BAmero_natural).
 2. Una versión personalizada del juego [Pong](https://en.wikipedia.org/wiki/Pong).
 
 ## Tecnicamente (desde el punto de vista de la programación) aprenderemos ...
