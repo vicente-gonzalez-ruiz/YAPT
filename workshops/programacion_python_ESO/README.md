@@ -1,21 +1,5 @@
 # Programación con Python para estudiantes de ESO
 
-## ¿Sobre qué vamos a programar?
-
-Vamos progrmar sobre un
-[PC](https://es.wikipedia.org/wiki/Computadora_personal#:~:text=Una%20computadora%20personal%2C%20computador%20personal,las%20computadoras%20IBM%20PC%20compatibles.)
-con [Linux](https://es.wikipedia.org/wiki/GNU/Linux), en concreto una
-versión de Linux llamada [Xubuntu](https://xubuntu.org/).
-
-## ¿En qué vamos a programar?
-
-Usaremos el lenguaje de programación [Python](https://www.python.org/)
-por ser fácil de aprender (básicamente, se diseñó con la idea de
-parecerse al lenguaje natural Inglés), ser
-[libre](https://empresas.blogthinkbig.com/las-5-razones-por-las-que-todo-el-mundo-quiere-aprender-python/)
-y [uno de los más demandados](http://pypl.github.io/PYPL.html),
-especialmente en el ámbito docente y científico.
-
 ## ¿Por qué podría sernos útil saber programar?
 
 Porque:
@@ -23,6 +7,42 @@ Porque:
 1. [Puede ser divertido](https://www.fluentu.com/blog/english-esp/wp-content/uploads/sites/33/2018/04/online-games-to-practice-english-e1522729897682.jpg).
 2. [Puede ser útil](https://es.euronews.com/2020/06/08/superordenadores-contra-el-coronavirus-identifican-moleculas-que-bloquean-su-progresion).
 3. [Puedes ganarte la vida con ello](https://www.revistagq.com/noticias/articulo/trabajos-mas-demandados-2020).
+
+## ¿En qué vamos a programar?
+
+Usaremos el lenguaje de programación [Python](https://www.python.org/)
+por ser:
+1. [Fácil de
+   aprender](https://programadesdecero.com/lenguaje-programacion-aprender/)
+   (básicamente, se diseñó con la idea de parecerse al lenguaje
+   natural Inglés).
+2. [Libre](https://empresas.blogthinkbig.com/las-5-razones-por-las-que-todo-el-mundo-quiere-aprender-python/)
+   (no cuesta dinero usarlo, si no quieres ... hay distribuciones de
+   Python creadas por empresas que te cobran principalmente por
+   asesorarte en su uso).
+3. Uno de los pocos lenguajes de programación *democráticos*, diseñado
+   por la comunidad de Python para la comunidad de Python que es muy
+   grande y lo [evoluciona
+   constantemente]((https://www.python.org/dev/peps/).
+4. Un [lenguaje de propósito
+   general](http://enciclopedia.us.es/index.php/Lenguaje_de_prop%C3%B3sito_general)
+   (no está especializado en resolver ningún tipo de problema en
+   concreto) y dispone de una [biblioteca de
+   código](https://pypi.org/) enorme (con más de 250.000 paquetes), lo
+   que hace que
+   [prototipar](https://es.wikipedia.org/wiki/Modelo_de_prototipos)
+   con Python sea fácil y rápido.
+4. [Uno de los más demandados](http://pypl.github.io/PYPL.html),
+   especialmente en el ámbito docente y científico (concretamente, en
+   el campo de la [Inteligencia
+   Artificial](https://es.wikipedia.org/wiki/Inteligencia_artificial)).
+
+## ¿Sobre qué vamos a programar?
+
+Vamos programar sobre un
+[PC](https://es.wikipedia.org/wiki/Computadora_personal#:~:text=Una%20computadora%20personal%2C%20computador%20personal,las%20computadoras%20IBM%20PC%20compatibles.)
+con [Linux](https://es.wikipedia.org/wiki/GNU/Linux), en concreto una
+versión de Linux llamada [Xubuntu](https://xubuntu.org/).
 
 ## ¿Qué vamos a programar?
 
