@@ -19,11 +19,12 @@ por ser:
 2. [Libre](https://empresas.blogthinkbig.com/las-5-razones-por-las-que-todo-el-mundo-quiere-aprender-python/)
    (no cuesta dinero usarlo, si no quieres ... hay distribuciones de
    Python creadas por empresas que te cobran principalmente por
-   asesorarte en su uso).
+   asesorarte en su uso), y además es
+   [abierto](https://es.wikipedia.org/wiki/Software_de_c%C3%B3digo_abierto). Esto último es importante para muchas [empresas](https://www.muycanal.com/2020/02/19/las-empresas-prefieren-el-codigo-abierto-para-su-software-empresarial) y organizaciones ([CERN](https://home.cern/science/computing/open-source-open-science), [NASA](https://code.nasa.gov/)).
 3. Uno de los pocos lenguajes de programación *democráticos*, diseñado
    por la comunidad de Python para la comunidad de Python que es muy
    grande y lo [evoluciona
-   constantemente]((https://www.python.org/dev/peps/).
+   constantemente](https://www.python.org/dev/peps/).
 4. Un [lenguaje de propósito
    general](http://enciclopedia.us.es/index.php/Lenguaje_de_prop%C3%B3sito_general)
    (no está especializado en resolver ningún tipo de problema en
@@ -347,9 +348,9 @@ main():
 
 4. Instalar thommy con `pip install thonny`.
 
-5. Instalar xosview.
+5. Instalar xosview con `apt install xosview`.
 
-6. Instalar epiphany.
+6. Instalar epiphany con `apt install epiphany`.
 
 6. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).
 
