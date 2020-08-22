@@ -70,11 +70,11 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 
 ## Pero antes, una comparativa interesante
 
-* [El coche más potente del mundo](https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.)
-* [El ordenador más potente del mundo (ahora)](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
+* [El coche más potente del mundo](https://www.autocasion.com/actualidad/pruebas/nuevo-lotus-evija-coche-mas-potente-mundo-fotos-info#:~:text=Con%202.000%20CV%20de%20potencia,presentado%20por%20el%20fabricante%20sueco.).
+* [El ordenador más potente del mundo](https://computerhoy.com/reportajes/tecnologia/ibm-summit-superordenador-mas-potente-del-mundo-627963).
 * [Evolucion de las computadoras y coches](https://www.muycomputer.com/2017/02/05/coches-evolucionado-ritmo-pc/).
 
-## Otros links interesantes (para cuando estés aburrido)
+## Otros links interesantes (... pero esto, para cuando estés aburrido)
 
 * [La primera computadora (infobae)](https://www.infobae.com/america/tecno/2019/10/14/cual-fue-la-primera-computadora-de-la-historia/).
 * [La primera generación de computadoras (wikipedia)](https://es.wikipedia.org/wiki/Primera_generaci%C3%B3n_de_computadoras).
@@ -90,7 +90,7 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 * [Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
 * [Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
 
-## Ejercicio 0: Di: "¡Hola Mundo!"
+## Ejercicio 0: Di: "¡Hola Mundo!" en Python
 
 Pues eso. Todos los programadores comienzan aprendiendo un lenguaje
 nuevo implementando el "Hello World!". Para ello:
@@ -111,12 +111,12 @@ nuevo implementando el "Hello World!". Para ello:
    ```
    print("¡Hola Mundo!")
    ```
-   y almacenarlo en un archivo llamado `hello_world.py`.
+   y almacenarlo en un archivo llamado `hello_world.py` (la extensión `py` indica que se trata de un módulo de Python, aunque esto es irrelevante para el sistema operativo).
    
 4. Ejecutarlo. Esto lo podemos hacer de dos maneras diferentes:
    1. Escribiendo en el terminal:
 	  ```python hello_world.py```
-   2. Pulsando en *Run* dentro de Thonny.
+   2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco dentro) de Thonny.
 
 ## Ejercicio 1: Compilación vs Interpretación
 En el Ejercicio 0 hemos interpretado el módulo (así es como se llaman los programas en Python) `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
