@@ -105,7 +105,7 @@ nuevo implementando el "Hello World!". Para ello:
    ```bash
    thonny &
    ```
-   El símbolo `&` indica que el comando `thonny` se va a ajecutar en [background](https://en.wikipedia.org/wiki/Background_process).
+   El símbolo `&` indica que el comando `thonny` se va a ajecutar en [background](https://en.wikipedia.org/wiki/Background_process) dentro del [shell](https://en.wikipedia.org/wiki/Unix_shell).
 
 3. Escribir el siguiente código:
    ```python
@@ -115,7 +115,7 @@ nuevo implementando el "Hello World!". Para ello:
    
 4. Ejecutarlo. Esto lo podemos hacer de dos maneras diferentes:
 
-   1. Escribiendo en el terminal:
+   1. Escribiendo en el terminal (también llamado shell):
 	  ```bash
 	  python hello_world.py
 	  ```
@@ -123,7 +123,7 @@ nuevo implementando el "Hello World!". Para ello:
    2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco dentro) de Thonny.
 
 ## Ejercicio 1: Compilación vs Interpretación
-En el Ejercicio 0 hemos interpretado el módulo `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
+En el [Ejercicio 0](#ejercicio-0:-di:-"¡hola-Mundo!"-en-python) hemos interpretado el módulo `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
 
 1. En un terminal ejecutar:
    ```
