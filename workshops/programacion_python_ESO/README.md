@@ -338,9 +338,14 @@ main():
    la versión 3.8.5 de CPython, y crear un entorno virtual llamado
    "curso_python".
    
-3. Instalar pygame usando pip dentro del VE. Ver https://stackoverflow.com/questions/7652385/where-can-i-find-and-install-the-dependencies-for-pygame
+3. Instalar pygame usando pip dentro del VE. Ver
+   https://stackoverflow.com/questions/7652385/where-can-i-find-and-install-the-dependencies-for-pygame
+   En concreto, en máquinas con Debian y derivados hay que instalar:
+   ```
+   sudo apt-get install python-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev   libsdl1.2-dev libsmpeg-dev python-numpy subversion libportmidi-dev ffmpeg libswscale-dev libavformat-dev libavcodec-dev
+   ```
 
-4. Instalar thommy con pip install thommy.
+4. Instalar thommy con `pip install thonny`.
 
 5. Instalar xosview.
 
