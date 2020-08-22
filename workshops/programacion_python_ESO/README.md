@@ -99,42 +99,73 @@ nuevo implementando el "Hello World!". Para ello:
    ```bash
    pyenv activate curso_python
    ```
-   Esto sirve para usar una versión específica de Python (la 3.8.5, véase la sección de aprovisionamiento más abajo) y con sus propias bibliotecas, para no interferir así con el *ecosistema* de Python usado por el sistema operativo.
+   Esto sirve para usar una versión específica de Python (la 3.8.5,
+   véase la sección de aprovisionamiento más abajo) y con sus propias
+   bibliotecas, para no interferir así con el *ecosistema* de Python
+   usado por el [sistema
+   operativo](https://es.wikipedia.org/wiki/Sistema_operativo).
 
-2. Ejecuta el [IDE (Integrated Development Environment)](https://en.wikipedia.org/wiki/Integrated_development_environment) que usaremos para programar y que se llama [Thonny](https://thonny.org/):
+2. Ejecuta el [IDE (Integrated Development
+   Environment)](https://en.wikipedia.org/wiki/Integrated_development_environment)
+   que usaremos para programar y que se llama
+   [Thonny](https://thonny.org/):
    ```bash
    thonny &
    ```
-   El símbolo `&` indica que el comando `thonny` se va a ajecutar en [background](https://en.wikipedia.org/wiki/Background_process) dentro del [shell](https://en.wikipedia.org/wiki/Unix_shell).
+   El símbolo `&` indica que el comando `thonny` se va a ajecutar en
+   [background](https://en.wikipedia.org/wiki/Background_process)
+   dentro del [shell](https://en.wikipedia.org/wiki/Unix_shell).
 
 3. Escribir el siguiente código:
    ```python
    print("¡Hola Mundo!")
    ```
-   y almacenarlo en un archivo llamado `hello_world.py` (la extensión `py` indica que se trata de un módulo de Python (así es como se llaman los programas en Python), aunque esto es irrelevante para el sistema operativo Linux).
+   y almacenarlo en un archivo llamado `hello_world.py` (la extensión
+   `py` indica que se trata de un módulo de Python (así es como se
+   llaman los programas en Python), aunque esto es irrelevante para el
+   sistema operativo Linux).
    
 4. Ejecutarlo. Esto lo podemos hacer de dos maneras diferentes:
-
    1. Escribiendo en el terminal (también llamado shell):
 	  ```bash
 	  python hello_world.py
 	  ```
+   2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco
+      dentro) de Thonny.
 
-   2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco dentro) de Thonny.
-
-## Ejercicio 1: Compilación vs Interpretación
-En el [Ejercicio 0](#ejer_0) hemos interpretado el módulo `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
+## <a id="ejer_1"></a>Ejercicio 1: Compilación vs Interpretación
+En el [Ejercicio 0](#ejer_0) hemos interpretado el módulo
+`hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste
+le hemos pasado como argumento el nombre del módulo
+(`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el
+lenguaje C, llamado
+[`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como
+C es un lenguaje compilado, tendremos que compilar el programa antes
+de poderlo ejecutar.
 
 1. En un terminal ejecutar:
-   ```
+   ```bash
    gcc cpu_test.c -o cpu_test -lm
    ```
    
-2. El comando anterior genera un archivo ejecutable llamado `cpu_test`. Para ejecutarlo, escribir:
-   ```
+2. El comando anterior genera un archivo ejecutable llamado
+   `cpu_test`. Para ejecutarlo, escribir:
+   ```bash
    ./cpu_test 100000000
    ```
-   donde el parámetro `100000000` es el número de operaciones en punto flotante (raíces cuadradas) que se van a realizar. Tras efectuarlas, el programa mostrará cuántas (en millones) se han ejecutado durante un segundo. Los programas compilados (código máquina compilado) son dependientes de *la plataforma* (CPU + sistema operativo), se ejecutan más rápido que los interpretados porque la CPU ejcuta directamente el código máquina. Cuando se interpretan, la CPU en realidad ejecuta el intérprete, que es quien ejecuta el programa (en código fuente). Por contrapartida, los programas interpretados no tienen que compilarse y por tanto, no dependen de la plataforma. 
+   donde el parámetro `100000000` es el número de operaciones en punto
+   flotante (raíces cuadradas en nuestro ejemplo) que se van a
+   realizar. Tras efectuarlas, el programa mostrará cuántas (en
+   millones) se han ejecutado por segundo. Los archivos resultante de
+   una compilación (código máquina compilado) son dependientes de *la
+   plataforma*
+   ([CPU](https://en.wikipedia.org/wiki/Central_processing_unit) +
+   sistema operativo), se ejecutan más rápido que los interpretados
+   porque la CPU ejcuta directamente el código máquina. Cuando se
+   interpretan, la CPU en realidad ejecuta el intérprete, que es quien
+   ejecuta el programa (en código fuente). Por contrapartida, los
+   programas interpretados (en código fuente) no tienen que compilarse
+   y por tanto, no dependen de la plataforma.
 
 Links pygame:
 https://pythonprogramming.net/pygame-python-3-part-1-intro/
