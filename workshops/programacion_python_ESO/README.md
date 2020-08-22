@@ -111,15 +111,17 @@ nuevo implementando el "Hello World!". Para ello:
    ```
    print("¡Hola Mundo!")
    ```
-   y almacenarlo en un archivo llamado `hello_world.py` (la extensión `py` indica que se trata de un módulo de Python, aunque esto es irrelevante para el sistema operativo).
+   y almacenarlo en un archivo llamado `hello_world.py` (la extensión `py` indica que se trata de un módulo de Python (así es como se llaman los programas en Python), aunque esto es irrelevante para el sistema operativo Linux).
    
 4. Ejecutarlo. Esto lo podemos hacer de dos maneras diferentes:
+
    1. Escribiendo en el terminal:
 	  ```python hello_world.py```
+
    2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco dentro) de Thonny.
 
 ## Ejercicio 1: Compilación vs Interpretación
-En el Ejercicio 0 hemos interpretado el módulo (así es como se llaman los programas en Python) `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
+En el Ejercicio 0 hemos interpretado el módulo `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
 
 1. En un terminal ejecutar:
    ```
