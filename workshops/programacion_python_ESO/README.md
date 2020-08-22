@@ -108,7 +108,7 @@ nuevo implementando el "Hello World!". Para ello:
    El símbolo `&` indica que el comando `thonny` se va a ajecutar en [background](https://en.wikipedia.org/wiki/Background_process).
 
 3. Escribir el siguiente código:
-   ```
+   ```python
    print("¡Hola Mundo!")
    ```
    y almacenarlo en un archivo llamado `hello_world.py` (la extensión `py` indica que se trata de un módulo de Python (así es como se llaman los programas en Python), aunque esto es irrelevante para el sistema operativo Linux).
@@ -116,7 +116,9 @@ nuevo implementando el "Hello World!". Para ello:
 4. Ejecutarlo. Esto lo podemos hacer de dos maneras diferentes:
 
    1. Escribiendo en el terminal:
-	  ```python hello_world.py```
+	  ```bash
+	  python hello_world.py
+	  ```
 
    2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco dentro) de Thonny.
 
