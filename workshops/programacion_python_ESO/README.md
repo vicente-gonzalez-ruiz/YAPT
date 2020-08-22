@@ -90,7 +90,7 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 * [Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
 * [Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
 
-## Ejercicio 0: Di: "¡Hola Mundo!" en Python
+## <a id="ejer_0"></a>Ejercicio 0: Di: "¡Hola Mundo!" en Python
 
 Pues eso. Todos los programadores comienzan aprendiendo un lenguaje
 nuevo implementando el "Hello World!". Para ello:
@@ -123,7 +123,7 @@ nuevo implementando el "Hello World!". Para ello:
    2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco dentro) de Thonny.
 
 ## Ejercicio 1: Compilación vs Interpretación
-En el [Ejercicio 0](#ejercicio-0:-di:-"¡hola-Mundo!"-en-python) hemos interpretado el módulo `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
+En el [Ejercicio 0](#ejer_0) hemos interpretado el módulo `hello_world.py`. Hemos ejecutado el intérprete ( `python`) y la éste le hemos pasado como argumento el módulo (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el lenguaje C, llamado [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como C es un lenguaje compilado, tendremos que compilar el programa antes de poderlo ejecutar.
 
 1. En un terminal ejecutar:
    ```
