@@ -82,7 +82,7 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 * [El triunfo de los nerds Cap 1/3](https://www.youtube.com/watch?v=6KgYRX-cNxA).
 * [El triunfo de los nerds Cap 2/3](https://www.youtube.com/watch?v=87EFyQN_Q-E).
 * [El triunfo de los nerds Cap 3/3](https://www.youtube.com/watch?v=Ofli7d0mtOU).
-* [Nerds 2.0.1 - A Brief History of the Internet - Cap 1/2: Networking The Nerds](https://www.youtube.com/watch?v=L4D2nxQBmOM).
+* [Nerds 2.0.1 - A Brief History of the Internet - Cap 1/2: Networking The Nerds](https://www.youtube.com/watch?v=L4D2nxQBmOM). [Aquí](http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires) está con más calidad.
 * [Nerds 2.0.1 - A Brief History of the Internet - Cap 2/2: Serving the Suits](https://www.youtube.com/watch?v=d0ya8DggDYs).
 * [¿Cuál fue el primer videojuego, quién lo creó y por qué?](https://plarium.com/es/blog/el-primer-videojuego/).
 * [Video Tennis For Two (1958)](https://www.youtube.com/watch?v=6PG2mdU_i8k), diseñado por [William Higinbotham](https://en.wikipedia.org/wiki/William_Higinbotham).
@@ -109,17 +109,21 @@ nuevo implementando el "Hello World!". Para ello:
    Environment)](https://en.wikipedia.org/wiki/Integrated_development_environment)
    que usaremos para programar y que se llama
    [Thonny](https://thonny.org/):
+   
    ```bash
    thonny &
    ```
+   
    El símbolo `&` indica que el comando `thonny` se va a ajecutar en
    [background](https://en.wikipedia.org/wiki/Background_process)
    dentro del [shell](https://en.wikipedia.org/wiki/Unix_shell).
 
 3. Escribir el siguiente código:
+
    ```python
    print("¡Hola Mundo!")
    ```
+   
    y almacenarlo en un archivo llamado `hello_world.py` (la extensión
    `py` indica que se trata de un módulo de Python (así es como se
    llaman los programas en Python), aunque esto es irrelevante para el
@@ -127,9 +131,11 @@ nuevo implementando el "Hello World!". Para ello:
    
 4. Ejecutarlo. Esto lo podemos hacer de dos maneras diferentes:
    1. Escribiendo en el terminal (también llamado shell):
+   
 	  ```bash
 	  python hello_world.py
 	  ```
+	  
    2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco
       dentro) de Thonny.
 
@@ -171,51 +177,69 @@ de poderlo ejecutar.
    programa. Por contrapartida, los programas interpretados no tienen
    que compilarse y por tanto, no dependen de la plataforma.
 
-Links pygame:
-https://pythonprogramming.net/pygame-python-3-part-1-intro/
-http://programarcadegames.com/
-https://lorenzod8n.wordpress.com/2007/12/16/
-https://sites.google.com/site/thepythonpongtutorial/home
+## <a id="ejer_2"></a>Ejercicio 2: Averigua si un número natural N es primo
+Un [número natural](https://es.wikipedia.org/wiki/N%C3%BAmero_natural)
+N es primo si ninguna de las divisiones de N entre los enteros primos
+menores sqrt(N) (la raíz cuadrada de N) divide a N de forma
+exacta. Este algoritmo puede verse
+[aquí](http://www.ceiploreto.es/sugerencias/ceibal/Primo_o_compuesto/cmo_saber_si_un_nmero_es_primo.html).
 
-http://forohistorico.coit.es/index.php/multimedia/videoteca/item/the-triumph-of-the-nerds-the-rise-of-accidental-empires
+Por tanto, nuestro problema de averiguar si un número natural N es
+primo o no (entonces, se dice que es compuesto) se puede dividir en 2
+subproblemas:
+1. Determinar la lista de los números primos menores o iguales que
+   sqrt(N).
+2. Dividir N entre todos los números P de dicha lista, y para cada uno
+   de ellos comprobar:
+   1. Si N es divisible entre P, entonces N es compuesto y debemos
+      terminar el algoritmo.
+3. Si hemos llegado hasta este paso, entonces N es primo.
 
+El paso número 1 es famoso desde hace más de 2000 años y se conoce
+como [La Criba de
+Erastótenes](https://es.wikipedia.org/wiki/Criba_de_Erat%C3%B3stenes). Recreando
+lo que podemos encontrar en el link anterior, debemos:
+1. Crear una lista con todos los números naturales menores o iguales
+   que N+1 y superiores a 2 (recuerda que el 1 divide a todos los
+   números de forma exacta). Esto se puede hacer en Python
+   escribiendo:
+   
+   ```python
+   primes = []
+   for i in range(2, math.sqrt(N)+1):
+	   primes.append(i)
+   ```
+   
+2. Para cada número en la lista, comenzando por el 2, eliminaremos
+   todos sus múltiplos en dicha lista:
+   
+   ```python
+   for i in range(2, math.sqrt(N)+1):
+	   if i in primes:
+		   for j in range(i*2, math.sqrt(N)+1, i):
+			   if j in primes:
+				   primes.remove(j)
+   ```
 
+   En este punto, `primes` contiene la lista de todos los números
+   naturales menores o iguales que N y que son números primos.
+   
+Finalmente, sólo los queda comprobar si alguno de los números de la
+lista con la criba divide de forma exacta a N:
 
-el primer videjuego
+```python
+N_is_prime = True
+for i in primes:
+    if N % i == 0:
+        N_is_prime = False # porque i divide a N
+        break
+```
 
-
-pong python
-
-http://programarcadegames.com/index.php?chapter=example_code&lang=es
-http://programarcadegames.com/index.php?lang=en
-
-Instalar Python
-
-## Ejercicio 0: Averigua si un número natural N es primo
-Una forma secilla de averiguar si un número natural (un número entero
-mayor o igual que 1) N es primo es comprobar que no es divisible entre
-los números naturales comprendidos entre 2 y N/2-1. Un número N es
-divisible entre un número I si el resto de dividir N entre I
-es 0. En programación, la operación matemática que calcula el resto de un cociente se llama *módulo* y en Python se representa con el símbolo `%`. Por ejemplo, 10 % 5 = 0, 10 % 2 = 0, y 10 % 6 = 4.
-
-Con toda esta información, podemos determinar si N es un número primo
-con el siguiente algoritmo:
-
-1. Introducir N.
-2. N_es_primo = Verdadero
-3. I = 2
-4. Mientras I <= (parte_entera_de(N/2) - 1):
-   1. Si (N % I) es igual a 0:
-	  1. N_es_primo = Falso
-	  2. I = parte_entera_de(N/2)
-   1. I = I + 1
-5. Imprimir(N_es_primo)
-
-En Python, la parte entera de una división de números (o lo que se
-conoce también como división entera) puede calcularse usando el
-operador `//`. Una posible solución a este ejercicio puede se
+Una posible solución a este ejercicio puede se
 encuentra en
 [aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/check_prime.py).
+
+## <a id="ejer_3"></a>Ejercicio 3: ¡Averigua el número!
 
 6. [Guess the number!](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi).
 
@@ -239,14 +263,22 @@ print("Congratulations! You guessed the number in", number_of_tries, "attempts :
 ```
 
 ## Ejercicio 1: Crear una pantalla vacía (empty screen) usando Pygame
-El objetivo de este ejercicio es conocer cómo abrir y cerrar un *screen* (una ventana) de Pygame. 
+El objetivo de este ejercicio es conocer cómo abrir y cerrar un
+*screen* (una ventana) de Pygame.
 1. Importar Pygame.
 2. Inicializar Pygame (usar `pygame.init()`).
 3. Crear una pantalla (usar `pygame.display.set_mode()`).
-4. Darle un título a la pantalla (usar `pygame.display.set_caption()`).
-5. Esperar a que el usuario cierre la pantalla (cosa que ocurre, cuando `pygame.event.wait().type` retorna un evento del tipo `pygame.QUIT`).
+4. Darle un título a la pantalla (usar
+   `pygame.display.set_caption()`).
+5. Esperar a que el usuario cierre la pantalla (cosa que ocurre,
+   cuando `pygame.event.wait().type` retorna un evento del tipo
+   `pygame.QUIT`).
 6. Cerrar Pygame (usar `pygame.quit()`).
-7. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_screen.py).
+7. Posible
+   [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_screen.py). Gran
+   cantidad de información sobre cómo programar juegos usando Pygame
+   puede encontrarse en [Programar Juegos Arcade con Python y
+   Pygame](http://programarcadegames.com/).
 
 ## Ejercicio 2: Pintar un par de puntos
 El objetivo de este ejercicio es averiguar cómo se distribuyen las
@@ -275,6 +307,9 @@ Hacemos que el rectángulo se mueva en diagonal, a velocidad constante. Cuando e
 5. 
 
 ## Ejercicio: Añadir sonido.
+
+En nuestro camino hacia implementar un [clone de Pong](https://sites.google.com/site/thepythonpongtutorial/home).
+
 
 ## Algo sobre programación orientada a objetos
 Los objetos son estructuras de código (técnicamente son instancias de
@@ -393,6 +428,4 @@ main():
 
 6. Instalar epiphany con `apt install epiphany`.
 
-6. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).
-
-}}}
+6. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md . como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).
