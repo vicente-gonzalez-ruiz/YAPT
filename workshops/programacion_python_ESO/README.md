@@ -21,9 +21,9 @@ por ser:
    Python creadas por empresas que te cobran principalmente por
    asesorarte en su uso), y además es
    [abierto](https://es.wikipedia.org/wiki/Software_de_c%C3%B3digo_abierto). Esto último es importante para muchas [empresas](https://www.muycanal.com/2020/02/19/las-empresas-prefieren-el-codigo-abierto-para-su-software-empresarial) y organizaciones ([CERN](https://home.cern/science/computing/open-source-open-science), [NASA](https://code.nasa.gov/)).
-3. Uno de los pocos lenguajes de programación *democráticos*, diseñado
-   por la comunidad de Python para la comunidad de Python que es muy
-   grande y lo [evoluciona
+3. Uno de los pocos lenguajes de programación que se podría calificar
+   como *democrático*, diseñado por la comunidad de Python para la
+   comunidad de Python que es muy grande y lo [evoluciona
    constantemente](https://www.python.org/dev/peps/).
 4. Un [lenguaje de propósito
    general](http://enciclopedia.us.es/index.php/Lenguaje_de_prop%C3%B3sito_general)
@@ -34,7 +34,7 @@ por ser:
    [prototipar](https://es.wikipedia.org/wiki/Modelo_de_prototipos)
    con Python sea fácil y rápido.
 4. [Uno de los más demandados](http://pypl.github.io/PYPL.html),
-   especialmente en el ámbito docente y científico (concretamente, en
+   especialmente en el ámbito docente y científico (especialmente, en
    el campo de la [Inteligencia
    Artificial](https://es.wikipedia.org/wiki/Inteligencia_artificial)).
 
@@ -43,7 +43,9 @@ por ser:
 Vamos programar sobre un
 [PC](https://es.wikipedia.org/wiki/Computadora_personal#:~:text=Una%20computadora%20personal%2C%20computador%20personal,las%20computadoras%20IBM%20PC%20compatibles.)
 con [Linux](https://es.wikipedia.org/wiki/GNU/Linux), en concreto una
-versión de Linux llamada [Xubuntu](https://xubuntu.org/).
+versión de Linux llamada [Xubuntu](https://xubuntu.org/), aunque
+Python puede usarse casi en cualquier plataforma actual (excepto en
+Android e IOs).
 
 ## ¿Qué vamos a programar?
 
@@ -55,16 +57,16 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 
 ## Tecnicamente (desde el punto de vista de la programación) aprenderemos ...
 
-1. A distinguir y reconocer las partes básicas de una computadora.
-2. A comprender qué es un lenguaje de programación.
-3. A comprender qué es un algoritmo y a implementarlos.
-4. A distinguir entre lenguajes compilados e interpretados.
-5. A interpretar qué es la potencia de cómputo.
-6. A usar el intérprete de Python.
-7. La sintaxis básica de Python.
-8. Algo sobre la SPL (Standard Python Library) y cómo usarla.
-9. Algunos conceptos sobre programación orientada a objetos.
-10. Algunos conceptos básicos sobre programación de vídeo-juegos.
+1. A distinguir y reconocer las partes básicas de una [computadora](https://es.wikipedia.org/wiki/Computadora).
+2. A comprender qué es un [lenguaje de programación](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n).
+3. A comprender qué es un [algoritmo](https://es.wikipedia.org/wiki/Algoritmo) y a implementarlos.
+4. A distinguir entre lenguajes [compilados](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_compilado) e [interpretados](https://es.wikipedia.org/wiki/Int%C3%A9rprete_(inform%C3%A1tica)).
+5. A interpretar qué es la [potencia de cómputo](https://en.wikipedia.org/wiki/Computer_performance).
+6. A usar el [intérprete de Python](https://docs.python.org/3/tutorial/interpreter.html).
+7. La [sintaxis básica de Python](https://www.w3schools.com/python/python_syntax.asp).
+8. Algo sobre la [SPL (Standard Python Library)](https://docs.python.org/3/library/) y cómo usarla.
+9. Algunos conceptos sobre [programación orientada a objetos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos).
+10. Algunos conceptos básicos sobre programación de [vídeojuegos](https://es.wikipedia.org/wiki/Videojuego).
 
 ## Pero antes, una comparativa interesante
 
