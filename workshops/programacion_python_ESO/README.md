@@ -150,6 +150,7 @@ de poderlo ejecutar.
    
 2. El comando anterior genera un archivo ejecutable llamado
    `cpu_test`. Para ejecutarlo, escribir:
+   
    ```bash
    ./cpu_test 100000000
    ```
