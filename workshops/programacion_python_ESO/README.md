@@ -240,6 +240,8 @@ encuentra en
 [aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/check_prime.py).
 
 ## <a id="ejer_3"></a>Ejercicio 3: ¡Averigua el número!
+Dejemos ahora un poco de lado a las matemáticas y vamos programar juegos sencillos. El primero de ellos consiste en adivinar qué número, dentro de un rango, ha elegido de forma aleatoria la computadora.
+
 
 6. [Guess the number!](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi).
 
@@ -261,6 +263,8 @@ while random_number != guessed_number:
   number_of_tries = number_of_tries + 1
 print("Congratulations! You guessed the number in", number_of_tries, "attempts :-)")
 ```
+
+Si hemos sido inteligentes, deberíamos haber adivinado el número a lo sumo en log(N)/log(2) = log_2(N) intentos, que es la complejidad algorítmica de la [búsqueda binaria](https://en.wikipedia.org/wiki/Binary_search_algorithm).
 
 ## Ejercicio 1: Crear una pantalla vacía (empty screen) usando Pygame
 El objetivo de este ejercicio es conocer cómo abrir y cerrar un

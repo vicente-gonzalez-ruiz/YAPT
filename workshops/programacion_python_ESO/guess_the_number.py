@@ -3,11 +3,14 @@ import random
 lowest_number = 0
 highest_number = 100
 random_number = random.randrange(lowest_number, highest_number)
+
 print("He elegido un número entero entre", lowest_number, "y", highest_number)
-print("Adivínalo!")
+print("¡Adivínalo!")
+
 guessed_number = int(input("Introduce un número: "))
 assert guessed_number >= lowest_number and guessed_number <= highest_number, \
   f"El número introducido {guessed_number} está fuera del intervalo de enteros [{lowest_number}, {highest_number}]"
+
 number_of_tries = 1
 while random_number != guessed_number:
   print("No has adivinado el número :-/")
