@@ -255,41 +255,83 @@ conocer). Llamémoslo `random_number`. Una forma de hacer esto es usar el métod
 
 Si hemos sido inteligentes, deberíamos haber adivinado el número a lo sumo en `log_2(N)` (`= log(N)/log(2)`) intentos, que es la complejidad algorítmica de la [búsqueda binaria](https://en.wikipedia.org/wiki/Binary_search_algorithm).
 
-Una posible solución a este ejercicio puede se
-encuentra
+Una posible solución a este ejercicio puede
+encuentrarse
 [aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/guess_the_number.py). Otra implementación podría ser [esta](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py), que es parte del paquete [freegames](https://pypi.python.org/pypi/freegames).
 
+## <a id="ejer_4"></a>Ejercicio 4: Crear una pantalla vacía (empty screen) usando Pygame
+Nuestra versión de Pong se va a apoyar en el uso del paquete
+[Pygame](https://www.pygame.org/news), que ofrece una
+[API](https://en.wikipedia.org/wiki/API) para programar videojuegos en
+Python. Lo primero que vamos a hacer es aprender a abrir (y cerrar)
+una [display](https://www.pygame.org/docs/ref/display.html) (una
+ventana (window) o una pantalla (screen), dependiendo del sistema
+gráfico porporcionado por el
+[SO](https://es.wikipedia.org/wiki/Sistema_operativo)) de Pygame. Tendremos que:
 
-## Ejercicio 1: Crear una pantalla vacía (empty screen) usando Pygame
-El objetivo de este ejercicio es conocer cómo abrir y cerrar un
-*screen* (una ventana) de Pygame.
-1. Importar Pygame.
-2. Inicializar Pygame (usar `pygame.init()`).
-3. Crear una pantalla (usar `pygame.display.set_mode()`).
+1. Importar Pygame (escribir la instrucción de Python `import pygame`).
+2. Inicializar Pygame (usar el método [`pygame.init()`](https://www.pygame.org/docs/ref/pygame.html#pygame.init)).
+3. Crear una pantalla (usar [`pygame.display.set_mode()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_mode)).
 4. Darle un título a la pantalla (usar
-   `pygame.display.set_caption()`).
+   [`pygame.display.set_caption()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_caption)).
 5. Esperar a que el usuario cierre la pantalla (cosa que ocurre,
-   cuando `pygame.event.wait().type` retorna un evento del tipo
-   `pygame.QUIT`).
-6. Cerrar Pygame (usar `pygame.quit()`).
-7. Posible
+   cuando [`pygame.event.wait().type`](https://www.pygame.org/docs/ref/event.html#pygame.event.wait) retorna un evento del tipo
+   [`pygame.QUIT`](https://www.pygame.org/docs/ref/event.html)).
+6. Cerrar Pygame (usar [`pygame.quit()`](https://www.pygame.org/docs/ref/pygame.html#pygame.quit)).
+7. Una posible
    [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_screen.py). Gran
    cantidad de información sobre cómo programar juegos usando Pygame
    puede encontrarse en [Programar Juegos Arcade con Python y
    Pygame](http://programarcadegames.com/).
 
-## Ejercicio 2: Pintar un par de puntos
-El objetivo de este ejercicio es averiguar cómo se distribuyen las
-coordenadas en una screen de Pygame, y aprender a dibujar puntos.
-1. Importar Pygame.
-2. Inicializar Pygame (usar `pygame.init()`).
-3. Crear una pantalla (usar `pygame.display.set_mode()`).
-4. Darle un título a la pantalla (usar `pygame.display.set_caption()`).
-5. Pintar un punto blanco en la coordenadas (x=1, y=1) (usar `screen.set_at()`).
+## <a id="ejer_5"></a>Ejercicio 5: Pintar un par de puntos
+Aparte de aprender cómo dibujar puntos, el objetivo de este ejercicio
+es averiguar cómo se distribuyen las coordenadas en un display de
+Pygame.
+1. Importar Pygame (ídem [Ejercicio 4](#ejer_4)).
+2. Inicializar Pygame (ídem [Ejercicio 4](#ejer_4)).
+3. Crear una pantalla (ídem [Ejercicio 4](#ejer_4)).
+4. Darle un título a la pantalla (ídem [Ejercicio 4](#ejer_4)).
+5. Pintar un punto blanco en la coordenadas (x=1, y=1) (usar [`pygame.screen.set_at(https://www.pygame.org/docs/ref/surface.html#pygame.Surface.set_at)`]()).
 6. Pintar un punto verde en (x=10, y=100).
-7. Esperar a que el usuario cierre la pantalla (cosa que ocurre, cuando `pygame.event.wait().type` retorna un evento del tipo `pygame.QUIT`).
-8. Cerrar Pygame (usar `pygame.quit()`).
+7. Esperar a que el usuario cierre la pantalla (ídem [Ejercicio 4](#ejer_4)).
+8. Cerrar Pygame (ídem [Ejercicio 4](#ejer_4)).
 9. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/plot_pixels.py).
+
+## ¡Odio tener código duplicado!
+Si comparamos el código (fuente) desarrollado para los Ejercicios
+[4](#ejer_4) y [5](#ejer_5), veremos que casi son idénticos. Esto
+puede ser interesante cuando queremos que ambos módulos sean
+completamente independientes, de manera que si modificamos uno, el
+comportamiento del otro no se vea afectado. Sin embargo, en general
+tener código duplicado no es una buena idea porque dificulta su
+mantenimiento. Por ejemplo, si nos damos cuenta de que en la solución
+del [Ejercicio 4](#ejer_4) hemos cometido un error, casi seguro que
+dicho error está también en la solución del [Ejercicio 5](#ejer_5). Lo
+ideal sería que tanto las soluciones de ambos ejercicios compartieran
+el código que tienen en común.
+
+La solución más frecuente y elegante para resolver la duplicación de
+código pasa por utilizar el [Paradigma de Programación Orientada a
+Objetos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos),
+o en inglés,
+[OOP](https://en.wikipedia.org/wiki/Object-oriented_programming).
+
+## Pensando en objetos
+La OOP ayuda a organizar el código fuente de tus programas y a hacer
+que éstos se puedan mantener (por ejemplo, encontrar
+[bugs](https://es.wikipedia.org/wiki/Error_de_software) (bichos), a lo
+que también se llama
+[depurar](https://es.wikipedia.org/wiki/Depuraci%C3%B3n_de_programas),
+[debugging](https://en.wikipedia.org/wiki/Debugging) en inglés) más
+fácilmente. La idea es organizar el código en clases (así se llaman
+estructuras de datos (llamadas atributos en el contexto de la OOP) y
+funciones (llamadas métodos en el contexto de la OOP) asociadas) y
+utilizar la
+[herencia](https://es.wikipedia.org/wiki/Herencia_(inform%C3%A1tica))
+para evitar reimplementar lo ya implementado (las clases heredan el
+comportamiento de las clases *ancestro*, también llamadas clases
+*base*).
 
 ## Ejercicio 3: Pintar un rectángulo
 Simplemente aprendemos cómo dibujar un rectángulo.
