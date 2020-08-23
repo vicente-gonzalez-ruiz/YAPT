@@ -126,7 +126,7 @@ nuevo implementando el "Hello World!". Para ello:
    
    y almacenarlo en un archivo llamado `hello_world.py` (la extensión
    `py` indica que se trata de un módulo de Python (así es como se
-   llaman los programas en Python), aunque esto es irrelevante para el
+   llaman los archivos en Python), aunque esto es irrelevante para el
    sistema operativo Linux).
    
 4. Ejecutarlo. Esto lo podemos hacer de dos maneras diferentes:
@@ -178,6 +178,9 @@ de poderlo ejecutar.
    que compilarse y por tanto, no dependen de la plataforma.
 
 ## <a id="ejer_2"></a>Ejercicio 2: Averigua si un número natural N es primo
+
+Los números primos son la base de la [criptografía asimétrica](https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica) (también llamados algoritmos criptográficos de clave pública) y son muy importantes para [*esconder* información digital](https://www.lasexta.com/tecnologia-tecnoxplora/ciencia/divulgacion/principios-basicos-encriptacion-entender-como-snowden-jugo-casa-blanca_2013082657fc98e90cf2fd8cc6b0d634.html), desarrollar [firmas](https://academy.binance.com/es/security/what-is-public-key-cryptography) y [monedas](https://es.cointelegraph.com/explained/what-is-asymmetric-cryptography) digitales, desarrollar algoritmos de [hashing](https://es.wikipedia.org/wiki/Tabla_hash), etc.
+
 Un [número natural](https://es.wikipedia.org/wiki/N%C3%BAmero_natural)
 N es primo si ninguna de las divisiones de N entre los enteros primos
 menores sqrt(N) (la raíz cuadrada de N) divide a N de forma
@@ -236,35 +239,26 @@ for i in primes:
 ```
 
 Una posible solución a este ejercicio puede se
-encuentra en
+encuentra
 [aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/check_prime.py).
 
 ## <a id="ejer_3"></a>Ejercicio 3: ¡Averigua el número!
-Dejemos ahora un poco de lado a las matemáticas y vamos programar juegos sencillos. El primero de ellos consiste en adivinar qué número, dentro de un rango, ha elegido de forma aleatoria la computadora.
+Dejemos ahora un poco de lado a las matemáticas y vamos programar juegos sencillos. El primero de ellos consiste en adivinar qué número, dentro de un rango, ha elegido de forma aleatoria la computadora. Básicamente, nuestro juego consistiría en:
 
+1. Generar un número aleatorio (dentro de un rango que el jugador debe
+conocer). Llamémoslo `random_number`. Una forma de hacer esto es usar el método `random.randrange()` de la PSL.
+2. Solicitar al jugador un número. Llamémoslo `guessed_number`. En la solición del [Ejercicio 2](#ejer_2) hay un ejemplo de cómo solicitar una entrada al programa desde el teclado.
+3. Mientras el jugador no adivine el número (mientras `guessed_number != random_number`):
+   1. Indicar al jugador si `random_number` es mayor o menor que
+      `guessed_number`.
+   2. Solicitar al jugador un nuevo `guessed_number`.
 
-6. [Guess the number!](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi).
+Si hemos sido inteligentes, deberíamos haber adivinado el número a lo sumo en `log_2(N)` (`= log(N)/log(2)`) intentos, que es la complejidad algorítmica de la [búsqueda binaria](https://en.wikipedia.org/wiki/Binary_search_algorithm).
 
-```
-lowest_number = 0
-highest_number = 100
-random_number = Generate_an_integer_random_number_in_the_range(lowest_number, highest_number)
-print("I have choosen an integer number between", lowest_number, "and", highest_number)
-print("Guess it!")
-guessed_number = input()
-number_of_tries = 1
-while random_number != guessed_number:
-  print("Wrong guess :-/")
-  if guessed_number < random_number then:
-    print("Try again with a higher number")
-  else if guessed_number > random_number then:
-    print("Try again with a lower number")
-  guessed_number = input()
-  number_of_tries = number_of_tries + 1
-print("Congratulations! You guessed the number in", number_of_tries, "attempts :-)")
-```
+Una posible solución a este ejercicio puede se
+encuentra
+[aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/guess_the_number.py). Otra implementación podría ser [esta](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py), que es parte del paquete [freegames](https://pypi.python.org/pypi/freegames).
 
-Si hemos sido inteligentes, deberíamos haber adivinado el número a lo sumo en log(N)/log(2) = log_2(N) intentos, que es la complejidad algorítmica de la [búsqueda binaria](https://en.wikipedia.org/wiki/Binary_search_algorithm).
 
 ## Ejercicio 1: Crear una pantalla vacía (empty screen) usando Pygame
 El objetivo de este ejercicio es conocer cómo abrir y cerrar un
