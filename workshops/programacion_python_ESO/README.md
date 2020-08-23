@@ -425,27 +425,16 @@ La pelota de nuestro Pong va a ser un cuadrado. Aprendamos a dibujar rectángulo
 1. Crear una clase llamada `DrawRectangle` que herede de la clase `EmptyDisplay`.
 2. Sobreescribir el método `EmptyDisplay.run()` para que se pinte un
    rectángulo y se cierre la ventana. Para dibujar un rectángulo podemos usar el método [`pygame.draw.rec()`](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect).
-Una posible solución la tenemos en [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
+Una posible solución puede encontrarse en [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
 
-## Ejercicio 4: Rebotar un rectángulo
-Hacemos que el rectángulo se mueva en diagonal, a velocidad constante. Cuando encontramos los límites del `screen`, el rectángulo debe rebotar.
-1. Importar Pygame.
-2. Inicializar Pygame (usar `pygame.init()`).
-3. Crear una pantalla (usar `pygame.display.set_mode()`).
-4. Darle un título a la pantalla (usar `pygame.display.set_caption()`).
-5. 
+## <a id="ejer_8"></a>Ejercicio 8: Rebota el rectángulo
+Hacemos que el rectángulo se mueva en diagonal, a velocidad constante, y que rebote en los límites del display..
+
 
 ## Ejercicio: Añadir sonido.
 
 En nuestro camino hacia implementar un [clone de Pong](https://sites.google.com/site/thepythonpongtutorial/home).
 
-
-## Algo sobre programación orientada a objetos
-Los objetos son estructuras de código (técnicamente son instancias de
-clases) que contienen datos y métodos, que manejan dichos datos. La
-programación orientada a objetos es útil porque ayuda al programador a
-organizar el código de forma lógica, y a depurarlo/mantenerlo más
-eficientemente.
 
 ## Ejercicio: Usar sprites
 
