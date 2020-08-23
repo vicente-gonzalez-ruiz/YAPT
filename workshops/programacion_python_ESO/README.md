@@ -238,9 +238,11 @@ for i in primes:
         break
 ```
 
-Una posible solución a este ejercicio puede se
-encuentra
-[aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/check_prime.py).
+Una posible solución a este ejercicio puede se encuentra
+[aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/check_prime.py). Si
+tienes curiosidad, la Wikipedia te habla sobre [los números primos más
+grandes
+conocidos](https://es.wikipedia.org/wiki/Mayor_n%C3%BAmero_primo_conocido).
 
 ## <a id="ejer_3"></a>Ejercicio 3: ¡Averigua el número!
 Dejemos ahora un poco de lado a las matemáticas y vamos programar juegos sencillos. El primero de ellos consiste en adivinar qué número, dentro de un rango, ha elegido de forma aleatoria la computadora. Básicamente, nuestro juego consistiría en:
@@ -331,7 +333,13 @@ utilizar la
 [herencia](https://es.wikipedia.org/wiki/Herencia_(inform%C3%A1tica))
 para evitar reimplementar lo ya implementado (las clases heredan el
 comportamiento de las clases *ancestro*, también llamadas clases
-*base*).
+*base*, clases *padre* (cuando la herencia es directa), ...). A las
+instancias de las clases se les llama *objetos*. En Python [casi todo
+lo que manejamos son
+objetos](https://docs.python.org/3/reference/datamodel.html). Por ejemplo, para implementar la Criba de Erastótenes del [Ejercicio 2](#ejer_2) hemos instanciado un objeto de clase lista (`primes`).
+
+Veamos
+un ejemplo.
 
 ## Ejercicio 3: Pintar un rectángulo
 Simplemente aprendemos cómo dibujar un rectángulo.

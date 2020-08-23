@@ -1,4 +1,4 @@
-# Test, for example, 9973
+# Test, for example, 9973, 30293874019
 
 import math
 
@@ -9,6 +9,8 @@ print("+---------------------------------+")
 N = int(input("Introduce un número natural mayor que 2: "))
 assert N>2, f"N={N} (recuerda que el número tiene que ser mayor que 2)"
 
+sqrt_N = int(math.sqrt(N))
+sqrt_N_plus_1 = sqrt_N + 1    
 N_is_prime = True
 
 sqrt_N = int(math.sqrt(N))
@@ -20,21 +22,16 @@ for i in range(2, sqrt_N_plus_1):
     primes.append(i)
 print("hecho")
 
-print("Cribando ...")
+print("Probando con ")
 for i in range(2, sqrt_N_plus_1):
     if i in primes:
+        print(f"{i}", end=' ', flush=True)
+        if N % i == 0:
+               N_is_prime = False # porque i divide a N
+               break
         for j in range(i*2, sqrt_N_plus_1, i):
             if j in primes:
-                print(f"{j}/{sqrt_N_plus_1}", end='\r', flush=True)
+                #print(f"{j}/{sqrt_N_plus_1}", end='\r', flush=True)
                 primes.remove(j)
-print("\nhecho")
-                
-print("Probando factores primos", end=' ')
-for i in primes:
-    print(f"{i}", end=' ', flush=True)
-    if N % i == 0:
-        N_is_prime = False # porque i divide a N
-        break
-print()
-
+print()         
 print("¿Es", N, "primo?:", N_is_prime)
