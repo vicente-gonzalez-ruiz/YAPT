@@ -240,7 +240,7 @@ for i in primes:
 
 Una posible solución a este ejercicio puede se encuentra
 [aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/check_prime.py). Si
-tienes curiosidad, la Wikipedia te habla sobre [los números primos más
+tienes curiosidad, la Wikipedia nos habla sobre [los números primos más
 grandes
 conocidos](https://es.wikipedia.org/wiki/Mayor_n%C3%BAmero_primo_conocido).
 
@@ -281,7 +281,7 @@ gráfico porporcionado por el
    [`pygame.QUIT`](https://www.pygame.org/docs/ref/event.html)).
 6. Cerrar Pygame (usar [`pygame.quit()`](https://www.pygame.org/docs/ref/pygame.html#pygame.quit)).
 7. Una posible
-   [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_screen.py). Gran
+   [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_display_v0.py). Gran
    cantidad de información sobre cómo programar juegos usando Pygame
    puede encontrarse en [Programar Juegos Arcade con Python y
    Pygame](http://programarcadegames.com/).
@@ -298,7 +298,7 @@ Pygame.
 6. Pintar un punto verde en (x=10, y=100).
 7. Esperar a que el usuario cierre la pantalla (ídem [Ejercicio 4](#ejer_4)).
 8. Cerrar Pygame (ídem [Ejercicio 4](#ejer_4)).
-9. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/plot_pixels.py).
+9. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/plot_pixels_v0.py).
 
 ## ¡Odio tener código duplicado!
 Si comparamos el código (fuente) desarrollado para los Ejercicios
@@ -334,12 +334,66 @@ utilizar la
 para evitar reimplementar lo ya implementado (las clases heredan el
 comportamiento de las clases *ancestro*, también llamadas clases
 *base*, clases *padre* (cuando la herencia es directa), ...). A las
-instancias de las clases se les llama *objetos*. En Python [casi todo
-lo que manejamos son
-objetos](https://docs.python.org/3/reference/datamodel.html). Por ejemplo, para implementar la Criba de Erastótenes del [Ejercicio 2](#ejer_2) hemos instanciado un objeto de clase lista (`primes`).
+instancias de las clases se les llama *objetos*, y en Python [casi
+todo lo que manejamos son
+objetos](https://docs.python.org/3/reference/datamodel.html). Por
+ejemplo, para implementar la Criba de Erastótenes del [Ejercicio
+2](#ejer_2) hemos instanciado un objeto de clase lista (`primes`).
 
-Veamos
-un ejemplo.
+Veamos un ejemplo más "natural". Supongamos que queremos trabajar con
+gatos y perros, y queremos que cuando un perro o un gato sean
+instanciados, aparezca un mensaje que indique tal acción, y cuando
+sean des-instanciados (eliminados de la memoria de la computadora)
+aparezca otro mensaje indicando también dicha acción. Usando la OOP,
+podemos definir 3 clases:
+[`Animal`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/animal.py)
+(las clases en Python suelen comenzar con una letra en mayúscula),
+[`Cat`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cat.py)
+y
+[`Dog`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/dog.py),
+usando la siguiente relación:
+
+```
+              +--------+
+              | Animal |
+			  +---+----+
+			      |
+	         +----+----+
+			 |         |
+			 v         v
+		  +--+--+   +--+--+
+          | Cat |   | Dog |
+		  +-----+   +-----+
+```
+
+indicando que un objeto de la clase `Cat`y otro de la clase `Dog` son
+ambos animales, y por tanto, comparten el comportamiento definido en la
+clase `Animal' . Podemos comprobar esto escribiendo en el terminal:
+
+```bash
+python animal.py
+
+```
+Escribiendo luego:
+
+```bash
+python dog.py
+
+```
+
+Y finalmente:
+
+```bash
+python cat.py
+
+```
+
+Si nos fijamos bien en los mensajes que aparecen en el terminal,
+cuando desde los módulos `cat.py` y `dog.py` se hace un `import
+animal`, el código que hay en el bloque del `__main__` no se ejecuta.
+
+## <a id="ejer_6"></a>Ejercicio 6: Reimplementamos los Ejercicios [4](#ejer_4) y [5](#ejer_5) usando la OOP
+
 
 ## Ejercicio 3: Pintar un rectángulo
 Simplemente aprendemos cómo dibujar un rectángulo.

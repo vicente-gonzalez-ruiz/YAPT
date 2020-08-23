@@ -2,7 +2,7 @@ import animal
 
 class Cat(animal.Animal):
 
-    def __init__(self, race = "persa"):
+    def __init__(self, race = "persa"):  # Por defecto, soy un gato persa
         super().__init__()
         self.race = race
    
