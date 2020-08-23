@@ -17,4 +17,3 @@ class PlotPixels(EmptyDisplay):
 if __name__ == "__main__":
     display = PlotPixels(caption = "Search the green pixel at the coordinates (x=10, y=100)")
     display.run()
-

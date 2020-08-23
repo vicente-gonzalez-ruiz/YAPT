@@ -64,7 +64,7 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 5. A interpretar qué es la [potencia de cómputo](https://en.wikipedia.org/wiki/Computer_performance).
 6. A usar el [intérprete de Python](https://docs.python.org/3/tutorial/interpreter.html).
 7. La [sintaxis básica de Python](https://www.w3schools.com/python/python_syntax.asp).
-8. Algo sobre la [SPL (Standard Python Library)](https://docs.python.org/3/library/) y cómo usarla.
+8. Algo sobre la [PLL (Python Standard Library)](https://docs.python.org/3/library/) y cómo usarla.
 9. Algunos conceptos sobre [programación orientada a objetos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos).
 10. Algunos conceptos básicos sobre programación de [vídeojuegos](https://es.wikipedia.org/wiki/Videojuego).
 
@@ -393,12 +393,39 @@ cuando desde los módulos `cat.py` y `dog.py` se hace un `import
 animal`, el código que hay en el bloque del `__main__` no se ejecuta.
 
 ## <a id="ejer_6"></a>Ejercicio 6: Reimplementamos los Ejercicios [4](#ejer_4) y [5](#ejer_5) usando la OOP
+Vamos a definir 2 clases en 2 módulos (archivos) diferentes:
+1. Una clase padre, llamada `EmptyDisplay`, en la que vamos a definir
+   3 métodos:
+   1. El constructor `__init__(self, width, caption)`, en el que
+      crearemos un display vacío.
+   2. El destructor `__del__(self)`, en el que cerraremos el display.
+   3. Un método llamado `__run__(self)`, que implementará la lógica
+      necesaria para esperar a que se cierre la ventana.
+2. Una clase hija que hereda de la clase `EmptyDisplay`, llamada
+   `PlotPlixels`, que *sobreescribirá* el método `EmptyDisplay.run()`
+   con la lǵica necesaria para pintar los dos pixels pixels y luego,
+   esperar a que se cierre la ventana.
 
+Una posible solución está disponible en
+[`empty_display.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_display.py)
+y
+[`plot_pixels.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/plot_pixels.py). Nótese
+que además hará falta el módulo `colors.py` que debe estar dentro de
+una carpeta llamada `lib` (crear la carpeta escribiendo en el terminal
+`mkdir lib` y mover `colors.py` dentro con `mv colors.py lib`). En
+este módulo han sido definidos algunos colores básicos. La razón por
+la que `colors.py` se colocan dentro de la carpeta `lib` es porque si
+por casualidad hubiera algún paquete de la
+[PSL](https://docs.python.org/3/library/) o en
+[PyPI](https://pypi.org/) llamado también `colors`, evitaríamos que
+nuestro `colors` enmascarara al "estándar".
 
-## Ejercicio 3: Pintar un rectángulo
-Simplemente aprendemos cómo dibujar un rectángulo.
-1. Este ejercicio es casi idéntico al Ejercicio 2, excepto que debemos pintar un rectángulo en lugar de un punto (usar `pygame.draw.rec()`).
-9. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
+## <a id="ejer_7"></a>Ejercicio 7: Pintar un rectángulo
+La pelota de nuestro Pong va a ser un cuadrado. Aprendamos a dibujar rectángulos:
+1. Crear una clase llamada `DrawRectangle` que herede de la clase `EmptyDisplay`.
+2. Sobreescribir el método `EmptyDisplay.run()` para que se pinte un
+   rectángulo y se cierre la ventana. Para dibujar un rectángulo podemos usar el método [`pygame.draw.rec()`](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect).
+Una posible solución la tenemos en [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
 
 ## Ejercicio 4: Rebotar un rectángulo
 Hacemos que el rectángulo se mueva en diagonal, a velocidad constante. Cuando encontramos los límites del `screen`, el rectángulo debe rebotar.

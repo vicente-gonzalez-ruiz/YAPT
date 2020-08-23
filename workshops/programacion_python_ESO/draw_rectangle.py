@@ -1,18 +1,19 @@
 import pygame
-from lib import colors as color
+from empty_display import EmptyDisplay
+import lib.colors as color
 
-pygame.init()
+class DrawRectangle(EmptyDisplay):
 
-screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Draw a blue rectangle at (200, 150, 100, 50)")
+    def run(self):
+        running = True
+        while running:
+            pygame.draw.rect(self.display, color.blue,
+                             (200, 150, 100, 50))
+            pygame.display.update()
+            event = pygame.event.wait()  # Wait for an (input) event
+            if event.type == pygame.QUIT:
+                running = False
 
-running = True
-while running:
-    pygame.draw.rect(screen, color.blue, (200, 150, 100, 50))
-    pygame.display.update()
-    event = pygame.event.wait()  # Wait for an (input) event
-    if event.type == pygame.QUIT:
-        running = False
-
-pygame.quit()
-print("Goodbye!")
+if __name__ == "__main__":
+    display = DrawRectangle(caption = "Draw a blue rectangle at (200, 150, 100, 50)")
+    display.run()
