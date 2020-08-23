@@ -1,21 +1,20 @@
 import pygame
+from empty_display import EmptyDisplay
 import lib.colors as color
 
-pygame.init()
-screen_width = 800
-screen_height = 600
-screen_size = (screen_width, screen_height)
-screen = pygame.display.set_mode(screen_size)
-pygame.display.set_caption("Search the green pixel at the coordinates (x=10, y=100)")
+class PlotPixels(EmptyDisplay):
+    
+    def run(self):
+        running = True
+        while running:
+            self.display.set_at((1, 1), color.white)
+            self.display.set_at((10, 100), color.green)
+            pygame.display.update()
+            event = pygame.event.wait()
+            if event.type == pygame.QUIT:
+                running = False
 
-running = True
-while running:
-    screen.set_at((1, 1), color.white)
-    screen.set_at((10, 100), color.green)
-    pygame.display.update()
-    event = pygame.event.wait()
-    if event.type == pygame.QUIT:
-        running = False
+if __name__ == "__main__":
+    display = PlotPixels(caption = "Search the green pixel at the coordinates (x=10, y=100)")
+    display.run()
 
-pygame.quit()
-print("Goodbye!")

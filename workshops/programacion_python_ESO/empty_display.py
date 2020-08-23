@@ -7,7 +7,7 @@ class EmptyDisplay():
                  caption = "Empty Screen"):
         pygame.init()
         display_size = (width, height)
-        display = pygame.display.set_mode(display_size)
+        self.display = pygame.display.set_mode(display_size)
         pygame.display.set_caption(caption)
 
     def __del__(self):
