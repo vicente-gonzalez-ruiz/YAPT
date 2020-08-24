@@ -428,8 +428,34 @@ La pelota de nuestro Pong va a ser un cuadrado. Aprendamos a dibujar rectángulo
 Una posible solución puede encontrarse en [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
 
 ## <a id="ejer_8"></a>Ejercicio 8: Rebota el rectángulo
-Hacemos que el rectángulo se mueva en diagonal, a velocidad constante, y que rebote en los límites del display..
+En nuestro Pong la pelota rebotará en los límites del
+display. Hagamos, por tanto, que el rectángulo se mueva en diagonal, a
+velocidad constante a razón de un pixel en horizontal y otro en
+vertical por cada frame, rebotando en las paredes de la ventana.
+1. Crear una clase llamada `BouncingBall` que herede de la clase
+   `EmptyDisplay`.
+2. Sobreescribir el método `EmptyDisplay.run()` para que pinte la
+   pelota (un cuadrado blanco). En este método tendremos que controlar
+   la posición de la pelota, y en lugar de usar `pygame.event.wait()`
+   para detener la ejecución de la aplicación hasta que no se produzca
+   un nuevo evento, usaremos el método
+   `[pygame.event.get()](https://www.pygame.org/docs/ref/event.html#pygame.event.get)`
+   que lo que hace básicamente es sacar de una cola de eventos el
+   siguiente disponible y retornar inmediatamente, tanto si la cola
+   tiene elementos como si está vacía. A este último tipo de
+   instrucciones (bueno, en realidad un método en nuestro caso) se les
+   llama *no bloqueantes*, porque retornan de su llamada
+   rápidamente. En contrapartida, `pygame.event.wait()` es un método
+   bloqueante. Si queremos refrescar el display de nuestro juego,
+   `pygame.event.get()` es la solución, y debe usarse así:
+   
+   ```python
+   for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+   ```
 
+Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/bouncing_ball.py).
 
 ## Ejercicio: Añadir sonido.
 
