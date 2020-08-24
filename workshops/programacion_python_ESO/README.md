@@ -244,7 +244,7 @@ tienes curiosidad, la Wikipedia nos habla sobre [los números primos más
 grandes
 conocidos](https://es.wikipedia.org/wiki/Mayor_n%C3%BAmero_primo_conocido).
 
-## <a id="ejer_3"></a>Ejercicio 3: ¡Averigua el número!
+## <a id="ejer_3"></a>Ejercicio 3: Bueno, juguemos un poco ahora ... y ¡averigua el número!
 Dejemos ahora un poco de lado a las matemáticas y vamos programar juegos sencillos. El primero de ellos consiste en adivinar qué número, dentro de un rango, ha elegido de forma aleatoria la computadora. Básicamente, nuestro juego consistiría en:
 
 1. Generar un número aleatorio (dentro de un rango que el jugador debe
@@ -354,16 +354,16 @@ y
 usando la siguiente relación:
 
 ```
-              +--------+
-              | Animal |
-			  +---+----+
-			      |
-	         +----+----+
-			 |         |
-			 v         v
-		  +--+--+   +--+--+
-          | Cat |   | Dog |
-		  +-----+   +-----+
+    +--------+
+    | Animal |
+    +---+----+
+        |
+   +----+----+
+   |         |
+   v         v
++--+--+   +--+--+
+| Cat |   | Dog |
++-----+   +-----+
 ```
 
 indicando que un objeto de la clase `Cat`y otro de la clase `Dog` son
