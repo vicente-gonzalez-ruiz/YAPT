@@ -421,20 +421,25 @@ Vamos a definir 2 clases en 2 módulos (archivos) diferentes:
 		 
 	  2. `width`, que indica el ancho de la ventana, en pixels.
 	  
-	  3. `height` que indica el alto de la ventana, en pixels.
+	  3. `height`, que indica el alto de la ventana, en pixels.
 	  
-  Todos los constructures de clase en Python tienen por nombre
-  `__init__`.
+	  4. `caption`, con el nombre de la ventana.
+	  
+	  Todos los constructures de clase en Python tienen por nombre
+	  `__init__`.
   
    2. El destructor `__del__(self)`, en el que cerraremos el
       display. Nótese que el primer parámetro de todos los métodos de
       una clase debe ser `self` (que no es más que una convención, en
       realidad podría usarse cuanquier otro nombre para este
-      parámetro).
+      parámetro). `__del__` es una palabra reservada para el
+      destructor.
 
    3. Un método llamado `run(self)`, que implementará la lógica
-      necesaria para esperar a que se cierre la ventana.
-	  
+      necesaria para esperar a que se cierre la ventana. `run` no es
+      una palbra reservada (el método podría tener cualquier otro
+      nombre).
+
    4. Un método denominado `get_event(self)`, que retorna un evento
       (por ejemplo, el cierre de la ventana). El método `run(self)`
       llamará a `get_event(self)`.
@@ -453,10 +458,10 @@ una carpeta llamada `lib` (crear la carpeta escribiendo en el terminal
 `mkdir lib` y mover `colors.py` dentro con `mv colors.py lib`). En
 este módulo han sido definidos algunos colores básicos. La razón por
 la que `colors.py` se colocan dentro de la carpeta `lib` es porque si
-por casualidad hubiera algún paquete de la
+por casualidad hubiera algún paquete en la
 [PSL](https://docs.python.org/3/library/) o en
 [PyPI](https://pypi.org/) llamado también `colors`, evitaríamos que
-nuestro `colors` enmascarara al "estándar".
+nuestro `colors` enmascarara al paquete "estándar".
 
 ## <a id="ejer_7"></a>Ejercicio 7: Pintar un rectángulo
 La pelota de nuestro Pong va a ser un cuadrado. Aprendamos a dibujar rectángulos:

@@ -10,10 +10,10 @@ class DrawRectangle(EmptyDisplay):
             pygame.draw.rect(self.display, color.blue,
                              (200, 150, 100, 50))
             pygame.display.update()
-            event = pygame.event.wait()  # Wait for an (input) event
+            event = pygame.event.wait()
             if event.type == pygame.QUIT:
                 running = False
 
 if __name__ == "__main__":
-    display = DrawRectangle(caption = "Draw a blue rectangle at (200, 150, 100, 50)")
+    display = DrawRectangle(caption = "Draw a blue rectangle at (x=200, y=150) with size (width=100, height=50)")
     display.run()

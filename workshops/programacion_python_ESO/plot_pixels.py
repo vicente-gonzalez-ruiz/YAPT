@@ -10,7 +10,7 @@ class PlotPixels(EmptyDisplay):
             self.display.set_at((1, 1), color.white)
             self.display.set_at((10, 100), color.green)
             pygame.display.update()
-            event = pygame.event.wait()
+            event = self.get_event()
             if event.type == pygame.QUIT:
                 running = False
 

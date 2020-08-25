@@ -11,21 +11,17 @@ class EmptyDisplay():
         self.display_size = (width, height)
         self.display = pygame.display.set_mode(self.display_size)
         pygame.display.set_caption(caption)
-        self.running = True
         
     def __del__(self):
         print("Goodbye!")
         pygame.quit()
 
-    def get_event(self):
-        return pygame.event.wait().type
-
     def run(self):
-        self.running = True
+        running = True
         while running:
-            event = self.get_event()
+            event = self.pygame.event.wait()
             if event.type == pygame.QUIT:
-                self.running = False
+                running = False
 
 if __name__ == "__main__":
     display = EmptyDisplay()
