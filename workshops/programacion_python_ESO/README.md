@@ -139,15 +139,17 @@ nuevo implementando el "Hello World!". Para ello:
    2. Pulsando el botón de *Run* (es verde y tiene un triángulo blanco
       dentro) de Thonny.
 
+<!-- Primera parada técnica -->
+
 ## <a id="ejer_1"></a>Ejercicio 1: Compilación vs Interpretación
 En el [Ejercicio 0](#ejer_0) hemos interpretado el módulo
 `hello_world.py`. Para ello, hemos ejecutado el intérprete ( `python`)
-y la éste le hemos pasado como argumento el nombre del módulo
+y a éste le hemos pasado como argumento el nombre del módulo
 (`hello_world.py`). Ahora vamos a ejecutar un programa escrito en el
 lenguaje C, llamado
 [`cpu_test.c`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cpu_test.c). Como
 C es un lenguaje compilado, tendremos que compilar el programa antes
-de poderlo ejecutar.
+de ejecutarlo.
 
 1. En un terminal ejecutar:
    ```bash
@@ -169,11 +171,11 @@ de poderlo ejecutar.
    máquina](https://en.wikipedia.org/wiki/Machine_code) compilado) son
    dependientes de *la plataforma*
    ([CPU](https://en.wikipedia.org/wiki/Central_processing_unit) +
-   sistema operativo), pero corren más rápido que los interpretados
-   porque la CPU ejecuta directamente el código máquina. Cuando se
-   interpretan, la CPU en realidad ejecuta el intérprete, que es quien
-   ejecuta las instrucciones del [código
-   fuente](https://en.wikipedia.org/wiki/Source_code) del
+   [SO](https://es.wikipedia.org/wiki/Sistema_operativo)), pero corren
+   más rápido que los interpretados porque la CPU ejecuta directamente
+   el código máquina. Cuando se interpretan, la CPU en realidad
+   ejecuta el intérprete, que es quien ejecuta las instrucciones del
+   [código fuente](https://en.wikipedia.org/wiki/Source_code) del
    programa. Por contrapartida, los programas interpretados no tienen
    que compilarse y por tanto, no dependen de la plataforma.
 
@@ -470,7 +472,12 @@ opciones:
    métodos `run()` de nuestras clases, reescribiendo una y otra vez el
    mismo código.
    
-2. La segunda es modificar la clase `EmptyDisplay` añadiendo un nuevo método llamado `poll_event()` que para que en una clase hija `EmptyDisplayPoll` sobreescribamos 
+2. La segunda es modificar la clase `EmptyDisplay` añadiendo un nuevo
+   método llamado `poll_event()` (que usa `pygame.event.wait()`), que
+   para que en una clase hija llamada `EmptyDisplayPoll`
+   sobreescribamos el método `poll_event()` (usando la clase
+   `pygame.event.get()`). Así tendremos menos código en las clases
+   herederas como `BouncingBall`.
 
 ## Ejercicio: Añadir sonido.
 
