@@ -431,7 +431,8 @@ Una posible solución puede encontrarse en [`draw_rectangle.py`](https://github.
 En nuestro Pong la pelota rebotará en los límites del
 display. Hagamos, por tanto, que el rectángulo se mueva en diagonal, a
 velocidad constante a razón de un pixel en horizontal y otro en
-vertical por cada frame, rebotando en las paredes de la ventana.
+vertical por cada frame presentado, rebotando en las paredes de la
+ventana.
 1. Crear una clase llamada `BouncingBall` que herede de la clase
    `EmptyDisplay`.
 2. Sobreescribir el método `EmptyDisplay.run()` para que pinte la
@@ -439,7 +440,7 @@ vertical por cada frame, rebotando en las paredes de la ventana.
    la posición de la pelota, y en lugar de usar `pygame.event.wait()`
    para detener la ejecución de la aplicación hasta que no se produzca
    un nuevo evento, usaremos el método
-   `[pygame.event.get()](https://www.pygame.org/docs/ref/event.html#pygame.event.get)`
+   `[pygame.event.get()`](https://www.pygame.org/docs/ref/event.html#pygame.event.get)
    que lo que hace básicamente es sacar de una cola de eventos el
    siguiente disponible y retornar inmediatamente, tanto si la cola
    tiene elementos como si está vacía. A este último tipo de
@@ -456,6 +457,20 @@ vertical por cada frame, rebotando en las paredes de la ventana.
    ```
 
 Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/bouncing_ball.py).
+
+## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`
+La clase `EmptyDisplay` espera (quedándose bloqueada en la instrucción
+`pygame.event.wait()`) a recibir el evento `pygame.QUIT` que indica
+que el display ha sido cerrado. Sin embargo, en la inmensa mayoría de
+los juegos el método que vamos a usar es el método
+`pygame.event.get()`. Para resolver este problema tenemos dos
+opciones:
+
+1. La primera es utilizar el método `pygame.event.get()` en todos los
+   métodos `run()` de nuestras clases, reescribiendo una y otra vez el
+   mismo código.
+   
+2. La segunda es modificar la clase `EmptyDisplay` añadiendo un nuevo método llamado `poll_event()` que para que en una clase hija `EmptyDisplayPoll` sobreescribamos 
 
 ## Ejercicio: Añadir sonido.
 
