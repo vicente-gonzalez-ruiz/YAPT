@@ -24,7 +24,7 @@ class EmptyDisplay():
         self.running = True
         while running:
             event = self.get_event()
-            if event == pygame.QUIT:
+            if event.type == pygame.QUIT:
                 self.running = False
 
 if __name__ == "__main__":

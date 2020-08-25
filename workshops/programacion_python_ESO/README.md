@@ -291,14 +291,14 @@ encontremos programando. Tendremos que:
    cuando [`pygame.event.wait().type`](https://www.pygame.org/docs/ref/event.html#pygame.event.wait) retorna un evento del tipo
    [`pygame.QUIT`](https://www.pygame.org/docs/ref/event.html)).
 6. Cerrar Pygame (usar [`pygame.quit()`](https://www.pygame.org/docs/ref/pygame.html#pygame.quit)).
-Una posible solución está disponible [aquí]().
+Una posible solución está disponible [aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/empty_display_v0.py).
    
 Gran cantidad de información sobre cómo programar juegos usando Pygame
 puede encontrarse en [Programar Juegos Arcade con Python y
 Pygame](http://programarcadegames.com/).
 
 ## <a id="ejer_5"></a>Ejercicio 5: Pintar un par de puntos
-Aparte de aprender cómo dibujar puntos, el objetivo de este ejercicio
+Además de aprender cómo dibujar puntos, el objetivo de este ejercicio
 es averiguar cómo se distribuyen las coordenadas en un display de
 Pygame.
 1. Importar Pygame (ídem [Ejercicio 4](#ejer_4)).
@@ -309,20 +309,22 @@ Pygame.
 6. Pintar un punto verde en (x=10, y=100).
 7. Esperar a que el usuario cierre la pantalla (ídem [Ejercicio 4](#ejer_4)).
 8. Cerrar Pygame (ídem [Ejercicio 4](#ejer_4)).
-9. Posible [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/plot_pixels_v0.py).
+
+Una posible solución es [esta](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/plot_pixels_v0.py).
 
 ## ¡Odio tener código duplicado!
 Si comparamos el código (fuente) desarrollado para los Ejercicios
-[4](#ejer_4) y [5](#ejer_5), veremos que casi son idénticos. Esto
+[4](#ejer_4) y [5](#ejer_5), apreciaremos que son casi idénticos. Esto
 puede ser interesante cuando queremos que ambos módulos sean
 completamente independientes, de manera que si modificamos uno, el
 comportamiento del otro no se vea afectado. Sin embargo, en general
 tener código duplicado no es una buena idea porque dificulta su
 mantenimiento. Por ejemplo, si nos damos cuenta de que en la solución
 del [Ejercicio 4](#ejer_4) hemos cometido un error, casi seguro que
-dicho error está también en la solución del [Ejercicio 5](#ejer_5). Lo
-ideal sería que tanto las soluciones de ambos ejercicios compartieran
-el código que tienen en común.
+dicho error está también en la solución del [Ejercicio 5](#ejer_5),
+porque reutiliza mucho del código. Lo ideal sería que las
+implementaciones de ambos ejercicios compartieran el código que tienen
+en común.
 
 La solución más frecuente y elegante para resolver la duplicación de
 código pasa por utilizar el [Paradigma de Programación Orientada a
@@ -333,13 +335,14 @@ o en inglés,
 ## Pensando en objetos
 La OOP ayuda a organizar el código fuente de tus programas y a hacer
 que éstos se puedan mantener (por ejemplo, encontrar
-[bugs](https://es.wikipedia.org/wiki/Error_de_software) (bichos), a lo
-que también se llama
+[bugs](https://es.wikipedia.org/wiki/Error_de_software) (bichos,
+aunque todo el mundo usa la palabra inglesa), a lo que también se
+llama
 [depurar](https://es.wikipedia.org/wiki/Depuraci%C3%B3n_de_programas),
 [debugging](https://en.wikipedia.org/wiki/Debugging) en inglés) más
 fácilmente. La idea es organizar el código en clases (así se llaman
 estructuras de datos (llamadas atributos en el contexto de la OOP) y
-funciones (llamadas métodos en el contexto de la OOP) asociadas) y
+funciones (llamadas métodos en el contexto de la OOP) asociadas)), y
 utilizar la
 [herencia](https://es.wikipedia.org/wiki/Herencia_(inform%C3%A1tica))
 para evitar reimplementar lo ya implementado (las clases heredan el
@@ -351,12 +354,12 @@ objetos](https://docs.python.org/3/reference/datamodel.html). Por
 ejemplo, para implementar la Criba de Erastótenes del [Ejercicio
 2](#ejer_2) hemos instanciado un objeto de clase lista (`primes`).
 
-Veamos un ejemplo más "natural". Supongamos que queremos trabajar con
-gatos y perros, y queremos que cuando un perro o un gato sean
-instanciados, aparezca un mensaje que indique tal acción, y cuando
-sean des-instanciados (eliminados de la memoria de la computadora)
-aparezca otro mensaje indicando también dicha acción. Usando la OOP,
-podemos definir 3 clases:
+Veamos un ejemplo de diseño de clases. Supongamos que queremos
+trabajar con gatos y perros, y queremos que cuando un perro o un gato
+sean instanciados, aparezca un mensaje que indique tal acción, y
+cuando sean borrados de la memoria de la computadora aparezca otro
+mensaje indicando también dicha acción. Usando la OOP, podemos definir
+3 clases:
 [`Animal`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/animal.py)
 (las clases en Python suelen comenzar con una letra en mayúscula),
 [`Cat`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cat.py)
@@ -379,20 +382,20 @@ usando la siguiente relación:
 
 indicando que un objeto de la clase `Cat`y otro de la clase `Dog` son
 ambos animales, y por tanto, comparten el comportamiento definido en la
-clase `Animal' . Podemos comprobar esto escribiendo en el terminal:
+clase `Animal`. Podemos comprobar esto ejecutando en el terminal:
 
 ```bash
 python animal.py
 
 ```
-Escribiendo luego:
+Luego ejecutando:
 
 ```bash
 python dog.py
 
 ```
 
-Y finalmente:
+Y finalmente, ejecutando:
 
 ```bash
 python cat.py
@@ -407,14 +410,38 @@ animal`, el código que hay en el bloque del `__main__` no se ejecuta.
 Vamos a definir 2 clases en 2 módulos (archivos) diferentes:
 1. Una clase padre, llamada `EmptyDisplay`, en la que vamos a definir
    3 métodos:
+
    1. El constructor `__init__(self, width, caption)`, en el que
-      crearemos un display vacío.
-   2. El destructor `__del__(self)`, en el que cerraremos el display.
-   3. Un método llamado `__run__(self)`, que implementará la lógica
+      crearemos un display vacío. Entre paréntesis hemos representado
+      sus parámetros:
+
+	  1. `self`, que [representa los atributos que de forma dinámica
+         son
+         creados](https://medium.com/quick-code/understanding-self-in-python-a3704319e5f0).
+		 
+	  2. `width`, que indica el ancho de la ventana, en pixels.
+	  
+	  3. `height` que indica el alto de la ventana, en pixels.
+	  
+  Todos los constructures de clase en Python tienen por nombre
+  `__init__`.
+  
+   2. El destructor `__del__(self)`, en el que cerraremos el
+      display. Nótese que el primer parámetro de todos los métodos de
+      una clase debe ser `self` (que no es más que una convención, en
+      realidad podría usarse cuanquier otro nombre para este
+      parámetro).
+
+   3. Un método llamado `run(self)`, que implementará la lógica
       necesaria para esperar a que se cierre la ventana.
+	  
+   4. Un método denominado `get_event(self)`, que retorna un evento
+      (por ejemplo, el cierre de la ventana). El método `run(self)`
+      llamará a `get_event(self)`.
+   
 2. Una clase hija que hereda de la clase `EmptyDisplay`, llamada
    `PlotPlixels`, que *sobreescribirá* el método `EmptyDisplay.run()`
-   con la lǵica necesaria para pintar los dos pixels pixels y luego,
+   con la loǵica necesaria para pintar los dos pixels pixels y luego,
    esperar a que se cierre la ventana.
 
 Una posible solución está disponible en
@@ -573,6 +600,35 @@ main():
 * `cat`: muestra el contenido de un archivo. Ejemplos:
   ```bash
   cat mi_fichero
+  ```
+
+* `mkdir` (make directory): crea un directorio. Ejemplo:
+  ```bash
+  mkdir lib
+  ```
+
+* `cp` (copy): copia un archivo/directorio. Ejemplos:
+  ```bash
+  cp hello_world.py copia_de_hello_world.py
+  cp -r lib /tmp  # Copia el directorio "lib" al directorio "/tmp"
+  ```
+
+* `mv` (move): mueve un archivo/directorio o renobra un
+  archivo/directorio. Ejemplos:
+  ```bash
+  mv hello_world.py hola_mundo.py  # Renombra un archivo
+  mv lib biblioteca                # Renombra un directorio
+  ```
+
+* `rm` (remove): borra un archivo/directorio PARA SIEMPRE. Ejemplos:
+  ```bash
+  rm hola_mundo.py  # Elimina el archivo "hola_muldo.py" del sistema de ficheros
+  rm -r lib         # Borra el directorio "lib", junto co todos sus contenidos
+  ```
+
+* `rmdir` (remove directory): borra un directorio vacío PARA SIEMPRE. Ejemplo:
+  ```bash
+  rm lib  # Borra el directorio vacío "lib"
   ```
 
 ## Apéndice B: Aprovisionamiento
