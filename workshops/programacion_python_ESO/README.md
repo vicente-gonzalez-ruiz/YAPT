@@ -201,15 +201,15 @@ subproblemas:
    de ellos comprobar:
    1. Si N es divisible entre P, entonces N es compuesto y debemos
       terminar el algoritmo.
-3. Si hemos llegado hasta este paso, entonces N es primo.
+3. Si hemos llegado hasta aquí en el algoritmo, entonces N es primo.
 
 El paso número 1 es famoso desde hace más de 2000 años y se conoce
 como [La Criba de
 Erastótenes](https://es.wikipedia.org/wiki/Criba_de_Erat%C3%B3stenes). Recreando
-lo que podemos encontrar en el link anterior, debemos:
-1. Crear una lista con todos los números naturales menores o iguales
-   que N+1 y superiores a 2 (recuerda que el 1 divide a todos los
-   números de forma exacta). Esto se puede hacer en Python
+lo que podemos encontrar en la Wikipedia, debemos:
+1. Crear una lista con todos los números naturales superiores a 2
+   (recuerda que el 1 divide a todos los números de forma exacta) y
+   menores o iguales que sqrt(N). Esto se puede hacer en Python
    escribiendo:
    
    ```python
@@ -230,9 +230,9 @@ lo que podemos encontrar en el link anterior, debemos:
    ```
 
    En este punto, `primes` contiene la lista de todos los números
-   naturales menores o iguales que N y que son números primos.
+   naturales entre 2 y sqrt(N), y que son números primos.
    
-Finalmente, sólo los queda comprobar si alguno de los números de la
+Finalmente, sólo nos queda comprobar si alguno de los números de la
 lista con la criba divide de forma exacta a N:
 
 ```python
@@ -253,7 +253,10 @@ conocidos](https://es.wikipedia.org/wiki/Mayor_n%C3%BAmero_primo_conocido).
 Dejemos ahora un poco de lado a las matemáticas y vamos programar juegos sencillos. El primero de ellos consiste en adivinar qué número, dentro de un rango, ha elegido de forma aleatoria la computadora. Básicamente, nuestro juego consistiría en:
 
 1. Generar un número aleatorio (dentro de un rango que el jugador debe
-conocer). Llamémoslo `random_number`. Una forma de hacer esto es usar el método `random.randrange()` de la PSL.
+conocer). Llamemos `random_number` a dicho número. Una forma de hacer
+esto es usar el método
+[`random.randrange()`](https://docs.python.org/3/library/random.html#random.randrange)
+de la PSL.
 2. Solicitar al jugador un número. Llamémoslo `guessed_number`. En la solición del [Ejercicio 2](#ejer_2) hay un ejemplo de cómo solicitar una entrada al programa desde el teclado.
 3. Mientras el jugador no adivine el número (mientras `guessed_number != random_number`):
    1. Indicar al jugador si `random_number` es mayor o menor que
