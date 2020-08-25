@@ -179,7 +179,8 @@ de ejecutarlo.
    fuente](https://en.wikipedia.org/wiki/Source_code) del
    programa. Por contrapartida, los programas interpretados no tienen
    que compilarse y por tanto, no dependen de la plataforma (siempre y
-   cuando exista un intérprete para dicha plataforma).
+   cuando [exista un intérprete para dicha
+   plataforma](https://www.python.org/downloads/)).
 
 ## <a id="ejer_2"></a>Ejercicio 2: Averigua si un número natural N es primo
 
