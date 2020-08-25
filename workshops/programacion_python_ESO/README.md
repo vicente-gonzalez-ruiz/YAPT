@@ -440,9 +440,9 @@ Vamos a definir 2 clases en 2 módulos (archivos) diferentes:
       una palbra reservada (el método podría tener cualquier otro
       nombre).
 
-   4. Un método denominado `get_event(self)`, que retorna un evento
+   <!--4. Un método denominado `get_event(self)`, que retorna un evento
       (por ejemplo, el cierre de la ventana). El método `run(self)`
-      llamará a `get_event(self)`.
+      llamará a `get_event(self)`.-->
    
 2. Una clase hija que hereda de la clase `EmptyDisplay`, llamada
    `PlotPlixels`, que *sobreescribirá* el método `EmptyDisplay.run()`
@@ -463,44 +463,68 @@ por casualidad hubiera algún paquete en la
 [PyPI](https://pypi.org/) llamado también `colors`, evitaríamos que
 nuestro `colors` enmascarara al paquete "estándar".
 
+Nótese que tenemos:
+```
++--------------+
+| EmptyDisplay |
++------+-------+
+       |
+       |
+       v
+ +-----+------+
+ | PlotPixels |
+ +------------+
+```
+
 ## <a id="ejer_7"></a>Ejercicio 7: Pintar un rectángulo
 La pelota de nuestro Pong va a ser un cuadrado. Aprendamos a dibujar rectángulos:
-1. Crear una clase llamada `DrawRectangle` que herede de la clase `EmptyDisplay`.
-2. Sobreescribir el método `EmptyDisplay.run()` para que se pinte un
-   rectángulo y se cierre la ventana. Para dibujar un rectángulo podemos usar el método [`pygame.draw.rec()`](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect).
-Una posible solución puede encontrarse en [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
 
-## <a id="ejer_8"></a>Ejercicio 8: Rebota el rectángulo
-En nuestro Pong la pelota rebotará en los límites del
-display. Hagamos, por tanto, que el rectángulo se mueva en diagonal, a
-velocidad constante a razón de un pixel en horizontal y otro en
-vertical por cada frame presentado, rebotando en las paredes de la
-ventana.
+1. Crear una clase llamada `DrawRectangle` que herede de la clase
+   `EmptyDisplay`.
+   
+2. Sobreescribir el método `EmptyDisplay.run()` para que se pinte un
+   rectángulo y se cierre la ventana. Para dibujar un rectángulo
+   podemos usar el método
+   [`pygame.draw.rec()`](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect).
+   
+Una posible solución puede encontrarse en
+   [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
+
+## <a id="ejer_8"></a>Ejercicio 8: Rebota el rectángulo en los lados de la ventana
+En nuestro Pong la pelota rebotará en los límites del display. Hagamos
+que el rectángulo se mueva en diagonal, a velocidad constante a razón
+de un pixel en horizontal y otro en vertical por cada frame
+presentado, rebotando en las paredes de la ventana. En concreto:
+
 1. Crear una clase llamada `BouncingBall` que herede de la clase
    `EmptyDisplay`.
-2. Sobreescribir el método `EmptyDisplay.run()` para que pinte la
+
+2. Sobreescribir el método `EmptyDisplay.run()` para que rebote la
    pelota (un cuadrado blanco). En este método tendremos que controlar
    la posición de la pelota, y en lugar de usar `pygame.event.wait()`
    para detener la ejecución de la aplicación hasta que no se produzca
-   un nuevo evento, usaremos el método
-   `[pygame.event.get()`](https://www.pygame.org/docs/ref/event.html#pygame.event.get)
-   que lo que hace básicamente es sacar de una cola de eventos el
+   un nuevo evento, usaremos el método `[pygame.event.get()`](https://www.pygame.org/docs/ref/event.html#pygame.event.get),
+   que lo que hace básicamente es sacar de la cola de eventos el
    siguiente disponible y retornar inmediatamente, tanto si la cola
    tiene elementos como si está vacía. A este último tipo de
-   instrucciones (bueno, en realidad un método en nuestro caso) se les
-   llama *no bloqueantes*, porque retornan de su llamada
-   rápidamente. En contrapartida, `pygame.event.wait()` es un método
-   bloqueante. Si queremos refrescar el display de nuestro juego,
-   `pygame.event.get()` es la solución, y debe usarse así:
+   instrucciones se les llama *no bloqueantes*, porque retornan de su
+   llamada tan pronto como es posible. Nótese que, por el contrario,
+   `pygame.event.wait()` es un método bloqueante.
    
+   `pygame.event.get()` debe utlizarse así:
+
    ```python
    for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
    ```
+   
+   y nos permitirá pintar en nuestra ventana tan rápido como deseemos
+   (o sea posible con los recursos de los que disponemos).
+   
+Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball.py).
 
-Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/bouncing_ball.py).
-
+<!--
 ## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`
 La clase `EmptyDisplay` espera (quedándose bloqueada en la instrucción
 `pygame.event.wait()`) a recibir el evento `pygame.QUIT` que indica
@@ -519,6 +543,13 @@ opciones:
    sobreescribamos el método `poll_event()` (usando la clase
    `pygame.event.get()`). Así tendremos menos código en las clases
    herederas como `BouncingBall`.
+-->
+
+## Ejercicio: Calculando los FPS (Frames Per Second)
+La clase `BouncingBall` mueve la pelota tan rápido como es posible, y
+sería interesante conocer el número de FPS alcanzados (entre otros
+motivos porque el ser humano difícilmente puede apreciar más de 100
+FPS, de hecho, en los juegos lo normal es limitar los FPS a 60).
 
 ## Ejercicio: Añadir sonido.
 

@@ -19,7 +19,7 @@ class EmptyDisplay():
     def run(self):
         running = True
         while running:
-            event = self.pygame.event.wait()
+            event = pygame.event.wait()
             if event.type == pygame.QUIT:
                 running = False
 

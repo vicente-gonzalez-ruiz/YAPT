@@ -7,6 +7,13 @@ HEIGHT = 1
 
 class BouncingBall(EmptyDisplay):
 
+    def __init__(self, width = 800, height = 600, caption = ""):
+        super().__init__(width, height, caption)
+        self.running = True
+    
+    def do_some_extra_stuff(self):
+        pass
+    
     def run(self):
         ball_width = 16
         ball_height = 16
@@ -18,8 +25,7 @@ class BouncingBall(EmptyDisplay):
         x_direction = 1  # Go to right
         y_direction = 1  # Go to bottom
 
-        running = True
-        while running:
+        while self.running:
             self.display.fill(color.black)
             pygame.draw.rect(self.display, color.white, (x_coordinate, y_coordinate, ball_width, ball_height))
             pygame.display.update()
@@ -36,7 +42,9 @@ class BouncingBall(EmptyDisplay):
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
+                    self.running = False
+
+            self.do_some_extra_stuff()
 
 if __name__ == "__main__":
     display = BouncingBall(caption = "A bouncing ball of size 16x16")
