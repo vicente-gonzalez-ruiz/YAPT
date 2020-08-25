@@ -1,5 +1,6 @@
 import pygame
 
+# Crea una ventana vacía y espera a que la cerremos.
 class EmptyDisplay():
 
     def __init__(self,
@@ -16,10 +17,13 @@ class EmptyDisplay():
         print("Goodbye!")
         pygame.quit()
 
+    def get_event(self):
+        return pygame.event.wait().type
+
     def run(self):
         self.running = True
         while running:
-            event = pygame.event.wait().type
+            event = self.get_event()
             if event == pygame.QUIT:
                 self.running = False
 

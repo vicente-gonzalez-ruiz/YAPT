@@ -271,30 +271,31 @@ Una posible solución a este ejercicio puede
 encuentrarse
 [aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/guess_the_number.py). Otra implementación podría ser [esta](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py), que es parte del paquete [freegames](https://pypi.python.org/pypi/freegames).
 
-## <a id="ejer_4"></a>Ejercicio 4: Crear una pantalla vacía (empty screen) usando Pygame
+## <a id="ejer_4"></a>Ejercicio 4: Crear una ventana vacía (empty screen) usando Pygame
 Nuestra versión de Pong se va a apoyar en el uso del paquete
 [Pygame](https://www.pygame.org/news), que ofrece una
 [API](https://en.wikipedia.org/wiki/API) para programar videojuegos en
-Python. Lo primero que vamos a hacer es aprender a abrir (y cerrar)
-una [display](https://www.pygame.org/docs/ref/display.html) (una
-ventana (window) o una pantalla (screen), dependiendo del sistema
-gráfico porporcionado por el
-[SO](https://es.wikipedia.org/wiki/Sistema_operativo)) de Pygame. Tendremos que:
+Python. Lo primero que vamos a hacer es aprender a abrir (y cerrar) un
+[display](https://www.pygame.org/docs/ref/display.html) (una ventana
+(window) o una pantalla (screen), dependiendo del sistema gráfico
+porporcionado por el
+[SO](https://es.wikipedia.org/wiki/Sistema_operativo)) en el que nos
+encontremos programando. Tendremos que:
 
 1. Importar Pygame (escribir la instrucción de Python `import pygame`).
 2. Inicializar Pygame (usar el método [`pygame.init()`](https://www.pygame.org/docs/ref/pygame.html#pygame.init)).
-3. Crear una pantalla (usar [`pygame.display.set_mode()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_mode)).
-4. Darle un título a la pantalla (usar
+3. Crear una ventana (usar [`pygame.display.set_mode()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_mode)).
+4. Darle un título a la ventana (usar
    [`pygame.display.set_caption()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_caption)).
-5. Esperar a que el usuario cierre la pantalla (cosa que ocurre,
+5. Esperar a que el usuario cierre la ventana (cosa que ocurre,
    cuando [`pygame.event.wait().type`](https://www.pygame.org/docs/ref/event.html#pygame.event.wait) retorna un evento del tipo
    [`pygame.QUIT`](https://www.pygame.org/docs/ref/event.html)).
 6. Cerrar Pygame (usar [`pygame.quit()`](https://www.pygame.org/docs/ref/pygame.html#pygame.quit)).
-7. Una posible
-   [solución](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_display_v0.py). Gran
-   cantidad de información sobre cómo programar juegos usando Pygame
-   puede encontrarse en [Programar Juegos Arcade con Python y
-   Pygame](http://programarcadegames.com/).
+Una posible solución está disponible [aquí]().
+   
+Gran cantidad de información sobre cómo programar juegos usando Pygame
+puede encontrarse en [Programar Juegos Arcade con Python y
+Pygame](http://programarcadegames.com/).
 
 ## <a id="ejer_5"></a>Ejercicio 5: Pintar un par de puntos
 Aparte de aprender cómo dibujar puntos, el objetivo de este ejercicio
@@ -550,8 +551,31 @@ main():
 7. [PacMan](https://github.com/grantjenks/free-python-games/blob/master/freegames/pacman.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi). Extra info at [Using Turtle graphics: a Tkinter based turtle graphics module for Python](http://localhost:8888/notebooks/YAPT/A3-Turtle.ipynb#Using-Turtle-graphics:-a-Tkinter-based-turtle-graphics-module-for-Python).
 8. [I/O](http://localhost:8888/notebooks/YAPT/18-IO.ipynb).
 
-## Aprovisionamiento
-{{{
+## Apéndice A: Comandos básicos del terminal
+
+* `cd` (change directory): permite moverse por el sistema de
+  ficheros. Ejemplos:
+  ```bash
+  cd Downloads  # Entra en el directorio "Downloads"
+  cd            # Retorna al "home directory"
+  cd ..         # Sube al directorio superior en el sistema de ficheros
+  ```
+
+* `ls` (list): muestra el contenido de un directorio. Ejemplos:
+  ```bash
+  ls            # Listado simple
+  ls -l         # Listado largo
+  ls -a         # Mostrar ficheros "ocultos"
+  ls -R         # Listado recursivo
+  ls -lR        # Listado largo y recursivo
+  ```
+  
+* `cat`: muestra el contenido de un archivo. Ejemplos:
+  ```bash
+  cat mi_fichero
+  ```
+
+## Apéndice B: Aprovisionamiento
 1. Instalar [Xubuntu 20.04 (Focal
    Fossa)](https://xubuntu.org/download/) en un pendrive de al menos 8
    GB. Xubuntu recién instalado ocupa aproximadamente 5 GB.
