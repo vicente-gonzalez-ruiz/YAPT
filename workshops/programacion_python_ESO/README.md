@@ -214,7 +214,7 @@ lo que podemos encontrar en la Wikipedia, debemos:
    
    ```python
    primes = []
-   for i in range(2, math.sqrt(N)+1):
+   for i in range(2, int(math.sqrt(N))+1):
 	   primes.append(i)
    ```
    
@@ -222,9 +222,9 @@ lo que podemos encontrar en la Wikipedia, debemos:
    todos sus múltiplos en dicha lista:
    
    ```python
-   for i in range(2, math.sqrt(N)+1):
+   for i in range(2, int(math.sqrt(N))+1):
 	   if i in primes:
-		   for j in range(i*2, math.sqrt(N)+1, i):
+		   for j in range(i*2, int(math.sqrt(N))+1, i):
 			   if j in primes:
 				   primes.remove(j)
    ```
@@ -244,10 +244,12 @@ for i in primes:
 ```
 
 Una posible solución a este ejercicio puede se encuentra
-[aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/check_prime.py). Si
+[aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/check_prime.py). Si
 tienes curiosidad, la Wikipedia nos habla sobre [los números primos más
 grandes
 conocidos](https://es.wikipedia.org/wiki/Mayor_n%C3%BAmero_primo_conocido).
+
+<!-- día 3 -->
 
 ## <a id="ejer_3"></a>Ejercicio 3: Bueno, juguemos un poco ahora ... y ¡averigua el número!
 Dejemos ahora un poco de lado a las matemáticas y vamos programar juegos sencillos. El primero de ellos consiste en adivinar qué número, dentro de un rango, ha elegido de forma aleatoria la computadora. Básicamente, nuestro juego consistiría en:
@@ -267,7 +269,7 @@ Si hemos sido inteligentes, deberíamos haber adivinado el número a lo sumo en 
 
 Una posible solución a este ejercicio puede
 encuentrarse
-[aquí](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/guess_the_number.py). Otra implementación podría ser [esta](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py), que es parte del paquete [freegames](https://pypi.python.org/pypi/freegames).
+[aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/guess_the_number.py). Otra implementación podría ser [esta](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py), que es parte del paquete [freegames](https://pypi.python.org/pypi/freegames).
 
 ## <a id="ejer_4"></a>Ejercicio 4: Crear una pantalla vacía (empty screen) usando Pygame
 Nuestra versión de Pong se va a apoyar en el uso del paquete
@@ -586,18 +588,24 @@ main():
    pyenv)](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/01-hello_world/02-installation.ipynb)
    la versión 3.8.5 de CPython, y crear un entorno virtual llamado
    "curso_python".
-   
-3. Instalar pygame usando pip dentro del VE. Ver
+
+3. Activar el VE `curso_python` escribiendo:
+   ```bash
+   pyenv activate curso_python
+   ```
+   en `.bashrc`.
+
+4. Instalar pygame usando pip dentro del VE. Ver
    https://stackoverflow.com/questions/7652385/where-can-i-find-and-install-the-dependencies-for-pygame
    En concreto, en máquinas con Debian y derivados hay que instalar:
    ```
    sudo apt-get install python-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev   libsdl1.2-dev libsmpeg-dev python-numpy subversion libportmidi-dev ffmpeg libswscale-dev libavformat-dev libavcodec-dev
    ```
 
-4. Instalar thommy con `pip install thonny`.
+5. Instalar thommy con `pip install thonny`.
 
-5. Instalar xosview con `apt install xosview`.
+6. Instalar xosview con `apt install xosview`.
 
-6. Instalar epiphany con `apt install epiphany`.
+7. Instalar epiphany con `apt install epiphany`.
 
-6. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md . como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).
+8. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md . como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).
