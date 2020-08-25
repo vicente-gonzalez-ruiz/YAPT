@@ -44,8 +44,8 @@ Vamos programar sobre un
 [PC](https://es.wikipedia.org/wiki/Computadora_personal#:~:text=Una%20computadora%20personal%2C%20computador%20personal,las%20computadoras%20IBM%20PC%20compatibles.)
 con [Linux](https://es.wikipedia.org/wiki/GNU/Linux), en concreto una
 versión de Linux llamada [Xubuntu](https://xubuntu.org/), aunque
-Python puede usarse casi en cualquier plataforma actual (excepto en
-Android e IOs).
+Python puede usarse [casi](https://www.python.org/download/other/) en
+cualquier plataforma actual.
 
 ## ¿Qué vamos a programar?
 
@@ -173,11 +173,13 @@ de ejecutarlo.
    ([CPU](https://en.wikipedia.org/wiki/Central_processing_unit) +
    [SO](https://es.wikipedia.org/wiki/Sistema_operativo)), pero corren
    más rápido que los interpretados porque la CPU ejecuta directamente
-   el código máquina. Cuando se interpretan, la CPU en realidad
-   ejecuta el intérprete, que es quien ejecuta las instrucciones del
-   [código fuente](https://en.wikipedia.org/wiki/Source_code) del
+   el código máquina de nuestro programa. Cuando las aplicaciones se
+   interpretan, la CPU en realidad ejecuta el intérprete, que es quien
+   ejecuta las instrucciones del [código
+   fuente](https://en.wikipedia.org/wiki/Source_code) del
    programa. Por contrapartida, los programas interpretados no tienen
-   que compilarse y por tanto, no dependen de la plataforma.
+   que compilarse y por tanto, no dependen de la plataforma (siempre y
+   cuando exista un intérprete para dicha plataforma).
 
 ## <a id="ejer_2"></a>Ejercicio 2: Averigua si un número natural N es primo
 
