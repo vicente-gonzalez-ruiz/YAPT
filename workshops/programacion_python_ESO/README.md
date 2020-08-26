@@ -252,7 +252,10 @@ conocidos](https://es.wikipedia.org/wiki/Mayor_n%C3%BAmero_primo_conocido).
 <!-- día 3 -->
 
 ## <a id="ejer_3"></a>Ejercicio 3: Bueno, juguemos un poco ahora ... y ¡averigua el número!
-Dejemos ahora un poco de lado a las matemáticas y vamos programar juegos sencillos. El primero de ellos consiste en adivinar qué número, dentro de un rango, ha elegido de forma aleatoria la computadora. Básicamente, nuestro juego consistiría en:
+Dejemos un poco de lado a las matemáticas y vamos programar juegos
+sencillos. El primero de ellos consiste en adivinar qué número, dentro
+de un rango, ha elegido de forma aleatoria la
+computadora. Básicamente, nuestro juego consistiría en:
 
 1. Generar un número aleatorio (dentro de un rango que el jugador debe
 conocer). Llamemos `random_number` a dicho número. Una forma de hacer
