@@ -563,25 +563,23 @@ opciones:
    herederas como `BouncingBall`.
 -->
 
-## Ejercicio: Calculando los FPS (Frames Per Second)
+## <a id="ejer_9"></a>Ejercicio 9: Calculando los FPS (Frames Per Second)
 La clase `BouncingBall` mueve la pelota tan rápido como es posible, y
-sería interesante conocer el número de FPS alcanzados (entre otros
-motivos porque el ser humano difícilmente puede apreciar más de 100
-FPS, de hecho, en los juegos lo normal es limitar los FPS a 60).
+sería interesante conocer el número de FPS alcanzados, principalmente
+porque el ser humano difícilmente puede apreciar más de 100 FPS (de
+hecho, en los juegos lo normal es limitar los FPS a 60).
 
-## Ejercicio: Añadir sonido.
+1. Explicar el código.
+
+Véase [`bouncing_ball_FPS.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball_FPS.py).
+
+
+## <a id="ejer_10"></a>Ejercicio 10: Añadiendo sonido
 
 En nuestro camino hacia implementar un [clone de Pong](https://sites.google.com/site/thepythonpongtutorial/home).
 
 
 ## Ejercicio: Usar sprites
-
-## Ejercicio: Reutilizar el código de la pantalla vacía para pintar puntos
-1. Distribuir el código del Ejercicio 1 en métodos (de una clase
-   llamada `Screen`; llamar al fichero que la contiene `screen.py`),
-   de forma que la clase creada para el Ejercicio 2 pueda reutilizar:
-   (1) la parte de código que crea la ventana, y (2) la parte de
-   código que cierra la ventana y Pygame.
 
 ```
 <---------------------- screen_width ----------------------->
@@ -607,6 +605,14 @@ En nuestro camino hacia implementar un [clone de Pong](https://sites.google.com/
 |                 +----------+                              | |
 +-----------------------------------------------------------+ v
 ```
+
+## Ejercicio: Reutilizar el código de la pantalla vacía para pintar puntos
+1. Distribuir el código del Ejercicio 1 en métodos (de una clase
+   llamada `Screen`; llamar al fichero que la contiene `screen.py`),
+   de forma que la clase creada para el Ejercicio 2 pueda reutilizar:
+   (1) la parte de código que crea la ventana, y (2) la parte de
+   código que cierra la ventana y Pygame.
+
 
 ```
 main():
