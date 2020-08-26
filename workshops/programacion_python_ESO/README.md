@@ -262,48 +262,57 @@ conocer). Llamemos `random_number` a dicho número. Una forma de hacer
 esto es usar el método
 [`random.randrange()`](https://docs.python.org/3/library/random.html#random.randrange)
 de la PSL.
-2. Solicitar al jugador un número. Llamémoslo `guessed_number`. En la solición del [Ejercicio 2](#ejer_2) hay un ejemplo de cómo solicitar una entrada al programa desde el teclado.
+2. Solicitar al jugador un número usando
+   [`input()`](https://www.w3schools.com/python/ref_func_input.asp). Llamémoslo
+   `guessed_number`. En la solución del [Ejercicio 2](#ejer_2) hay un
+   ejemplo de cómo solicitar una entrada al programa desde el teclado.
 3. Mientras el jugador no adivine el número (mientras `guessed_number != random_number`):
    1. Indicar al jugador si `random_number` es mayor o menor que
       `guessed_number`.
    2. Solicitar al jugador un nuevo `guessed_number`.
 
-Si hemos sido inteligentes, deberíamos haber adivinado el número a lo sumo en `log_2(N)` (`= log(N)/log(2)`) intentos, que es la complejidad algorítmica de la [búsqueda binaria](https://en.wikipedia.org/wiki/Binary_search_algorithm).
+Tras implementar nuestro juego y ejecutarlo unas cuantas veces, aprenderemos que podemos siempre adivinar el número a lo sumo en `log_2(N)` (`= log(N)/log(2)`) intentos, que es la complejidad algorítmica de la [búsqueda binaria](https://en.wikipedia.org/wiki/Binary_search_algorithm).
 
 Una posible solución a este ejercicio puede
 encuentrarse
 [aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/guess_the_number.py). Otra implementación podría ser [esta](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py), que es parte del paquete [freegames](https://pypi.python.org/pypi/freegames).
 
 ## <a id="ejer_4"></a>Ejercicio 4: Crear una ventana vacía (empty screen) usando Pygame
-Nuestra versión de Pong se va a apoyar en el uso del paquete
+El segundo (y último juego) que vamos a implementar en este curso de
+programación con Python es una versión del videojuego Pong. Para
+desarrollarlo más fácilmente, nos vamos a apoyar en el uso del paquete
 [Pygame](https://www.pygame.org/news), que ofrece una
 [API](https://en.wikipedia.org/wiki/API) para programar videojuegos en
 Python. Lo primero que vamos a hacer es aprender a abrir (y cerrar) un
 [display](https://www.pygame.org/docs/ref/display.html) (una ventana
 (window) o una pantalla (screen), dependiendo del sistema gráfico
-porporcionado por el
+porporcionado por la computadora y el
 [SO](https://es.wikipedia.org/wiki/Sistema_operativo)) en el que nos
-encontremos programando. Tendremos que:
+encontremos programando (por ejemplo, en Xubuntu, el sistema gráfico
+es el [X Window
+System](https://es.wikipedia.org/wiki/Sistema_de_ventanas_X)).
+
+Bien, para implementar este ejercicio tendremos que:
 
 1. Importar Pygame (escribir la instrucción de Python `import pygame`).
 2. Inicializar Pygame (usar el método [`pygame.init()`](https://www.pygame.org/docs/ref/pygame.html#pygame.init)).
 3. Crear una ventana (usar [`pygame.display.set_mode()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_mode)).
-4. Darle un título a la ventana (usar
+4. Opcionalmente, darle un título a la ventana (usar
    [`pygame.display.set_caption()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_caption)).
 5. Esperar a que el usuario cierre la ventana (cosa que ocurre,
    cuando [`pygame.event.wait().type`](https://www.pygame.org/docs/ref/event.html#pygame.event.wait) retorna un evento del tipo
    [`pygame.QUIT`](https://www.pygame.org/docs/ref/event.html)).
-6. Cerrar Pygame (usar [`pygame.quit()`](https://www.pygame.org/docs/ref/pygame.html#pygame.quit)).
-Una posible solución está disponible [aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/empty_display_v0.py).
-   
-Gran cantidad de información sobre cómo programar juegos usando Pygame
+6. Cuando el usuario haya cerrado la ventana, cerrar también Pygame (usar [`pygame.quit()`](https://www.pygame.org/docs/ref/pygame.html#pygame.quit)).
+
+Una posible solución está disponible [aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/empty_display_v0.py). Además, gran cantidad de información sobre cómo programar juegos usando Pygame
 puede encontrarse en [Programar Juegos Arcade con Python y
 Pygame](http://programarcadegames.com/).
 
 ## <a id="ejer_5"></a>Ejercicio 5: Pintar un par de puntos
 Además de aprender cómo dibujar puntos, el objetivo de este ejercicio
 es averiguar cómo se distribuyen las coordenadas en un display de
-Pygame.
+Pygame. Implementar:
+
 1. Importar Pygame (ídem [Ejercicio 4](#ejer_4)).
 2. Inicializar Pygame (ídem [Ejercicio 4](#ejer_4)).
 3. Crear una pantalla (ídem [Ejercicio 4](#ejer_4)).
@@ -315,7 +324,7 @@ Pygame.
 
 Una posible solución es [esta](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/plot_pixels_v0.py).
 
-## ¡Odio tener código duplicado!
+## Pero ... estamos escribiendo dos veces lo mismo :-/
 Si comparamos el código (fuente) desarrollado para los Ejercicios
 [4](#ejer_4) y [5](#ejer_5), apreciaremos que son casi idénticos. Esto
 puede ser interesante cuando queremos que ambos módulos sean
@@ -325,12 +334,13 @@ tener código duplicado no es una buena idea porque dificulta su
 mantenimiento. Por ejemplo, si nos damos cuenta de que en la solución
 del [Ejercicio 4](#ejer_4) hemos cometido un error, casi seguro que
 dicho error está también en la solución del [Ejercicio 5](#ejer_5),
-porque reutiliza mucho del código. Lo ideal sería que las
+porque reutiliza mucho de su código. Lo ideal sería que las
 implementaciones de ambos ejercicios compartieran el código que tienen
 en común.
 
-La solución más frecuente y elegante para resolver la duplicación de
-código pasa por utilizar el [Paradigma de Programación Orientada a
+La solución más frecuente y quizás elegante para resolver la
+duplicación de código pasa por utilizar el [Paradigma de Programación
+Orientada a
 Objetos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos),
 o en inglés,
 [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming).
@@ -338,15 +348,15 @@ o en inglés,
 ## Pensando en objetos
 La OOP ayuda a organizar el código fuente de tus programas y a hacer
 que éstos se puedan mantener (por ejemplo, encontrar
-[bugs](https://es.wikipedia.org/wiki/Error_de_software) (bichos,
-aunque todo el mundo usa la palabra inglesa), a lo que también se
-llama
-[depurar](https://es.wikipedia.org/wiki/Depuraci%C3%B3n_de_programas),
-[debugging](https://en.wikipedia.org/wiki/Debugging) en inglés) más
+[bugs](https://es.wikipedia.org/wiki/Error_de_software) (en español:
+bichos, aunque todo el mundo usa la palabra inglesa), a lo que también
+se llama
+[depurar](https://es.wikipedia.org/wiki/Depuraci%C3%B3n_de_programas)
+( [debugging](https://en.wikipedia.org/wiki/Debugging) en inglés) más
 fácilmente. La idea es organizar el código en clases (así se llaman
-estructuras de datos (llamadas atributos en el contexto de la OOP) y
-funciones (llamadas métodos en el contexto de la OOP) asociadas)), y
-utilizar la
+estructuras de datos (llamadas a su vez *atributos* en el contexto de
+la OOP) y funciones (llamadas normalmente *métodos* en el contexto de
+la OOP) asociadas)), y utilizar la
 [herencia](https://es.wikipedia.org/wiki/Herencia_(inform%C3%A1tica))
 para evitar reimplementar lo ya implementado (las clases heredan el
 comportamiento de las clases *ancestro*, también llamadas clases
@@ -355,20 +365,23 @@ instancias de las clases se les llama *objetos*, y en Python [casi
 todo lo que manejamos son
 objetos](https://docs.python.org/3/reference/datamodel.html). Por
 ejemplo, para implementar la Criba de Erastótenes del [Ejercicio
-2](#ejer_2) hemos instanciado un objeto de clase lista (`primes`).
+2](#ejer_2) hemos instanciado un objeto de [clase
+lista](https://www.w3schools.com/python/python_lists.asp) (`primes`)
+de la PSL.
 
-Veamos un ejemplo de diseño de clases. Supongamos que queremos
-trabajar con gatos y perros, y queremos que cuando un perro o un gato
-sean instanciados, aparezca un mensaje que indique tal acción, y
-cuando sean borrados de la memoria de la computadora aparezca otro
-mensaje indicando también dicha acción. Usando la OOP, podemos definir
-3 clases:
-[`Animal`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/animal.py)
-(las clases en Python suelen comenzar con una letra en mayúscula),
+Veamos un ejemplo de diseño de clases. Supongamos que vamos a
+implementar un programa que trabaja con gatos y perros, y queremos que
+cuando un perro o un gato sean instanciados (cuando creemos un objeto
+usando la clase *Dog* o la clase *Cat* (las clases en Python suelen
+comenzar con una letra en mayúscula)), aparezca un mensaje que indique
+tal acción, y cuando sean borrados de la memoria de la computadora
+aparezca otro mensaje indicando también dicha acción. Usando la OOP,
+podemos definir 3 clases:
+[`Animal`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/animal.py),
 [`Cat`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/cat.py)
 y
 [`Dog`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/dog.py),
-usando la siguiente relación:
+usando la siguiente (relación de) herencia:
 
 ```
     +--------+
@@ -407,7 +420,9 @@ python cat.py
 
 Si nos fijamos bien en los mensajes que aparecen en el terminal,
 cuando desde los módulos `cat.py` y `dog.py` se hace un `import
-animal`, el código que hay en el bloque del `__main__` no se ejecuta.
+animal`, el código que hay en el bloque del `__main__` no se
+ejecuta. Eso es porque cuando hacemos un `import`, la variable
+`__name__` tiene el nombre del módulo.
 
 ## <a id="ejer_6"></a>Ejercicio 6: Reimplementamos los Ejercicios [4](#ejer_4) y [5](#ejer_5) usando la OOP
 Vamos a definir 2 clases en 2 módulos (archivos) diferentes:
