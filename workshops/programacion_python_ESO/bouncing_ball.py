@@ -44,7 +44,7 @@ class BouncingBall(EmptyDisplay):
                 if event.type == pygame.QUIT:
                     self.running = False
 
-            self.do_some_extra_stuff()
+            self.do_some_extra_stuff()  # Útil en clases descendientes
 
 if __name__ == "__main__":
     display = BouncingBall(caption = "A bouncing ball of size 16x16")

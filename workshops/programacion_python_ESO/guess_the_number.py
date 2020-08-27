@@ -1,24 +1,30 @@
 import random
 
-lowest_number = 0
-highest_number = 100
-random_number = random.randrange(lowest_number, highest_number)
+# Paso 1
+start = 0  # Número más pequeño
+stop = 100 # Número más grande
+random_number = random.randrange(start, stop)
 
-print("He elegido un número entero entre", lowest_number, "y", highest_number)
-print("¡Adivínalo!")
+# Paso 2
+guessed_number = int(input(f"Introduce un número entre {start}, {stop}: "))
+assert guessed_number >= start and guessed_number <= stop, \
+  f"El número introducido {guessed_number} está fuera del intervalo de enteros [{start}, {stop}]"
 
-guessed_number = int(input("Introduce un número: "))
-assert guessed_number >= lowest_number and guessed_number <= highest_number, \
-  f"El número introducido {guessed_number} está fuera del intervalo de enteros [{lowest_number}, {highest_number}]"
-
+# Paso 3
 number_of_tries = 1
 while random_number != guessed_number:
+
   print("No has adivinado el número :-/")
+
+  # Paso 3.i
   if guessed_number < random_number:
-    print("Inténtalo de nuevo con un valor más alto")
+    print("Tu número es muy pequeño")
   elif guessed_number > random_number:
-    print("Inténtalo de nuevo con un valor más bajo")
+    print("Tu número es muy grande")
+
+  # Paso 3.ii
   guessed_number = int(input("Introduce un número: "))
   number_of_tries = number_of_tries + 1
-print("¡Felicidades!")
+
+  print("¡Yúhú!")
 print("Has adivinado el número en", number_of_tries, "intentos :-)")

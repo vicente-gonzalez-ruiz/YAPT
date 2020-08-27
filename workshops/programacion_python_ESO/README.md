@@ -53,7 +53,7 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 
 1. Un comprobador de [números primos](https://es.wikipedia.org/wiki/N%C3%BAmero_primo).
 2. Un juego de adivinanza de [números naturales](https://es.wikipedia.org/wiki/N%C3%BAmero_natural).
-2. Una versión personalizada del juego [Pong](https://en.wikipedia.org/wiki/Pong).
+2. Una versión personalizada del juego [Pong](https://en.wikipedia.org/wiki/Pong), que [no es la primera vez que se porta a Python](https://sites.google.com/site/thepythonpongtutorial/home).
 
 ## Tecnicamente (desde el punto de vista de la programación) aprenderemos ...
 
@@ -569,14 +569,44 @@ sería interesante conocer el número de FPS alcanzados, principalmente
 porque el ser humano difícilmente puede apreciar más de 100 FPS (de
 hecho, en los juegos lo normal es limitar los FPS a 60).
 
-1. Explicar el código.
+Analicemos un poco el código y veamos cómo podemos informar
+periódicamente (porque los FPS pueden variar con el tiempo dependiendo
+de la carga de la computadora):
 
-Véase [`bouncing_ball_FPS.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball_FPS.py).
+* Ahora mismo tenemos un bucle (el controlado `while self.running`)
+que va tan rápido como puede.
+* Pygame ofrece el método
+  [`self.clock.tick()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.tick)
+  que mantiene un cronómetro y que mide el tiempo transcurrido entre 2
+  llamadas consecutivas a este método. Si queremos temporizar el
+  número de iteraciones del bucle por segundo (que sería el número de
+  FPS), este método debe llamarse dentro del bucle.
+* Pygame ofrece el método
+  [`self.clock.get_fps()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.get_fps)
+  que devuelve el número de FPS a partir del cronómetro mantenido por
+  `self.clock.tick()`. Por tanto, este método debería llamarse siempre
+  que deseamos conocer los FPS.
+* El número de mensajes sobre los FPS van a mostrarse con una
+  frecuencia de 1 Hz. Por tanto, deberemos en alguna parte definir un
+  temporizador en bucle con dicha frecuencia de disparo.
+* Ahora mismo sólo disponemos del bucle principal (el controlado
+  `while self.running`) que que itera mucho más rápido, y por tanto,
+  no nos sirve. Podemos intentar técnicas como imprimir los FPS una
+  vez cada X iteraciones, pero esto no deja de ser poco elegante
+  sabiendo que en Python disponemos de [hilos
+  (`threads`)](https://es.wikipedia.org/wiki/Hilo_(inform%C3%A1tica)).
+  
+Conociendo todo esto, lo que vamos a hacer para imprimir los FPS a
+razón de un mensaje/segundo es crear un hilo que ejecute un bucle que
+finalice cuando `self.running == False`, y que llame al método
+`self.clock.get_fps()` e imprima el valor retornado.
 
+Véase [`bouncing_ball_FPS.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball_FPS.py) como posible solución.
 
 ## <a id="ejer_10"></a>Ejercicio 10: Añadiendo sonido
 
-En nuestro camino hacia implementar un [clone de Pong](https://sites.google.com/site/thepythonpongtutorial/home).
+Añadir sonido a un juego casi es obligatorio y Pygame nos proporciona
+la funcionalidad necesaria.
 
 
 ## Ejercicio: Usar sprites
