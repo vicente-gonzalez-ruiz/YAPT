@@ -317,7 +317,7 @@ Pygame. Implementar:
 2. Inicializar Pygame (ídem [Ejercicio 4](#ejer_4)).
 3. Crear una pantalla (ídem [Ejercicio 4](#ejer_4)).
 4. Darle un título a la pantalla (ídem [Ejercicio 4](#ejer_4)).
-5. Pintar un punto blanco en la coordenadas (x=1, y=1) (usar [`pygame.screen.set_at(https://www.pygame.org/docs/ref/surface.html#pygame.Surface.set_at)`]()).
+5. Pintar un punto blanco en la coordenadas (x=1, y=1) (usar [`pygame.screen.set_at`]((https://www.pygame.org/docs/ref/surface.html#pygame.Surface.set_at))).
 6. Pintar un punto verde en (x=10, y=100).
 7. Esperar a que el usuario cierre la pantalla (ídem [Ejercicio 4](#ejer_4)).
 8. Cerrar Pygame (ídem [Ejercicio 4](#ejer_4)).
