@@ -294,15 +294,21 @@ System](https://es.wikipedia.org/wiki/Sistema_de_ventanas_X)).
 
 Bien, para implementar este ejercicio tendremos que:
 
-1. Importar Pygame (escribir la instrucción de Python `import pygame`).
-2. Inicializar Pygame (usar el método [`pygame.init()`](https://www.pygame.org/docs/ref/pygame.html#pygame.init)).
-3. Crear una ventana (usar [`pygame.display.set_mode()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_mode)).
+1. Importar Pygame (escribir la instrucción de Python `import
+   pygame`).
+2. Inicializar Pygame (usar el método
+   [`pygame.init()`](https://www.pygame.org/docs/ref/pygame.html#pygame.init)).
+3. Crear una ventana (usar
+   [`pygame.display.set_mode()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_mode)).
 4. Opcionalmente, darle un título a la ventana (usar
    [`pygame.display.set_caption()`](https://www.pygame.org/docs/ref/display.html#pygame.display.set_caption)).
-5. Esperar a que el usuario cierre la ventana (cosa que ocurre,
-   cuando [`pygame.event.wait().type`](https://www.pygame.org/docs/ref/event.html#pygame.event.wait) retorna un evento del tipo
+5. Esperar a que el usuario cierre la ventana (cosa que ocurre, cuando
+   [`pygame.event.wait().type`](https://www.pygame.org/docs/ref/event.html#pygame.event.wait)
+   retorna un evento del tipo
    [`pygame.QUIT`](https://www.pygame.org/docs/ref/event.html)).
-6. Cuando el usuario haya cerrado la ventana, cerrar también Pygame (usar [`pygame.quit()`](https://www.pygame.org/docs/ref/pygame.html#pygame.quit)).
+6. Cuando el usuario haya cerrado la ventana, cerrar también Pygame
+   (usar
+   [`pygame.quit()`](https://www.pygame.org/docs/ref/pygame.html#pygame.quit)).
 
 Una posible solución está disponible [aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/empty_display_v0.py). Además, gran cantidad de información sobre cómo programar juegos usando Pygame
 puede encontrarse en [Programar Juegos Arcade con Python y
@@ -468,9 +474,9 @@ Vamos a definir 2 clases en 2 módulos (archivos) diferentes:
    esperar a que se cierre la ventana.
 
 Una posible solución está disponible en
-[`empty_display.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/empty_display.py)
+[`empty_display.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/empty_display.py)
 y
-[`plot_pixels.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/plot_pixels.py). Nótese
+[`plot_pixels.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/plot_pixels.py). Nótese
 que además hará falta el módulo `colors.py` que debe estar dentro de
 una carpeta llamada `lib` (crear la carpeta escribiendo en el terminal
 `mkdir lib` y mover `colors.py` dentro con `mv colors.py lib`). En
@@ -495,14 +501,15 @@ Nótese que tenemos:
 ```
 
 ## <a id="ejer_7"></a>Ejercicio 7: Pintar un rectángulo
-La pelota de nuestro Pong va a ser un cuadrado. Aprendamos a dibujar rectángulos:
+La pelota de nuestro Pong va a ser un cuadrado. Aprendamos a dibujar
+rectángulos:
 
 1. Crear una clase llamada `DrawRectangle` que herede de la clase
    `EmptyDisplay`.
    
 2. Sobreescribir el método `EmptyDisplay.run()` para que se pinte un
-   rectángulo y se cierre la ventana. Para dibujar un rectángulo
-   podemos usar el método
+   rectángulo y termine (nuestro programa), cuando dicho evento se
+   produzca. Para dibujar un rectángulo podemos usar el método
    [`pygame.draw.rec()`](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect).
    
 Una posible solución puede encontrarse en

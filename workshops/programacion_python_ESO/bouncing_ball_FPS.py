@@ -14,14 +14,18 @@ class BouncingBallFPS(BouncingBall):
 #        self.super(width, height, caption)
 
 
-    def do_some_extra_stuff(self):
-        self.clock.tick() # Necessary to compute the FPS value
+    #def do_some_extra_stuff(self):
+    #    self.clock.tick() # Necessary to compute the FPS value
 
     def print_FPS(self):
         while self.running:
             FPS = self.clock.get_fps() # Frames Per Second
             print(f"FPS={FPS:03.2f}")
             time.sleep(1) # 1 second
+
+    def update_frame(self):
+        super().update_frame()
+        self.clock.tick() # Necessary to compute the FPS value
 
     def run(self):
         self.clock = pygame.time.Clock()
