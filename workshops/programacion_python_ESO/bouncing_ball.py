@@ -7,11 +7,18 @@ HEIGHT = 1
 
 class BouncingBall(EmptyDisplay):
 
-    def __init__(self, width = 800, height = 600, caption = ""):
+    def __init__(self,
+                 width = 800,
+                 height = 600,
+                 caption = "A bouncing ball of size 16x16"):
+        
         super().__init__(width, height, caption)
         self.running = True
         self.ball_width = 16
         self.ball_height = 16
+        self.ball_color = color.white
+        self.initial_x_coordinate = self.display_size[WIDTH]//2 - self.ball_width//2
+        self.initial_y_coordinate = 3*self.display_size[HEIGHT]//4 - self.ball_height//2
 
     def horizontal_rebound(self):
         self.x_direction_step = -self.x_direction_step
@@ -23,7 +30,7 @@ class BouncingBall(EmptyDisplay):
         display_width = self.display_size[WIDTH]
         display_height = self.display_size[HEIGHT]
         self.display.fill(color.black)
-        pygame.draw.rect(self.display, color.white, (self.x_coordinate, self.y_coordinate, self.ball_width, self.ball_height))
+        pygame.draw.rect(self.display, self.ball_color, (self.x_coordinate, self.y_coordinate, self.ball_width, self.ball_height))
         pygame.display.update()
 
         self.x_coordinate += self.x_direction_step
@@ -40,10 +47,8 @@ class BouncingBall(EmptyDisplay):
                 self.running = False
     
     def run(self):
-        initial_x_coordinate = self.display_size[WIDTH]//2 - self.ball_width//2
-        initial_y_coordinate = 3*self.display_size[HEIGHT]//4 - self.ball_height//2
-        self.x_coordinate = initial_x_coordinate
-        self.y_coordinate = initial_y_coordinate
+        self.x_coordinate = self.initial_x_coordinate
+        self.y_coordinate = self.initial_y_coordinate
         self.x_direction_step = 1  # Go to right, one pixel
         self.y_direction_step = 1  # Go to bottom, one pixel
 
@@ -52,5 +57,5 @@ class BouncingBall(EmptyDisplay):
             self.process_events()
 
 if __name__ == "__main__":
-    display = BouncingBall(caption = "A bouncing ball of size 16x16")
+    display = BouncingBall()
     display.run()
