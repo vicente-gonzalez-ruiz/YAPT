@@ -27,8 +27,10 @@ class Ball(pygame.sprite.Sprite):
         self.y_direction_step = 1 # Go to bottom, one pixel
 
     def update(self):
-        self.rect.x += self.x_direction_step
-        self.rect.y += self.y_direction_step
+        #self.rect.x += self.x_direction_step
+        #self.rect.y += self.y_direction_step
+        self.rect.x = self.x_coordinate
+        self.rect.y = self.y_coordinate
 
 class BouncingBallSprite(BouncingBallSound):
 
