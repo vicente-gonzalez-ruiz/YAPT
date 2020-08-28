@@ -1,5 +1,6 @@
 import pygame
 import threading
+import time
 from empty_display import EmptyDisplay
 import lib.colors as Color
 
@@ -13,12 +14,14 @@ class Ball(pygame.sprite.Sprite):
                  width,
                  height,
                  initial_x_coordinate,
-                 initial_y_coordinate):
+                 initial_y_coordinate,
+                 display_size):
 
         super().__init__()
         self.color = color
         self.width = width
         self.height = height
+        self.display_size = display_size
         self.image = pygame.Surface([width, height])
         self.image.fill(Color.black)                                  
         self.image.set_colorkey(Color.black)
@@ -28,8 +31,8 @@ class Ball(pygame.sprite.Sprite):
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = initial_x_coordinate
         self.rect.y = initial_y_coordinate
-        self.x_direction_step = 2 # Go to the right, one pixel
-        self.y_direction_step = 2 # Go to bottom, one pixel
+        self.x_direction_step = 1 # Go to the right, one pixel
+        self.y_direction_step = 1 # Go to bottom, one pixel
 
     def horizontal_rebound(self):
         self.x_direction_step = -self.x_direction_step
@@ -38,8 +41,8 @@ class Ball(pygame.sprite.Sprite):
         self.y_direction_step = -self.y_direction_step
 
     def update(self):
-        display_width = 800
-        display_height = 600
+        display_width = self.display_size[0]
+        display_height = self.display_size[1]
         self.rect.x += self.x_direction_step
         self.rect.y += self.y_direction_step
         if (self.rect.x + self.width) > display_width:
@@ -47,8 +50,7 @@ class Ball(pygame.sprite.Sprite):
             self.horizontal_rebound()
         elif self.rect.x < 0:
             self.rect.x = 0
-            self.horizontal_rebound()
-            
+            self.horizontal_rebound()          
         if (self.rect.y + self.height) > display_height:
             self.rect.y = display_height - self.height - 1
             self.vertical_rebound()
@@ -56,7 +58,7 @@ class Ball(pygame.sprite.Sprite):
             self.rect.y = 0
             self.vertical_rebound()
 
-class BouncingBall(EmptyDisplay):
+class Pong_v0(EmptyDisplay):
 
     def __init__(self,
                  width = 800,
@@ -78,25 +80,13 @@ class BouncingBall(EmptyDisplay):
             width = self.ball_width,
             height = self.ball_height,
             initial_x_coordinate = self.initial_x_coordinate,
-            initial_y_coordinate = self.initial_y_coordinate)
+            initial_y_coordinate = self.initial_y_coordinate,
+            display_size = self.display_size
+        )
         self.all_sprites_list = pygame.sprite.Group()
         self.all_sprites_list.add(self.ball)
 
-    # Quitar
-    def update_frame(self):
-        #display_width = self.display_size[WIDTH]
-        #display_height = self.display_size[HEIGHT]
-        self.display.fill(Color.black)
-        #pygame.draw.rect(
-        #    self.display,
-        #    self.ball_color, (
-        #        self.ball.rect.x,
-        #        self.ball.rect.y,
-        #        self.ball.width,
-        #        self.ball.height))
-        #self.all_sprites_list.update()
-        self.all_sprites_list.draw(self.display)
-        pygame.display.update()
+        self.FPS = 0
 
     def process_events(self):
         for event in pygame.event.get():
@@ -108,34 +98,36 @@ class BouncingBall(EmptyDisplay):
         while self.running:
             self.display.fill(Color.black)
             self.all_sprites_list.draw(self.display)
-            pygame.display.update()
+            #pygame.display.update()
+            pygame.display.flip()
             self.process_events()
             clock.tick(60)
-            print(f"UPS={self.UPS:03.2f}")
+            self.FPS = clock.get_fps()
 
+    def update_model(self):
+        self.all_sprites_list.update()
+        
     def run_model(self):
         clock = pygame.time.Clock()
         while self.running:
-            self.all_sprites_list.update()
+            #self.all_sprites_list.draw(self.display)
+            self.update_model()
             clock.tick(1000)
-            self.UPS = clock.get_fps()
 
+    def print_FPS(self):
+        while self.running:
+            print(f"FPS={self.FPS:04.2f}", end='\r' )
+            time.sleep(1)
+            
     def run(self):
-        #self.ball.rect.x = self.initial_x_coordinate
-        #self.ball.rect.y = self.initial_y_coordinate
-        #self.x_direction_step = 1  # Go to right, one pixel
-        #self.y_direction_step = 1  # Go to bottom, one pixel
         self.draw_frame__thread = threading.Thread(target = self.draw_frame)
         self.draw_frame__thread.start()
-
-        #while self.running:
-        #    self.update_frame()
-        #    self.process_events()
+        self.print_FPS__thread = threading.Thread(target = self.print_FPS)
+        self.print_FPS__thread.start()
         self.run_model()
-
         self.draw_frame__thread.join()
-
+        self.print_FPS__thread.join()
 
 if __name__ == "__main__":
-    display = BouncingBall()
+    display = Pong_v0()
     display.run()
