@@ -103,13 +103,14 @@ class BouncingBall(EmptyDisplay):
             pygame.display.update()
             self.process_events()
             clock.tick(60)
-            print(".", end='', flush=True); 
+            #print(f"UPS={self.UPS:03.2f}")
 
     def run_model(self):
         clock = pygame.time.Clock()
         while self.running:
             self.all_sprites_list.update()
-            #clock.tick(-1)
+            clock.tick(1000)
+            #self.UPS = clock.get_fps()
 
     def run(self):
         #self.ball.rect.x = self.initial_x_coordinate

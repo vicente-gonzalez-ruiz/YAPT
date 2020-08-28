@@ -515,6 +515,32 @@ rectángulos:
 Una posible solución puede encontrarse en
    [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
 
+## <a id="ejer_7"></a>Ejercicio 7: Rellena un area de colores
+Vamos a rellenar un cuadrado en el centro de la ventana con píxeles de cientos de colores. Algo como:
+
+```
++-----------------------------+
+|                             |
+|                             |
+|                             |
+|         +--------+          |
+|         |********|          |
+|         |********|          |
+|         |********|          |
+|         +--------+          |
+|                             |
+|                             |
+|                             |
++-----------------------------+
+```
+Decide tú el tamaño del cuadrado, pero, que esté centrado horizontal y verticalmente. Como suele ya siendo habitual:
+
+1. Crear una clase llamada `DrawColorSquare` que herede de la clase
+   `EmptyDisplay`.
+   
+2. Sobreescribir el método `EmptyDisplay.run()` para que pinte el
+   cuadrado.
+
 ## <a id="ejer_8"></a>Ejercicio 8: Rebota el rectángulo en los lados de la ventana
 En nuestro Pong la pelota rebotará en los límites del display. Hagamos
 que el rectángulo se mueva en diagonal, a velocidad constante a razón
