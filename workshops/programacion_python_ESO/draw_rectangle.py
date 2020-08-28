@@ -5,11 +5,10 @@ import lib.colors as color
 class DrawRectangle(EmptyDisplay):
 
     def run(self):
+        pygame.draw.rect(self.display, color.blue, (200, 150, 100, 50))
+        pygame.display.update()
         running = True
         while running:
-            pygame.draw.rect(self.display, color.blue,
-                             (200, 150, 100, 50))
-            pygame.display.update()
             event = pygame.event.wait()
             if event.type == pygame.QUIT:
                 running = False

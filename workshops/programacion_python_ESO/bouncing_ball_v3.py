@@ -28,8 +28,8 @@ class Ball(pygame.sprite.Sprite):
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = initial_x_coordinate
         self.rect.y = initial_y_coordinate
-        self.x_direction_step = 2 # Go to the right, one pixel
-        self.y_direction_step = 2 # Go to bottom, one pixel
+        self.x_direction_step = 1 # Go to the right, one pixel
+        self.y_direction_step = 1 # Go to bottom, one pixel
 
     def horizontal_rebound(self):
         self.x_direction_step = -self.x_direction_step
@@ -43,11 +43,9 @@ class Ball(pygame.sprite.Sprite):
         self.rect.x += self.x_direction_step
         self.rect.y += self.y_direction_step
         if (self.rect.x + self.width) > display_width or self.rect.x < 0:
-            self.rect.x = display_width - self.width - 1
             self.horizontal_rebound()
 
         if (self.rect.y + self.height) > display_height or self.rect.y < 0:
-            self.rect.y = display_height - self.height - 1
             self.vertical_rebound()
 
 class BouncingBall(EmptyDisplay):
@@ -94,6 +92,8 @@ class BouncingBall(EmptyDisplay):
 
     def process_events(self):
         for event in pygame.event.get():
+            if event.type == pygame.USEREVENT+1:
+                self.all_sprites_list.update()
             if event.type == pygame.QUIT:
                 self.running = False
     
@@ -103,16 +103,17 @@ class BouncingBall(EmptyDisplay):
             self.display.fill(Color.black)
             self.all_sprites_list.draw(self.display)
             pygame.display.update()
-            self.process_events()
-            clock.tick(30)
-            print(f"UPS={self.UPS:03.2f}")
+            clock.tick(60)
+            #print(f"UPS={self.UPS:03.2f}")
 
     def run_model(self):
-        clock = pygame.time.Clock()
+        pygame.time.set_timer(pygame.USEREVENT+1, 0.1)
+        #clock = pygame.time.Clock()
         while self.running:
-            self.all_sprites_list.update()
-            clock.tick(1000)
-            self.UPS = clock.get_fps()
+            self.process_events()
+            #self.all_sprites_list.update()
+            #clock.tick(1000)
+            #self.UPS = clock.get_fps()
 
     def run(self):
         #self.ball.rect.x = self.initial_x_coordinate

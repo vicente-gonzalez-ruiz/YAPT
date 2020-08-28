@@ -325,8 +325,9 @@ Pygame. Implementar:
 4. Darle un título a la pantalla (ídem [Ejercicio 4](#ejer_4)).
 5. Pintar un punto blanco en la coordenadas (x=1, y=1) (usar [`pygame.screen.set_at()`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.set_at)).
 6. Pintar un punto verde en (x=10, y=100).
-7. Esperar a que el usuario cierre la pantalla (ídem [Ejercicio 4](#ejer_4)).
-8. Cerrar Pygame (ídem [Ejercicio 4](#ejer_4)).
+7. Actualizar la ventana usando [`pygame.display.update()`](https://www.pygame.org/docs/ref/display.html#pygame.display.update).
+8. Esperar a que el usuario cierre la pantalla (ídem [Ejercicio 4](#ejer_4)).
+9. Cerrar Pygame (ídem [Ejercicio 4](#ejer_4)).
 
 Una posible solución es [esta](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/plot_pixels_v0.py).
 
@@ -510,12 +511,16 @@ rectángulos:
 2. Sobreescribir el método `EmptyDisplay.run()` para que se pinte un
    rectángulo y termine (nuestro programa), cuando dicho evento se
    produzca. Para dibujar un rectángulo podemos usar el método
-   [`pygame.draw.rec()`](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect).
+   [`pygame.draw.rec()`](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect). Recuerda
+   que, tras pintar todas las *estructuras* que deseemos, tenemos que
+   invocar el método
+   [`pygame.display.update()`](https://www.pygame.org/docs/ref/display.html#pygame.display.update)
+   para que estas sean mostradas en la pantalla.
    
 Una posible solución puede encontrarse en
    [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
 
-## <a id="ejer_7"></a>Ejercicio 7: Rellena un area de colores
+## <a id="ejer_8"></a>Ejercicio 8: Rellena un area de colores
 Vamos a rellenar un cuadrado en el centro de la ventana con píxeles de cientos de colores. Algo como:
 
 ```

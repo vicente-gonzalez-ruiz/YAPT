@@ -5,12 +5,12 @@ import lib.colors as color
 class PlotPixels(EmptyDisplay):
     
     def run(self):
+        self.display.set_at((1, 1), color.white)
+        self.display.set_at((10, 100), color.green)
+        pygame.display.update()
         running = True
         while running:
-            self.display.set_at((1, 1), color.white)
-            self.display.set_at((10, 100), color.green)
-            pygame.display.update()
-            event = self.get_event()
+            event = pygame.event.wait()
             if event.type == pygame.QUIT:
                 running = False
 
