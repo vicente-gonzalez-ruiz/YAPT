@@ -7,8 +7,11 @@ import lib.colors as Color
 WIDTH = 0
 HEIGHT = 1
 
-class Ball(pygame.sprite.Sprite):
+class BallPosition:
+    x = 1
 
+class Ball(pygame.sprite.Sprite):
+    
     def __init__(self,
                  color,
                  width,
@@ -31,8 +34,8 @@ class Ball(pygame.sprite.Sprite):
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = initial_x_coordinate
         self.rect.y = initial_y_coordinate
-        self.x_direction_step = 1 # Go to the right, one pixel
-        self.y_direction_step = 1 # Go to bottom, one pixel
+        self.x_direction_step = 8 # Go to the right, one pixel
+        self.y_direction_step = 8 # Go to bottom, one pixel
 
     def horizontal_rebound(self):
         self.x_direction_step = -self.x_direction_step
@@ -57,6 +60,7 @@ class Ball(pygame.sprite.Sprite):
         elif self.rect.y < 0:
             self.rect.y = 0
             self.vertical_rebound()
+        BallPosition.x = self.rect.x
 
 class Pong_v0(EmptyDisplay):
 
