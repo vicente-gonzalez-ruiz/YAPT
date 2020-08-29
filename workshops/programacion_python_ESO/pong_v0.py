@@ -8,12 +8,14 @@ import lib.colors as Color
 
 WIDTH = 0
 HEIGHT = 1
-SPEED = 4
+SPEED = 8
 
-class BallPosition:
-    x = 1
+class SharedState:
+    ball_x_coor = 1
     CPU_motion = 0
     player_motion = 0
+    player_score = 0
+    CPU_score = 0
 
 class Ball(pygame.sprite.Sprite):
     
@@ -42,27 +44,31 @@ class Ball(pygame.sprite.Sprite):
         self.x_direction_step = SPEED # Go to the right, one pixel
         self.y_direction_step = SPEED # Go to bottom, one pixel
 
-    def horizontal_rebound(self):
-        self.x_direction_step = -self.x_direction_step
+    #def horizontal_rebound(self):
+    #    self.x_direction_step = -self.x_direction_step
 
-    def vertical_rebound(self):
-        self.y_direction_step = -self.y_direction_step
+    #def vertical_rebound(self):
+    #    self.y_direction_step = -self.y_direction_step
 
     def ball_hits_bottom(self):
         #self.horizontal_rebound()
         self.y_direction_step = -SPEED
+        #print("ball hits bottom")
 
     def ball_hits_top(self):
         self.y_direction_step = SPEED
+        #print("ball hits top")
         #self.horizontal_rebound()
 
     def ball_hits_left(self):
         #self.vertical_rebound()
         self.x_direction_step = SPEED
-        
+        #print("ball hits left")
+
     def ball_hits_right(self):
         #self.vertical_rebound()
         self.x_direction_step = -SPEED
+        #print("ball hits right")
         
     def update(self):
         display_width = self.display_size[0]
@@ -81,7 +87,7 @@ class Ball(pygame.sprite.Sprite):
         elif self.rect.y < 0:
             self.ball_hits_top()
             #self.rect.y = 0
-        BallPosition.x = self.rect.x
+        SharedState.ball_x_coor = self.rect.x
 
 class Pong_v0(EmptyDisplay):
 

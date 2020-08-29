@@ -2,7 +2,6 @@
 
 import pygame
 from pong_v0 import Pong_v0
-from pong_v0 import BallPosition
 import lib.colors as Color
 
 WIDTH = 0
@@ -32,14 +31,13 @@ class PlayerRacket(pygame.sprite.Sprite):
         self.rect.y = self.display_size[1] - 20
 
     def update(self):
-        motion = pygame.mouse.get_rel()[0]
-        self.rect.x += motion
+        self.motion = pygame.mouse.get_rel()[0]
+        self.rect.x += self.motion
         #self.rect.y += self.display_size[1] - 10
         if (self.rect.x + self.width) > self.display_size[0]:
             self.rect.x = self.display_size[0] - self.width
         elif self.rect.x < 0:
             self.rect.x = 0
-        BallPosition.player_motion += abs(motion)
 
 class Pong_v1(Pong_v0):
 
@@ -64,7 +62,11 @@ class Pong_v1(Pong_v0):
     def update_model(self):
         super().update_model()
         if pygame.sprite.collide_mask(self.ball, self.player_racket):         
-            self.ball.vertical_rebound()
+            #self.ball.vertical_rebound()
+            distance_to_the_racket_center = self.player_racket.rect.x - self.ball.rect.x + 64 - 16
+            angle = distance_to_the_racket_center / 10
+            self.ball.x_direction_step = -angle
+            self.ball.y_direction_step = -self.ball.y_direction_step
 
 if __name__ == "__main__":
     display = Pong_v1()
