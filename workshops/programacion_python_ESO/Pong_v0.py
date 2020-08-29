@@ -107,7 +107,7 @@ class RightWall(pygame.sprite.Sprite):
                          color,
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = display_size[0] - 1
-        self.rect.y = -15
+        self.rect.y = -1
 
 class Pong_v0(EmptyDisplay):
 
