@@ -1,4 +1,8 @@
+# Anadimos puntuaciones. Cada pelota incrementa un contador cuando
+# rebota en el fondo del contrario.
+
 import pygame
+from pong_v0 import BallPosition
 from pong_v2 import Pong_v2
 import lib.colors as Color
 from pong_v0 import Ball
@@ -23,10 +27,12 @@ class ScoreBall(Ball):
     def ball_hits_bottom(self):
         super().ball_hits_bottom()
         self.CPU_score += 10
+        self.CPU_score -= BallPosition.CPU_motion
     
     def ball_hits_top(self):
         super().ball_hits_bottom()
         self.player_score += 10
+        self.player_score -= BallPosition.player_motion
 
 class Pong_v3(Pong_v2):
 

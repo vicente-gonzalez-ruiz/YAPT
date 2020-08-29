@@ -30,14 +30,17 @@ class CPURacket(pygame.sprite.Sprite):
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = 300
         self.rect.y = 20
+        self.motion = 0
 
     def update(self):
+        self.motion = BallPosition.x - self.motion
         self.rect.x = BallPosition.x - self.width//2
         #self.rect.y += self.display_size[1] - 10
         if (self.rect.x + self.width) > self.display_size[0]:
             self.rect.x = self.display_size[0] - self.width
         elif self.rect.x < 0:
             self.rect.x = 0
+        BallPosition.CPU_motion += abs(self.motion)
 
 class Pong_v2(Pong_v1):
 

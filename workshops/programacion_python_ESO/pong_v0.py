@@ -12,6 +12,8 @@ SPEED = 4
 
 class BallPosition:
     x = 1
+    CPU_motion = 0
+    player_motion = 0
 
 class Ball(pygame.sprite.Sprite):
     

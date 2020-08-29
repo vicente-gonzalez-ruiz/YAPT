@@ -1,7 +1,8 @@
-# Añadimos la raqueta del juador.
+# Añadimos la raqueta del juador que se mueve con el ratón.
 
 import pygame
 from pong_v0 import Pong_v0
+from pong_v0 import BallPosition
 import lib.colors as Color
 
 WIDTH = 0
@@ -31,12 +32,14 @@ class PlayerRacket(pygame.sprite.Sprite):
         self.rect.y = self.display_size[1] - 20
 
     def update(self):
-        self.rect.x += pygame.mouse.get_rel()[0]
+        motion = pygame.mouse.get_rel()[0]
+        self.rect.x += motion
         #self.rect.y += self.display_size[1] - 10
         if (self.rect.x + self.width) > self.display_size[0]:
             self.rect.x = self.display_size[0] - self.width
         elif self.rect.x < 0:
             self.rect.x = 0
+        BallPosition.player_motion += abs(motion)
 
 class Pong_v1(Pong_v0):
 
