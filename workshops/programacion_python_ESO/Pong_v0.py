@@ -7,16 +7,7 @@ import time
 from empty_display import EmptyDisplay
 import lib.colors as Color
 
-WIDTH = 0
-HEIGHT = 1
 SPEED = 8
-
-class SharedState:
-    ball_x_coor = 1
-    CPU_motion = 0
-    player_motion = 0
-    player_score = 0
-    CPU_score = 0
 
 class Ball(pygame.sprite.Sprite):
     
@@ -55,7 +46,7 @@ class UpperWall(pygame.sprite.Sprite):
 
         super().__init__()
         width = display_size[0] - 2
-        height = 1
+        height = 16
         self.image = pygame.Surface([width, height])
         self.image.fill(Color.black)                                  
         self.image.set_colorkey(Color.black)
@@ -64,7 +55,7 @@ class UpperWall(pygame.sprite.Sprite):
                          color,
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = 1
-        self.rect.y = 0
+        self.rect.y = -15
         pygame.draw.rect(self.image, color, [self.rect.x, self.rect.y, width, height])
 
 class LowerWall(pygame.sprite.Sprite):
@@ -133,8 +124,8 @@ class Pong_v0(EmptyDisplay):
 
         self.ball_width = 16
         self.ball_height = 16
-        self.initial_x_coordinate = self.display_size[WIDTH]//2 - self.ball_width//2
-        self.initial_y_coordinate = 3*self.display_size[HEIGHT]//4 - self.ball_height//2
+        self.initial_x_coordinate = self.display_size[0]//2 - self.ball_width//2
+        self.initial_y_coordinate = 3*self.display_size[1]//4 - self.ball_height//2
         self.ball_color = Color.white
         self.ball = Ball(
             color = self.ball_color,
