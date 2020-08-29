@@ -64,7 +64,7 @@ class LowerWall(pygame.sprite.Sprite):
 
         super().__init__()
         width = display_size[0] - 2
-        height = 1
+        height = 16
         self.image = pygame.Surface([width, height])
         self.image.fill(Color.black)                                  
         self.image.set_colorkey(Color.black)
@@ -73,7 +73,7 @@ class LowerWall(pygame.sprite.Sprite):
                          color,
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = 1
-        self.rect.y = display_size[1] - 1
+        self.rect.y = display_size[1] + 15
 
 class LeftWall(pygame.sprite.Sprite):
     
