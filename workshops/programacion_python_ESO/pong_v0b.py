@@ -43,6 +43,18 @@ class Ball(pygame.sprite.Sprite):
     def vertical_rebound(self):
         self.y_direction_step = -self.y_direction_step
 
+    def ball_hits_bottom(self):
+        self.horizontal_rebound()
+
+    def ball_hits_top(self):
+        self.horizontal_rebound()
+
+    def ball_hits_left(self):
+        self.vertical_rebound()
+        
+    def ball_hits_right(self):
+        self.vertical_rebound()
+        
     def update(self):
         display_width = self.display_size[0]
         display_height = self.display_size[1]
@@ -50,16 +62,16 @@ class Ball(pygame.sprite.Sprite):
         self.rect.y += self.y_direction_step
         if (self.rect.x + self.width) > display_width:
             self.rect.x = display_width - self.width - 1
-            self.horizontal_rebound()
+            self.ball_hits_bottom()
         elif self.rect.x < 0:
             self.rect.x = 0
-            self.horizontal_rebound()          
+            self.horizontal_rebound()
         if (self.rect.y + self.height) > display_height:
             self.rect.y = display_height - self.height - 1
-            self.vertical_rebound()
+            self.ball_hits_right()
         elif self.rect.y < 0:
             self.rect.y = 0
-            self.vertical_rebound()
+            self.ball_hits_right()
         BallPosition.x = self.rect.x
 
 class Pong_v0(EmptyDisplay):
@@ -100,25 +112,26 @@ class Pong_v0(EmptyDisplay):
     def update_model(self):
         self.all_sprites_list.update()
 
-    def draw_frames(self):
+    def draw_frame(self):
+        self.display.fill(Color.black)
+        self.all_sprites_list.draw(self.display)
+
+    def draw(self):
         clock = pygame.time.Clock()
         while self.running:
-            self.display.fill(Color.black)
-            self.all_sprites_list.draw(self.display)
+            self.draw_frame()
             self.update_model()
-            #pygame.display.update()
-            pygame.display.flip()
+            pygame.display.update()
             self.process_events()
             clock.tick(60)
             self.FPS = clock.get_fps()
 
-        
-    def run_model(self):
-        clock = pygame.time.Clock()
-        while self.running:
-            #self.all_sprites_list.draw(self.display)
-            self.update_model()
-            clock.tick(1000)
+#    def run_model(self):
+#        clock = pygame.time.Clock()
+#        while self.running:
+#            #self.all_sprites_list.draw(self.display)
+#            self.update_model()
+#            clock.tick(1000)
 
     def print_FPS(self):
         while self.running:
@@ -131,7 +144,7 @@ class Pong_v0(EmptyDisplay):
         self.print_FPS__thread = threading.Thread(target = self.print_FPS)
         self.print_FPS__thread.start()
         #self.run_model()
-        self.draw_frames()
+        self.draw()
         #self.draw_frame__thread.join()
         self.print_FPS__thread.join()
 
