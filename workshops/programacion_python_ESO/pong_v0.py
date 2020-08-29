@@ -1,3 +1,5 @@
+# La pelota (un sprite) rebotando en las paredes de la ventana.
+
 import pygame
 import threading
 import time
@@ -6,9 +8,13 @@ import lib.colors as Color
 
 WIDTH = 0
 HEIGHT = 1
+SPEED = 4
+
+class BallPosition:
+    x = 1
 
 class Ball(pygame.sprite.Sprite):
-
+    
     def __init__(self,
                  color,
                  width,
@@ -31,8 +37,8 @@ class Ball(pygame.sprite.Sprite):
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = initial_x_coordinate
         self.rect.y = initial_y_coordinate
-        self.x_direction_step = 1 # Go to the right, one pixel
-        self.y_direction_step = 1 # Go to bottom, one pixel
+        self.x_direction_step = SPEED # Go to the right, one pixel
+        self.y_direction_step = SPEED # Go to bottom, one pixel
 
     def horizontal_rebound(self):
         self.x_direction_step = -self.x_direction_step
@@ -40,23 +46,40 @@ class Ball(pygame.sprite.Sprite):
     def vertical_rebound(self):
         self.y_direction_step = -self.y_direction_step
 
+    def ball_hits_bottom(self):
+        #self.horizontal_rebound()
+        self.y_direction_step = -SPEED
+
+    def ball_hits_top(self):
+        self.y_direction_step = SPEED
+        #self.horizontal_rebound()
+
+    def ball_hits_left(self):
+        #self.vertical_rebound()
+        self.x_direction_step = SPEED
+        
+    def ball_hits_right(self):
+        #self.vertical_rebound()
+        self.x_direction_step = -SPEED
+        
     def update(self):
         display_width = self.display_size[0]
         display_height = self.display_size[1]
         self.rect.x += self.x_direction_step
         self.rect.y += self.y_direction_step
         if (self.rect.x + self.width) > display_width:
-            self.rect.x = display_width - self.width - 1
-            self.horizontal_rebound()
+            self.ball_hits_right()
+            ##self.rect.x = display_width - self.width - SPEED
         elif self.rect.x < 0:
-            self.rect.x = 0
-            self.horizontal_rebound()          
+            self.ball_hits_left()
+            #self.rect.x = 0
         if (self.rect.y + self.height) > display_height:
-            self.rect.y = display_height - self.height - 1
-            self.vertical_rebound()
+            self.ball_hits_bottom()
+            #self.rect.y = display_height - self.height - SPEED
         elif self.rect.y < 0:
-            self.rect.y = 0
-            self.vertical_rebound()
+            self.ball_hits_top()
+            #self.rect.y = 0
+        BallPosition.x = self.rect.x
 
 class Pong_v0(EmptyDisplay):
 
@@ -93,26 +116,29 @@ class Pong_v0(EmptyDisplay):
             if event.type == pygame.QUIT:
                 self.running = False
     
+    def update_model(self):
+        self.all_sprites_list.update()
+
     def draw_frame(self):
+        self.display.fill(Color.black)
+        self.all_sprites_list.draw(self.display)
+
+    def draw(self):
         clock = pygame.time.Clock()
         while self.running:
-            self.display.fill(Color.black)
-            self.all_sprites_list.draw(self.display)
-            #pygame.display.update()
-            pygame.display.flip()
+            self.draw_frame()
+            self.update_model()
+            pygame.display.update()
             self.process_events()
             clock.tick(60)
             self.FPS = clock.get_fps()
 
-    def update_model(self):
-        self.all_sprites_list.update()
-        
-    def run_model(self):
-        clock = pygame.time.Clock()
-        while self.running:
-            #self.all_sprites_list.draw(self.display)
-            self.update_model()
-            clock.tick(1000)
+#    def run_model(self):
+#        clock = pygame.time.Clock()
+#        while self.running:
+#            #self.all_sprites_list.draw(self.display)
+#            self.update_model()
+#            clock.tick(1000)
 
     def print_FPS(self):
         while self.running:
@@ -120,12 +146,13 @@ class Pong_v0(EmptyDisplay):
             time.sleep(1)
             
     def run(self):
-        self.draw_frame__thread = threading.Thread(target = self.draw_frame)
-        self.draw_frame__thread.start()
+        #self.draw_frame__thread = multiprocessing.Process(target = self.draw_frame)
+        #self.draw_frame__thread.start()
         self.print_FPS__thread = threading.Thread(target = self.print_FPS)
         self.print_FPS__thread.start()
-        self.run_model()
-        self.draw_frame__thread.join()
+        #self.run_model()
+        self.draw()
+        #self.draw_frame__thread.join()
         self.print_FPS__thread.join()
 
 if __name__ == "__main__":

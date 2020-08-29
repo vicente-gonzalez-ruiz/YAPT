@@ -1,5 +1,7 @@
+# Añadimos la raqueta de la CPU que sigue la pelota.
+
 import pygame
-from pong_v0b import BallPosition
+from pong_v0 import BallPosition
 from pong_v1 import Pong_v1
 import lib.colors as Color
 

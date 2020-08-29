@@ -1,7 +1,7 @@
 import pygame
 from pong_v2 import Pong_v2
 import lib.colors as Color
-from pong_v0b import Ball
+from pong_v0 import Ball
 
 WIDTH = 0
 HEIGHT = 1

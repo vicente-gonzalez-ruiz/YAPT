@@ -1,5 +1,7 @@
+# Añadimos la raqueta del juador.
+
 import pygame
-from pong_v0b import Pong_v0
+from pong_v0 import Pong_v0
 import lib.colors as Color
 
 WIDTH = 0
