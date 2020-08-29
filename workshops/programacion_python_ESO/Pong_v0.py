@@ -124,8 +124,11 @@ class Pong_v0(EmptyDisplay):
                  width = 800,
                  height = 600,
                  caption = "A bouncing ball of size 16x16"):
-        
+
+        pygame.mixer.pre_init(44100, -16, 1, 512)
         super().__init__(width, height, caption)
+        self.ping_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
+        
         self.running = True
 
         self.ball_width = 16
@@ -165,9 +168,11 @@ class Pong_v0(EmptyDisplay):
 
     def horizontal_rebound(self):
         self.ball.x_direction_step = -self.ball.x_direction_step
+        self.ping_sound.play()
                 
     def vertical_rebound(self):
         self.ball.y_direction_step = -self.ball.y_direction_step
+        self.ping_sound.play()
 
     def update_model(self):
         self.all_sprites_list.update()
