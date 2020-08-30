@@ -151,11 +151,16 @@ class Pong_v0(EmptyDisplay):
         self.all_sprites_list.add(self.right_wall)
         
         self.FPS = 0
+        pygame.event.set_grab(True)
 
     def process_events(self):
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                self.running = False
+            #if event.type == pygame.QUIT:
+            #    self.running = False
+            #el
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.running = False
 
     def horizontal_rebound(self):
         self.ball.x_direction_step = -self.ball.x_direction_step
@@ -165,12 +170,18 @@ class Pong_v0(EmptyDisplay):
         self.ball.y_direction_step = -self.ball.y_direction_step
         self.ping_sound.play()
 
+    def ball_hits_upper_wall(self):
+        self.vertical_rebound()
+
+    def ball_hits_lower_wall(self):
+        self.vertical_rebound()
+
     def update_model(self):
         self.all_sprites_list.update()
         if pygame.sprite.collide_mask(self.ball, self.upper_wall):
-            self.vertical_rebound()
+            self.ball_hits_upper_wall()
         if pygame.sprite.collide_mask(self.ball, self.lower_wall):
-            self.vertical_rebound()
+            self.ball_hits_lower_wall()
         if pygame.sprite.collide_mask(self.ball, self.right_wall):
             if self.ball.rect.x > self.display_size[0] - self.ball_width:
                 self.ball.rect.x = self.display_size[0] - self.ball_width
