@@ -64,7 +64,7 @@ class LowerWall(pygame.sprite.Sprite):
 
         super().__init__()
         width = display_size[0] - 2
-        height = 16
+        height = 1
         self.image = pygame.Surface([width, height])
         self.image.fill(Color.black)                                  
         self.image.set_colorkey(Color.black)
@@ -80,7 +80,7 @@ class LeftWall(pygame.sprite.Sprite):
     def __init__(self, color, display_size):
 
         super().__init__()
-        width = 16
+        width = 1
         height = display_size[1] - 2
         self.image = pygame.Surface([width, height])
         self.image.fill(Color.black)                                  
@@ -89,7 +89,7 @@ class LeftWall(pygame.sprite.Sprite):
         pygame.draw.rect(self.image,
                          color,
                          [self.rect.x, self.rect.y, width, height])
-        self.rect.x = -15
+        self.rect.x = 0
         self.rect.y = 1
 
 class RightWall(pygame.sprite.Sprite):
@@ -97,7 +97,7 @@ class RightWall(pygame.sprite.Sprite):
     def __init__(self, color, display_size):
 
         super().__init__()
-        width = 16
+        width = 1
         height = display_size[1] - 2
         self.image = pygame.Surface([width, height])
         self.image.fill(Color.black)                                  
@@ -119,7 +119,7 @@ class Pong_v0(EmptyDisplay):
         pygame.mixer.pre_init(44100, -16, 1, 512)
         super().__init__(width, height, caption)
         self.ping_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
-        
+
         self.running = True
 
         self.ball_width = 16
@@ -172,8 +172,12 @@ class Pong_v0(EmptyDisplay):
         if pygame.sprite.collide_mask(self.ball, self.lower_wall):
             self.vertical_rebound()
         if pygame.sprite.collide_mask(self.ball, self.right_wall):
+            if self.ball.rect.x > self.display_size[0] - self.ball_width:
+                self.ball.rect.x = self.display_size[0] - self.ball_width
             self.horizontal_rebound()
         if pygame.sprite.collide_mask(self.ball, self.left_wall):
+            if self.ball.rect.x < 0:
+                self.ball.rect.x = 0
             self.horizontal_rebound()
 
     def draw_frame(self):
