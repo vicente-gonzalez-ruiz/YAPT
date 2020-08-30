@@ -152,6 +152,7 @@ class Pong_v0(EmptyDisplay):
         
         self.FPS = 0
         pygame.event.set_grab(True)
+        pygame.mouse.set_visible(False)
 
     def process_events(self):
         for event in pygame.event.get():
