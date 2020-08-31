@@ -20,7 +20,12 @@ por ser:
    (no cuesta dinero usarlo, si no quieres ... hay distribuciones de
    Python creadas por empresas que te cobran principalmente por
    asesorarte en su uso), y además es
-   [abierto](https://es.wikipedia.org/wiki/Software_de_c%C3%B3digo_abierto). Esto último es importante para muchas [empresas](https://www.muycanal.com/2020/02/19/las-empresas-prefieren-el-codigo-abierto-para-su-software-empresarial) y organizaciones ([CERN](https://home.cern/science/computing/open-source-open-science), [NASA](https://code.nasa.gov/)).
+   [abierto](https://es.wikipedia.org/wiki/Software_de_c%C3%B3digo_abierto). Esto
+   último es importante para muchas
+   [empresas](https://www.muycanal.com/2020/02/19/las-empresas-prefieren-el-codigo-abierto-para-su-software-empresarial)
+   y organizaciones
+   ([CERN](https://home.cern/science/computing/open-source-open-science),
+   [NASA](https://code.nasa.gov/)).
 3. Uno de los pocos lenguajes de programación que se podría calificar
    como *democrático*, diseñado por la comunidad de Python para la
    comunidad de Python que es muy grande y lo [evoluciona
@@ -51,22 +56,40 @@ cualquier plataforma actual.
 
 Básicamente, vamos a diseñar e implementar 3 programas:
 
-1. Un comprobador de [números primos](https://es.wikipedia.org/wiki/N%C3%BAmero_primo).
-2. Un juego de adivinanza de [números naturales](https://es.wikipedia.org/wiki/N%C3%BAmero_natural).
-2. Una versión personalizada del juego [Pong](https://en.wikipedia.org/wiki/Pong), que [no es la primera vez que se porta a Python](https://sites.google.com/site/thepythonpongtutorial/home).
+1. Un comprobador de [números
+   primos](https://es.wikipedia.org/wiki/N%C3%BAmero_primo).
+2. Un juego de adivinanza de [números
+   naturales](https://es.wikipedia.org/wiki/N%C3%BAmero_natural).
+2. Una versión personalizada del juego
+   [Pong](https://en.wikipedia.org/wiki/Pong), que [no es la primera
+   vez que se porta a
+   Python](https://sites.google.com/site/thepythonpongtutorial/home).
 
 ## Tecnicamente (desde el punto de vista de la programación) aprenderemos ...
 
-1. A distinguir y reconocer las partes básicas de una [computadora](https://es.wikipedia.org/wiki/Computadora).
-2. A comprender qué es un [lenguaje de programación](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n).
-3. A comprender qué es un [algoritmo](https://es.wikipedia.org/wiki/Algoritmo) y a implementarlos.
-4. A distinguir entre lenguajes [compilados](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_compilado) e [interpretados](https://es.wikipedia.org/wiki/Int%C3%A9rprete_(inform%C3%A1tica)).
-5. A interpretar qué es la [potencia de cómputo](https://en.wikipedia.org/wiki/Computer_performance).
-6. A usar el [intérprete de Python](https://docs.python.org/3/tutorial/interpreter.html).
-7. La [sintaxis básica de Python](https://www.w3schools.com/python/python_syntax.asp).
-8. Algo sobre la [PLL (Python Standard Library)](https://docs.python.org/3/library/) y cómo usarla.
-9. Algunos conceptos sobre [programación orientada a objetos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos).
-10. Algunos conceptos básicos sobre programación de [vídeojuegos](https://es.wikipedia.org/wiki/Videojuego).
+1. A distinguir y reconocer las partes básicas de una
+   [computadora](https://es.wikipedia.org/wiki/Computadora).
+2. A comprender qué es un [lenguaje de
+   programación](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n).
+3. A comprender qué es un
+   [algoritmo](https://es.wikipedia.org/wiki/Algoritmo) y a
+   implementarlos.
+4. A distinguir entre lenguajes
+   [compilados](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_compilado)
+   e
+   [interpretados](https://es.wikipedia.org/wiki/Int%C3%A9rprete_(inform%C3%A1tica)).
+5. A interpretar qué es la [potencia de
+   cómputo](https://en.wikipedia.org/wiki/Computer_performance).
+6. A usar el [intérprete de
+   Python](https://docs.python.org/3/tutorial/interpreter.html).
+7. La [sintaxis básica de
+   Python](https://www.w3schools.com/python/python_syntax.asp).
+8. Algo sobre la [PLL (Python Standard
+   Library)](https://docs.python.org/3/library/) y cómo usarla.
+9. Algunos conceptos sobre [programación orientada a
+   objetos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos).
+10. Algunos conceptos básicos sobre programación de
+    [vídeojuegos](https://es.wikipedia.org/wiki/Videojuego).
 
 ## Pero antes, una comparativa interesante
 
@@ -709,14 +732,23 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
   2. Procesar los eventos con:
   
      ```python
-	 def process_events(self):
+    def process_events(self):
         for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.QUIT:
+                self.running = False
+            elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.running = False
      ```
 	 
-	 Esto permitirá cerrar la ventana al pulsar la tecla <Esc>.
+	 Esto permitirá cerrar la ventana al pulsar la tecla <Esc> o al
+     hacer click en el botón de cerrar la ventana. Dicho método debe
+     llamarse con la frecuencia en que los eventos tienen ser
+     procesados. En nuestro caso, como dichos eventos son poco
+     frecuentes y no importa cierta latencia entre dar la orden de
+     cerrar la ventana y que esto ocurra, el método es llamado dentro
+     de un hilo una vez cada segundo y además imprime a través del
+     terminal el número de FPS (Frames Per Second) del juego.
 	 
   3. 
   

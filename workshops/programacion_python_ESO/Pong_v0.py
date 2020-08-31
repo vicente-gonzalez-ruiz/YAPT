@@ -139,10 +139,9 @@ class Pong_v0(EmptyDisplay):
 
     def process_events(self):
         for event in pygame.event.get():
-            #if event.type == pygame.QUIT:
-            #    self.running = False
-            #el
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.QUIT:
+                self.running = False
+            elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.running = False
 
@@ -185,7 +184,7 @@ class Pong_v0(EmptyDisplay):
             self.draw_frame()
             self.update_model()
             pygame.display.update()
-            self.process_events()
+            #self.process_events()
             clock.tick(60)
             self.FPS = clock.get_fps()
 
@@ -199,6 +198,7 @@ class Pong_v0(EmptyDisplay):
     def print_FPS(self):
         while self.running:
             print(f"FPS={self.FPS:04.2f}", end='\r' )
+            self.process_events()
             time.sleep(1)
             
     def run(self):
