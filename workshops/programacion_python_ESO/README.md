@@ -587,7 +587,52 @@ Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](
 ## <a id="ejer_9"></a>Ejercicio 9: Usando sprites
 Básicamente, un
 [sprite](https://www.pygame.org/docs/tut/SpriteIntro.html) es un
-objeto que una vez instanciado, puede moverse y detectar si colisiona
+objeto gráfico 2D que cuando se mueve permite detectar colisiones con
+otros objetos. Pygame proporciona la clase
+[`pygame.sprite.Sprite`](https://www.pygame.org/docs/ref/sprite.html)
+con dicha funcionalidad. Lo que vamos a hacer ahora es reescribir el
+[Ejercicio 8](#ejer_8) usando sprites.
+
+Básicamente nuestro diseño será:
+
+```
+    +---------------------------------------+
+    |               upper wall              |
++---+---------------------------------------+---+
+|   |                                       |   |
+| l |                                       | r |
+| e |                                       | i |
+| f |                                       | g |
+| t |                                       | h |
+|   |                                       | t |
+|   |                                       |   |
+| w |      +-+                              | w |
+| a |      | |                              | a |
+| l |      +-+                              | l |
+| l |                                       | l |
+|   |                                       |   |
++---+---------------------------------------+---+
+    |               lower wall              |
+    +---------------------------------------+
+```
+
+donde todos los sprites son cuadrados (la pelota) o rectangulares (las
+paredes).
+
+### Creando sprites rectangulares y estáticos
+Para crear un sprite de este tipo debemos heredar la clase
+`pygame.sprite.Sprite` y en nuestra clase hija:
+1. LLamar al constructor de la clase `pygame.sprite.Sprite`
+   escribiendo `super().__init__()`.
+2. Crear la superficie que ocupa el sprite con `self.sprite =
+   pygame.Surface([width, height])`, donde `width` es el número de
+   pixels del sprite en horizontal y `height` el número de pixels del
+   sprite en vertical. La superficie debe llamarse `self.sprite`, ya
+   que este objeto se llama así en la clase padre.
+3. 
+
+
+que una vez instanciado, puede moverse y detectar si colisiona
 con otros sprites.permite moverse y detectar colisiones con otros
 sprites. La principal ventaja de usar los sprites de Pygame es que
 están optimizados para ejecutarse rápidamente. Puesto que la pelota va
