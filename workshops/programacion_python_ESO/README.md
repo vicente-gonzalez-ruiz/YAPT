@@ -647,6 +647,31 @@ Para crear un sprite de este tipo debemos heredar la clase
    *bounding box* (esquina superior izquierda y dimensiones) del
    sprite.
 
+### Moviento un sprite
+Para desplazar un sprite simplemente tenemos que sobreescribir el
+método `update(self)` y especificar los nuevos valores de
+`self.rect.x` y de `self.rect.y`.
+
+### Detectando una colisión entre 2 sprites
+Una vez que los sprites han sido instanciados, deben colocarse en una
+lista instanciada por el método
+[`pygame.sprite.Group()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group). Ejemplo:
+
+```python
+self.all_sprites_list = pygame.sprite.Group()
+self.all_sprites_list.add(self.ball)
+```
+
+donde `self.ball` sería el sprite (una instancia de la clase Ball que
+hereda de la clase Sprite) de nuestra pelota.
+
+Podemos detectar la colisión (a nivel de pixel dibujado) entre dos sprites (pongamos, `self.ball` y `self.upper_wall`) usando:
+
+```python
+if pygame.sprite.collide_mask(self.ball, self.upper_wall):
+    self.ball_hits_upper_wall()
+```
+
 <!--
 ## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`
 La clase `EmptyDisplay` espera (quedándose bloqueada en la instrucción

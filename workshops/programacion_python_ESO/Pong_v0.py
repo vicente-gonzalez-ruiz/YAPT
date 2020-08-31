@@ -25,12 +25,12 @@ class Ball(pygame.sprite.Sprite):
         self.height = height
         self.display_size = display_size
         self.image = pygame.Surface([width, height])
-        self.image.fill(Color.black)                                  
+        self.image.fill(Color.white)                                  
         self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
-        pygame.draw.rect(self.image,
-                         color,
-                         [self.rect.x, self.rect.y, width, height])
+        #pygame.draw.rect(self.image,
+        #                 color,
+        #                 [self.rect.x, self.rect.y, width, height])
         self.rect.x = initial_x_coordinate
         self.rect.y = initial_y_coordinate
         self.x_direction_step = SPEED # Go to the right, one pixel
