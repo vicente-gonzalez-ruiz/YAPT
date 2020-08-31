@@ -28,9 +28,6 @@ class Ball(pygame.sprite.Sprite):
         self.image.fill(Color.white)                                  
         self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
-        #pygame.draw.rect(self.image,
-        #                 color,
-        #                 [self.rect.x, self.rect.y, width, height])
         self.rect.x = initial_x_coordinate
         self.rect.y = initial_y_coordinate
         self.x_direction_step = SPEED # Go to the right, one pixel
@@ -106,7 +103,7 @@ class Pong_v0(EmptyDisplay):
 
         pygame.mixer.pre_init(44100, -16, 1, 512)
         super().__init__(width, height, caption)
-        self.ping_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
+        self.rebound_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
 
         self.running = True
 
@@ -153,11 +150,11 @@ class Pong_v0(EmptyDisplay):
 
     def horizontal_rebound(self):
         self.ball.x_direction_step = -self.ball.x_direction_step
-        self.ping_sound.play()
+        self.rebound_sound.play()
                 
     def vertical_rebound(self):
         self.ball.y_direction_step = -self.ball.y_direction_step
-        self.ping_sound.play()
+        self.rebound_sound.play()
 
     def ball_hits_upper_wall(self):
         self.vertical_rebound()

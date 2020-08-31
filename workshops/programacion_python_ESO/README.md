@@ -584,7 +584,7 @@ presentado, rebotando en las paredes de la ventana. En concreto:
    
 Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball.py).
 
-## <a id="ejer_10"></a>Ejercicio 10: Usando sprites
+## <a id="ejer_10"></a>Ejercicio 10: Usando sprites. Versión 0 de Pong
 Básicamente, un
 [sprite](https://www.pygame.org/docs/tut/SpriteIntro.html) es un
 objeto gráfico 2D que cuando se mueve permite detectar colisiones con
@@ -672,6 +672,39 @@ if pygame.sprite.collide_mask(self.ball, self.upper_wall):
     self.ball_hits_upper_wall()
 ```
 
+donde `self.ball_hits_upper_wall()` sería el método que se encargaría
+de gestionar la colisión entre la pelota y el muro superior. Por
+ejemplo, podría emitir algún sonido y decidir la nueva trayectoria de
+la pelota.
+
+### Pong_v0
+
+Pong_v0 implementa la pelota rebotanto en diagonal contra las 4
+paredes. Los 5 elementos son sprites. Necesitaremos:
+
+1. Declarar una clase `Ball` que herede de `pygame.sprite.Sprite`. Esta
+   implementa 2 métodos:
+   1. `__init__()`: que crea el sprite.
+   2. `update()`: que indica cómo mover la pelota.
+2. Declarar 4 clases (casi idénticas) con las 4 paredes: `UpperWall`,
+   `LowerWall`, `LeftWall` y `RightWall`, todas herederas de
+   `pygame.sprite.Sprite`. Ninguna de ellas necesita sobreescribir el
+   método `update()` puesto que no se mueven.
+3. Declarar la clase `Pong_v0(EmptyDisplay)`. Esta:
+   1. En `__init__`:
+	  1. Inicializar el mezclador de audio con
+	     ```python
+		 pygame.mixer.pre_init(44100, -16, 1, 512)
+		 ```
+	  2. LLamar al constructor de `EmptyDisplay`.
+	  3. Cargar el sonido de rebote de la pelota con las paredes ():
+	     ```python
+		 self.rebound_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
+		 ```
+	  4. Instanciar la pelota.
+	  5. Instanciar la lista de sprites con `pygame.sprite.Group()`.
+	  6. Instanciar las 4 paredes.
+	  7. Añadir todos los sprites a la lista de sprites.
 <!--
 ## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`
 La clase `EmptyDisplay` espera (quedándose bloqueada en la instrucción
