@@ -236,11 +236,11 @@ Finalmente, sólo nos queda comprobar si alguno de los números de la
 lista con la criba divide de forma exacta a N:
 
 ```python
-N_is_prime = True
-for i in primes:
-    if N % i == 0:
-        N_is_prime = False # porque i divide a N
-        break
+N_is_prime = True          # Variable que indicará si N es primo
+for i in primes:           # Para todos los elementos de la lista primes
+    if N % i == 0:         # Si i divide a N
+        N_is_prime = False # Entonces N no es primo
+		break              # Salir del bucle
 ```
 
 Una posible solución a este ejercicio puede se encuentra
@@ -556,10 +556,11 @@ presentado, rebotando en las paredes de la ventana. En concreto:
    `EmptyDisplay`.
 
 2. Sobreescribir el método `EmptyDisplay.run()` para que rebote la
-   pelota (un cuadrado blanco). En este método tendremos que controlar
-   la posición de la pelota, y en lugar de usar `pygame.event.wait()`
-   para detener la ejecución de la aplicación hasta que no se produzca
-   un nuevo evento, usaremos el método `[pygame.event.get()`](https://www.pygame.org/docs/ref/event.html#pygame.event.get),
+   pelota (que será un cuadrado blanco). En este método tendremos que
+   controlar la posición de la pelota, y en lugar de usar
+   `pygame.event.wait()` para detener la ejecución de la aplicación
+   hasta que no se produzca un nuevo evento, usaremos el método
+   `[pygame.event.get()`](https://www.pygame.org/docs/ref/event.html#pygame.event.get),
    que lo que hace básicamente es sacar de la cola de eventos el
    siguiente disponible y retornar inmediatamente, tanto si la cola
    tiene elementos como si está vacía. A este último tipo de
@@ -567,7 +568,8 @@ presentado, rebotando en las paredes de la ventana. En concreto:
    llamada tan pronto como es posible. Nótese que, por el contrario,
    `pygame.event.wait()` es un método bloqueante.
    
-   `pygame.event.get()` debe utlizarse así:
+   `pygame.event.get()` debe utlizarse así (si lo que deseamos es
+   cerrar el display de Pygame cuando "matamos" la ventana):
 
    ```python
    for event in pygame.event.get():
@@ -575,10 +577,23 @@ presentado, rebotando en las paredes de la ventana. En concreto:
             running = False
    ```
    
-   y nos permitirá pintar en nuestra ventana tan rápido como deseemos
-   (o sea posible con los recursos de los que disponemos).
+   y nos permitirá pintar los contenidos (lo que se conoce normalmente
+   en el mundo de los videojuegos como *frame*) en nuestra ventana tan
+   rápido como deseemos (o sea posible con los recursos de los que
+   disponemos).
    
 Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball.py).
+
+## <a id="ejer_9"></a>Ejercicio 9: Usando sprites
+Básicamente, un
+[sprite](https://www.pygame.org/docs/tut/SpriteIntro.html) es un
+objeto que una vez instanciado, puede moverse y detectar si colisiona
+con otros sprites.permite moverse y detectar colisiones con otros
+sprites. La principal ventaja de usar los sprites de Pygame es que
+están optimizados para ejecutarse rápidamente. Puesto que la pelota va
+a rebotar contra las paredes y las raquetas de los jugadores en Pong,
+parece lógico recrear nuestro anterior módulo, creando un sprite que
+rebota contra las paredes del display.
 
 <!--
 ## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`

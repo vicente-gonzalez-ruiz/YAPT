@@ -46,7 +46,7 @@ class UpperWall(pygame.sprite.Sprite):
 
         super().__init__()
         width = display_size[0] - 2
-        height = 16
+        height = 1
         self.image = pygame.Surface([width, height])
         self.image.fill(Color.black)                                  
         self.image.set_colorkey(Color.black)
@@ -55,7 +55,7 @@ class UpperWall(pygame.sprite.Sprite):
                          color,
                          [self.rect.x, self.rect.y, width, height])
         self.rect.x = 1
-        self.rect.y = -15
+        self.rect.y = 0
         pygame.draw.rect(self.image, color, [self.rect.x, self.rect.y, width, height])
 
 class LowerWall(pygame.sprite.Sprite):
@@ -65,13 +65,13 @@ class LowerWall(pygame.sprite.Sprite):
         super().__init__()
         width = display_size[0] - 2
         height = 1
-        self.image = pygame.Surface([width, height])
-        self.image.fill(Color.black)                                  
-        self.image.set_colorkey(Color.black)
-        self.rect = self.image.get_rect()
-        pygame.draw.rect(self.image,
-                         color,
-                         [self.rect.x, self.rect.y, width, height])
+        self.sprite = pygame.Surface([width, height])
+        self.sprite.fill(color)
+        self.sprite.set_colorkey(Color.black)
+        self.rect = self.sprite.get_rect()
+        #pygame.draw.rect(self.image,
+        #                 color,
+        #                 [self.rect.x, self.rect.y, width, height])
         self.rect.x = 1
         self.rect.y = display_size[1] - 2
 
