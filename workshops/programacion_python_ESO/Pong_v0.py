@@ -136,8 +136,6 @@ class Pong_v0(EmptyDisplay):
         self.all_sprites_list.add(self.right_wall)
         
         self.FPS = 0
-        pygame.event.set_grab(True)
-        pygame.mouse.set_visible(False)
 
     def process_events(self):
         for event in pygame.event.get():
@@ -215,10 +213,4 @@ class Pong_v0(EmptyDisplay):
 
 if __name__ == "__main__":
     display = Pong_v0()
-    try:
-        display.run()
-    finally:
-        # Importante si por alguna razón pygame.quit() no fuera
-        # llamado antes. Ver:
-        # https://stackoverflow.com/questions/51901008/pygame-event-set-grab-remains-turned-on-after-exception-crash-and-makes-progra
-        pygame.quit()
+    display.run()
