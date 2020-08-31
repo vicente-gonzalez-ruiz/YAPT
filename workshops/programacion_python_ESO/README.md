@@ -560,7 +560,7 @@ presentado, rebotando en las paredes de la ventana. En concreto:
    controlar la posición de la pelota, y en lugar de usar
    `pygame.event.wait()` para detener la ejecución de la aplicación
    hasta que no se produzca un nuevo evento, usaremos el método
-   `[pygame.event.get()`](https://www.pygame.org/docs/ref/event.html#pygame.event.get),
+   [`pygame.event.get()`](https://www.pygame.org/docs/ref/event.html#pygame.event.get),
    que lo que hace básicamente es sacar de la cola de eventos el
    siguiente disponible y retornar inmediatamente, tanto si la cola
    tiene elementos como si está vacía. A este último tipo de
