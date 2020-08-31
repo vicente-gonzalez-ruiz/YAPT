@@ -51,9 +51,6 @@ class UpperWall(pygame.sprite.Sprite):
         self.image.fill(Color.black)                                  
         self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
-        pygame.draw.rect(self.image,
-                         color,
-                         [self.rect.x, self.rect.y, width, height])
         self.rect.x = 1
         self.rect.y = 0
         pygame.draw.rect(self.image, color, [self.rect.x, self.rect.y, width, height])
@@ -67,11 +64,8 @@ class LowerWall(pygame.sprite.Sprite):
         height = 1
         self.image = pygame.Surface([width, height])
         self.image.fill(color)
-        self.image.set_colorkey(Color.white)
+        self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
-        #pygame.draw.rect(self.image,
-        #                 color,
-        #                 [self.rect.x, self.rect.y, width, height])
         self.rect.x = 1
         self.rect.y = display_size[1] - 2
 
@@ -83,12 +77,9 @@ class LeftWall(pygame.sprite.Sprite):
         width = 1
         height = display_size[1] - 2
         self.image = pygame.Surface([width, height])
-        self.image.fill(Color.black)                                  
+        self.image.fill(color)                                  
         self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
-        pygame.draw.rect(self.image,
-                         color,
-                         [self.rect.x, self.rect.y, width, height])
         self.rect.x = 0
         self.rect.y = 1
 
@@ -100,12 +91,9 @@ class RightWall(pygame.sprite.Sprite):
         width = 1
         height = display_size[1] - 2
         self.image = pygame.Surface([width, height])
-        self.image.fill(Color.black)                                  
+        self.image.fill(color)                                  
         self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
-        pygame.draw.rect(self.image,
-                         color,
-                         [self.rect.x, self.rect.y, width, height])
         self.rect.x = display_size[0] - 1
         self.rect.y = -1
 
