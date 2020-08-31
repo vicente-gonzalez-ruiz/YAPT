@@ -16,12 +16,15 @@ class EmptyDisplay():
         print("Goodbye!")
         pygame.quit()
 
+    def process_events(self):
+        event = pygame.event.wait()
+        if event.type == pygame.QUIT:
+            running = False
+
     def run(self):
         running = True
         while running:
-            event = pygame.event.wait()
-            if event.type == pygame.QUIT:
-                running = False
+            self.process_events()
 
 if __name__ == "__main__":
     display = EmptyDisplay()
