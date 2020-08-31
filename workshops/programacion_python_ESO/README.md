@@ -546,7 +546,7 @@ Decide tú el tamaño del cuadrado, pero, que esté centrado horizontal y vertic
 2. Sobreescribir el método `EmptyDisplay.run()` para que pinte el
    cuadrado.
 
-## <a id="ejer_8"></a>Ejercicio 8: Rebota el rectángulo en los lados de la ventana
+## <a id="ejer_9"></a>Ejercicio 9: Rebota el rectángulo en los lados de la ventana
 En nuestro Pong la pelota rebotará en los límites del display. Hagamos
 que el rectángulo se mueva en diagonal, a velocidad constante a razón
 de un pixel en horizontal y otro en vertical por cada frame
