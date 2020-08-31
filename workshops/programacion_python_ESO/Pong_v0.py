@@ -65,10 +65,10 @@ class LowerWall(pygame.sprite.Sprite):
         super().__init__()
         width = display_size[0] - 2
         height = 1
-        self.sprite = pygame.Surface([width, height])
-        self.sprite.fill(color)
-        self.sprite.set_colorkey(Color.black)
-        self.rect = self.sprite.get_rect()
+        self.image = pygame.Surface([width, height])
+        self.image.fill(color)
+        self.image.set_colorkey(Color.white)
+        self.rect = self.image.get_rect()
         #pygame.draw.rect(self.image,
         #                 color,
         #                 [self.rect.x, self.rect.y, width, height])
@@ -230,4 +230,10 @@ class Pong_v0(EmptyDisplay):
 
 if __name__ == "__main__":
     display = Pong_v0()
-    display.run()
+    try:
+        display.run()
+    finally:
+        # Importante si por alguna razón pygame.quit() no fuera
+        # llamado antes. Ver:
+        # https://stackoverflow.com/questions/51901008/pygame-event-set-grab-remains-turned-on-after-exception-crash-and-makes-progra
+        pygame.quit()

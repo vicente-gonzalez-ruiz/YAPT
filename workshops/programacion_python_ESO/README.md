@@ -584,7 +584,7 @@ presentado, rebotando en las paredes de la ventana. En concreto:
    
 Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball.py).
 
-## <a id="ejer_9"></a>Ejercicio 9: Usando sprites
+## <a id="ejer_10"></a>Ejercicio 10: Usando sprites
 Básicamente, un
 [sprite](https://www.pygame.org/docs/tut/SpriteIntro.html) es un
 objeto gráfico 2D que cuando se mueve permite detectar colisiones con
@@ -619,26 +619,33 @@ Básicamente nuestro diseño será:
 donde todos los sprites son cuadrados (la pelota) o rectangulares (las
 paredes).
 
-### Creando sprites rectangulares y estáticos
+### Creando un sprite rectangular, homogéneo (sólido) y estático
 Para crear un sprite de este tipo debemos heredar la clase
 `pygame.sprite.Sprite` y en nuestra clase hija:
 1. LLamar al constructor de la clase `pygame.sprite.Sprite`
    escribiendo `super().__init__()`.
-2. Crear la superficie que ocupa el sprite con `self.sprite =
+2. Crear la superficie que ocupa el sprite con `self.image =
    pygame.Surface([width, height])`, donde `width` es el número de
    pixels del sprite en horizontal y `height` el número de pixels del
-   sprite en vertical. La superficie debe llamarse `self.sprite`, ya
+   sprite en vertical. La superficie debe llamarse `self.image`, ya
    que este objeto se llama así en la clase padre.
-3. 
-
-
-que una vez instanciado, puede moverse y detectar si colisiona
-con otros sprites.permite moverse y detectar colisiones con otros
-sprites. La principal ventaja de usar los sprites de Pygame es que
-están optimizados para ejecutarse rápidamente. Puesto que la pelota va
-a rebotar contra las paredes y las raquetas de los jugadores en Pong,
-parece lógico recrear nuestro anterior módulo, creando un sprite que
-rebota contra las paredes del display.
+3. Pintar el sprite con el color deseado. Usar:
+   [`self.image.fill(color)`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.fill),
+   donde color es el color del sprite.
+4. Indicar el color transparente del sprite usando
+   [`self.image.set_colorkey(color)`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.set_colorkey),
+   donde `color` es el color del sprite que deseamos que sea
+   transparente (que no se pinte). La llamada a este método es
+   obligatorio o de lo contrario el sprite se pinta pero no se
+   detectan las colisiones con él. `color` puede ser cualquier color,
+   excepto el color del sprite (o de lo contrario, no se pintará). En
+   nuestro caso, hemos elejido el color negro.
+5. Indicar la posición del sprite, asignando valores a `self.rect.x` y
+   `self.rect.y`. El objeto [`self.rect =
+   self.image.get_rect()`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect)
+   debe obtenerse de esta forma, y lo que hace es devolver el
+   *bounding box* (esquina superior izquierda y dimensiones) del
+   sprite.
 
 <!--
 ## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`
