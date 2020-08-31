@@ -705,6 +705,21 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
 	  5. Instanciar la lista de sprites con `pygame.sprite.Group()`.
 	  6. Instanciar las 4 paredes.
 	  7. Añadir todos los sprites a la lista de sprites.
+	  
+  2. Procesar los eventos con:
+  
+     ```python
+	 def process_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.running = False
+     ```
+	 
+	 Esto permitirá cerrar la ventana al pulsar la tecla <Esc>.
+	 
+  3. 
+  
 <!--
 ## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`
 La clase `EmptyDisplay` espera (quedándose bloqueada en la instrucción
