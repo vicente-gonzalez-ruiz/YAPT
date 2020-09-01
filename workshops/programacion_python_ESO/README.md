@@ -785,6 +785,15 @@ de gestionar la colisión entre la pelota y el muro superior. Por
 ejemplo, podría emitir algún sonido y decidir la nueva trayectoria de
 la pelota.
 
+### Control de los FPS
+
+Pygame ofrece el método
+[`pygame.time.Clock.tick()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.tick)
+que mantiene un cronómetro y que mide el tiempo transcurrido entre 2
+llamadas consecutivas a este método. Si queremos temporizar el número
+de iteraciones del bucle por segundo (que sería el número de FPS),
+este método debe llamarse dentro del bucle.
+
 ### Pong_v0
 
 [`Pong_v0.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/Pong_v0.py)
@@ -900,73 +909,18 @@ elementos son sprites. Necesitaremos:
 		```python
 		self.print_FPS__thread.join()
 		```
-  
-<!--
-## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`
-La clase `EmptyDisplay` espera (quedándose bloqueada en la instrucción
-`pygame.event.wait()`) a recibir el evento `pygame.QUIT` que indica
-que el display ha sido cerrado. Sin embargo, en la inmensa mayoría de
-los juegos el método que vamos a usar es el método
-`pygame.event.get()`. Para resolver este problema tenemos dos
-opciones:
-
-1. La primera es utilizar el método `pygame.event.get()` en todos los
-   métodos `run()` de nuestras clases, reescribiendo una y otra vez el
-   mismo código.
-   
-2. La segunda es modificar la clase `EmptyDisplay` añadiendo un nuevo
-   método llamado `poll_event()` (que usa `pygame.event.wait()`), que
-   para que en una clase hija llamada `EmptyDisplayPoll`
-   sobreescribamos el método `poll_event()` (usando la clase
-   `pygame.event.get()`). Así tendremos menos código en las clases
-   herederas como `BouncingBall`.
--->
-
-## <a id="ejer_9"></a>Ejercicio 9: Calculando los FPS (Frames Per Second)
-La clase `BouncingBall` mueve la pelota tan rápido como es posible, y
-sería interesante conocer el número de FPS alcanzados, principalmente
-porque el ser humano difícilmente puede apreciar más de 100 FPS (de
-hecho, en los juegos lo normal es limitar los FPS a 60).
-
-Analicemos un poco el código y veamos cómo podemos informar
-periódicamente (porque los FPS pueden variar con el tiempo dependiendo
-de la carga de la computadora):
-
-* Ahora mismo tenemos un bucle (el controlado `while self.running`)
-que va tan rápido como puede.
-* Pygame ofrece el método
-  [`self.clock.tick()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.tick)
-  que mantiene un cronómetro y que mide el tiempo transcurrido entre 2
-  llamadas consecutivas a este método. Si queremos temporizar el
-  número de iteraciones del bucle por segundo (que sería el número de
-  FPS), este método debe llamarse dentro del bucle.
-* Pygame ofrece el método
-  [`self.clock.get_fps()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.get_fps)
-  que devuelve el número de FPS a partir del cronómetro mantenido por
-  `self.clock.tick()`. Por tanto, este método debería llamarse siempre
-  que deseamos conocer los FPS.
-* El número de mensajes sobre los FPS van a mostrarse con una
-  frecuencia de 1 Hz. Por tanto, deberemos en alguna parte definir un
-  temporizador en bucle con dicha frecuencia de disparo.
-* Ahora mismo sólo disponemos del bucle principal (el controlado
-  `while self.running`) que que itera mucho más rápido, y por tanto,
-  no nos sirve. Podemos intentar técnicas como imprimir los FPS una
-  vez cada X iteraciones, pero esto no deja de ser poco elegante
-  sabiendo que en Python disponemos de [hilos
-  (`threads`)](https://es.wikipedia.org/wiki/Hilo_(inform%C3%A1tica)).
-  
-Conociendo todo esto, lo que vamos a hacer para imprimir los FPS a
-razón de un mensaje/segundo es crear un hilo que ejecute un bucle que
-finalice cuando `self.running == False`, y que llame al método
-`self.clock.get_fps()` e imprima el valor retornado.
-
-Véase [`bouncing_ball_FPS.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball_FPS.py) como posible solución.
-
-## <a id="ejer_10"></a>Ejercicio 10: Añadiendo sonido
-
-Añadir sonido a un juego casi es obligatorio y Pygame nos proporciona
-la funcionalidad necesaria.
-
+	 6. Como puede apreciarse, el hilo usa la variable de clase
+        `self.FPS` que se calcula en el bucle principal del programa
+		
+		```python
+		self.FPS = clock.get_fps()
+		```
+		
+		usando el método
+		[`self.clock.get_fps()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.get_fps)
+		que devuelve el número de FPS a partir del cronómetro
+		mantenido por
+		[`pygame.time.Clock.tick()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.tick).
 
 ## Ejercicio: Usar sprites
 
