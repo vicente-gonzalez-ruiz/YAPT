@@ -313,7 +313,8 @@ porporcionado por la computadora y el
 [SO](https://es.wikipedia.org/wiki/Sistema_operativo)) en el que nos
 encontremos programando (por ejemplo, en Xubuntu, el sistema gráfico
 es el [X Window
-System](https://es.wikipedia.org/wiki/Sistema_de_ventanas_X)).
+System](https://es.wikipedia.org/wiki/Sistema_de_ventanas_X)) y el
+gestor de ventanas [`XFCE`](https://www.xfce.org/).
 
 Bien, para implementar este ejercicio tendremos que:
 
@@ -504,10 +505,11 @@ y
 que además hará falta el módulo `colors.py` que debe estar dentro de
 una carpeta llamada `lib` (crear la carpeta escribiendo en el terminal
 `mkdir lib` y mover `colors.py` dentro con `mv colors.py lib`). En
-este módulo han sido definidos algunos colores básicos. La razón por
-la que `colors.py` se colocan dentro de la carpeta `lib` es porque si
-por casualidad hubiera algún paquete en la
-[PSL](https://docs.python.org/3/library/) o en
+este módulo han sido definidos algunos colores básicos (véase la
+aplicación [`Gcolor2`](http://gcolor2.sourceforge.net/) normalmente
+instalada en XFCE). La razón por la que `colors.py` se colocan dentro
+de la carpeta `lib` es porque si por casualidad hubiera algún paquete
+en la [PSL](https://docs.python.org/3/library/) o en
 [PyPI](https://pypi.org/) llamado también `colors`, evitaríamos que
 nuestro `colors` enmascarara al paquete "estándar".
 
@@ -673,7 +675,32 @@ Para crear un sprite de este tipo debemos heredar la clase
 ### Moviento un sprite
 Para desplazar un sprite simplemente tenemos que sobreescribir el
 método `update(self)` y especificar los nuevos valores de
-`self.rect.x` y de `self.rect.y`.
+`self.rect.x` y de `self.rect.y`. Pero ojo, esto no tendrá efecto
+hasta que llamemos a los métodos:
+1. [`self.all_sprites_list.update()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update),
+   donde [`self.all_sprites_list =
+   pygame.sprite.Group()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group).
+2. [`self.all_sprites_list.draw(self.display)`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group.draw).
+3. [`pygame.display.update()`](https://www.pygame.org/docs/ref/display.html#pygame.display.update).
+Los dos primeros métodos deben invocarse cuando queremos que los
+sprites se muevan *en memoria*, y esto debería ocurrir si el
+movimiento es tan rápido que no podría ser apreciado por un ser humano
+(normalmente, por encima de 60 Hz no aumenta la sensación de
+movimiento). El último método se debe de llamar para que todos los
+cambios realizados en el frame sean mostrados.
+
+Sobre ¿por qué puede ser interesante trabajar con una frecuencia de
+renderizado mayor que una frecuencia de refresco?, hay algún [vídeo
+interesante](https://www.youtube.com/watch?v=lS_G2XSYVl4) que lo
+explica, aunque básicamente se hace para aumentar la precisión de la
+detección de colisiones entre sprites que se mueven de forma discreta,
+a grandes saltos (puede ocurrir que los sprites *se crucen*, como si
+fueran fantasmas inmateriales, y no se detectarían las colisiones).
+
+En nuestra versión de Pong el paso de movimiento máximo de la pelota
+jamás superará el tamaño de la misma (16x16 pixels), y por tanto, la
+frecuencia de renderizado del juego y la frecuencia de pintado de los
+frames puede ser la misma.
 
 ### Detectando una colisión entre 2 sprites
 Una vez que los sprites han sido instanciados, deben colocarse en una
