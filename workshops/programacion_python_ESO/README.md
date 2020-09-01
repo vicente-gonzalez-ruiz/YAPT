@@ -622,7 +622,7 @@ presentado, rebotando en las paredes de la ventana. En concreto:
 Una posible solución a este ejercicio está disponible en
 [`bouncing_ball.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball.py).
 
-## <a id="ejer_10"></a>Ejercicio 10. Usando sprites (Versión 0 de Pong)
+## <a id="ejer_10"></a>Ejercicio 10. Usando sprites (versión 0 de Pong)
 Básicamente, un
 [sprite](https://www.pygame.org/docs/tut/SpriteIntro.html) es un
 objeto gráfico 2D que cuando se mueve permite detectar colisiones con
@@ -787,8 +787,9 @@ la pelota.
 
 ### Pong_v0
 
-Pong_v0 implementa la pelota rebotanto en diagonal contra las 4
-paredes. Los 5 elementos son sprites. Necesitaremos:
+[`Pong_v0.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/Pong_v0.py)
+implementa la pelota rebotanto en diagonal contra las 4 paredes. Los 5
+elementos son sprites. Necesitaremos:
 
 1. Declarar una clase `Ball` que herede de
    [`pygame.sprite.Sprite`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite). Esta
