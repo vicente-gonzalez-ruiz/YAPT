@@ -716,7 +716,10 @@ Para desplazar un sprite simplemente tenemos que sobreescribir el
 método `update()` y especificar los nuevos valores de
 `self.rect.x` y de `self.rect.y`. Pero ojo, esto sólo tendrá efecto
 tras llamar a los métodos:
-1. [`self.all_sprites_list.update()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update),
+1. ```python
+   a = 1
+   ```
+   [`self.all_sprites_list.update()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update),
    donde [`self.all_sprites_list =
    pygame.sprite.Group()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group).
 2. [`self.all_sprites_list.draw(self.display)`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group.draw).
