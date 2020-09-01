@@ -748,9 +748,9 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
 3. Declarar la clase `Pong_v0(EmptyDisplay)`. Esta:
    1. En `__init__`:
 	  1. Inicializar el mezclador de audio con
-	     ```python
-		 pygame.mixer.pre_init(44100, -16, 1, 512)
-		 ```
+```python
+pygame.mixer.pre_init(44100, -16, 1, 512)
+```
 	  2. LLamar al constructor de `EmptyDisplay` escribiendo
          `super().__init__(width, height, caption)`.
 	  3. Cargar el sonido de rebote de la pelota con las paredes ():
@@ -787,22 +787,22 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
 	 
   3. Para ejecutar un método de una clase en un hilo, hay que:
 	 1. Importar:
-	 ```python
-	 import threading
-	 import time
-	 ```
-	 2. Declarar el método. Por ejemplo:
 		 ```python
-		 def print_FPS(self):
+		 import threading
+		 import time
+		 ```
+	 2. Declarar el método. Por ejemplo:
+   		```python
+		def print_FPS(self):
 			while self.running:
 				print(f"FPS={self.FPS:04.2f}", end='\r' )
 				self.process_events()
 				time.sleep(1)
 	     ```
 	 3. Crear el hilo con:
-	 ```python
-	 self.print_FPS__thread = threading.Thread(target = self.print_FPS)
-	 ```
+		 ```python
+		 self.print_FPS__thread = threading.Thread(target = self.print_FPS)
+		 ```
 	 4. Lanzar el hilo:
 		 ``` python
 		 self.print_FPS__thread.start()
