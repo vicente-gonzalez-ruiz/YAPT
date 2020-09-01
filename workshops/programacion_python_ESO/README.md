@@ -607,6 +607,10 @@ presentado, rebotando en las paredes de la ventana. En concreto:
    rápido como deseemos (o sea posible con los recursos de los que
    disponemos).
    
+3. Recuerda que para que los gráficos aparezcan en la ventana, esta
+   tiene que actualizarse con
+   [`pygame.display.update()`](https://www.pygame.org/docs/ref/display.html#pygame.display.update).
+   
 Una posible solución a este ejercicio está disponible en [`bouncing_ball.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball.py).
 
 ## <a id="ejer_10"></a>Ejercicio 10: Usando sprites. Versión 0 de Pong
