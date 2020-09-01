@@ -6,7 +6,7 @@ from Pong_v0 import Pong_v0
 import lib.colors as Color
 import random
 
-CPU_DIFFICULTY = 4 # 2 is more difficult than 1
+CPU_DIFFICULTY = 4  # 1 es el mínimo
 
 class PlayerRacket(pygame.sprite.Sprite):
 

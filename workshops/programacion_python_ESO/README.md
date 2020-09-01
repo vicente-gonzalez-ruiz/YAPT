@@ -956,6 +956,12 @@ la pelota. Este es más o menos el esquema:
 
 Las dos raquetas serán sprites.
 
+### Pong_v1
+
+[`Pong_v1.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/Pong_v1.py) extiende (hereda) Pong_v0, añadiendo ambas raquetas. Básicamente, vamos a:
+
+1. Crear 
+
 ## Apéndice A: Comandos básicos del terminal
 
 * `cd` (change directory): permite moverse por el sistema de
