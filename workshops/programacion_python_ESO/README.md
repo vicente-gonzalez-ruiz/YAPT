@@ -844,8 +844,8 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
   2. Procesar los eventos con:
   
      ```python
-    def process_events(self):
-        for event in pygame.event.get():
+     def process_events(self):
+         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
             elif event.type == pygame.KEYDOWN:
