@@ -744,7 +744,7 @@ Los dos primeros métodos deben invocarse cuando queremos que los
 sprites se muevan *en memoria*, y esto debería ocurrir si el
 movimiento es tan rápido que no podría ser apreciado por un ser humano
 (normalmente, por encima de 60 Hz no aumenta la sensación de
-movimiento). El último método se debe de llamar para que todos los
+movimiento). El último método se debe llamar para que todos los
 cambios realizados en el frame sean mostrados.
 
 Sobre ¿por qué puede ser interesante trabajar con una frecuencia de
@@ -757,8 +757,8 @@ fueran fantasmas inmateriales, y no se detectarían las colisiones).
 
 En nuestra versión de Pong el paso de movimiento máximo de la pelota
 jamás superará el tamaño de la misma (16x16 pixels), y por tanto, la
-frecuencia de renderizado del juego y la frecuencia de pintado de los
-frames puede ser la misma.
+frecuencia de renderizado del juego (en memoria) y la frecuencia de
+pintado de los frames pueden ser iguales.
 
 ### Detectando una colisión entre 2 sprites
 Una vez que los sprites han sido instanciados, deben colocarse en una
@@ -790,14 +790,16 @@ la pelota.
 Pong_v0 implementa la pelota rebotanto en diagonal contra las 4
 paredes. Los 5 elementos son sprites. Necesitaremos:
 
-1. Declarar una clase `Ball` que herede de `pygame.sprite.Sprite`. Esta
+1. Declarar una clase `Ball` que herede de
+   [`pygame.sprite.Sprite`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite). Esta
    implementa 2 métodos:
    1. `__init__()`: que crea el sprite.
    2. `update()`: que indica cómo mover la pelota.
 2. Declarar 4 clases (casi idénticas) con las 4 paredes: `UpperWall`,
    `LowerWall`, `LeftWall` y `RightWall`, todas herederas de
-   `pygame.sprite.Sprite`. Ninguna de ellas necesita sobreescribir el
-   método `update()` puesto que no se mueven.
+   [`pygame.sprite.Sprite`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite). Ninguna
+   de ellas necesita sobreescribir el método `update()` puesto que no
+   se mueven.
 3. Declarar la clase `Pong_v0(EmptyDisplay)`. Esta:
    1. En `__init__`:
 	  1. Inicializar el mezclador de audio con
