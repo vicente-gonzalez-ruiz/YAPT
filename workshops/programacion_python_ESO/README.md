@@ -803,21 +803,43 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
 3. Declarar la clase `Pong_v0(EmptyDisplay)`. Esta:
    1. En su método `__init__`:
 	  1. Inicializar el mezclador de audio con
+	  
 	     ```python
 	     pygame.mixer.pre_init(44100, -16, 1, 512)
 	     ```
+
 	  2. LLamar al constructor de `EmptyDisplay` escribiendo
-         `super().__init__(width, height, caption)`.
-	  3. Cargar el sonido de rebote de la pelota con las paredes ():
+	  
+         ```python
+		 super().__init__(width, height, caption)
+		 ```
+
+	  3. Cargar el sonido de rebote de la pelota con las paredes
+         usando
+         [`pygame.mixer.Sound()`](https://www.pygame.org/docs/ref/mixer.html#pygame.mixer.Sound):
+	  
 	     ```python
 		 self.rebound_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
 		 ```
-	  4. Instanciar la pelota.
-	  5. Instanciar la lista de sprites con
-         [`pygame.sprite.Group()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group).
-	  6. Instanciar las 4 paredes.
-	  7. Añadir todos los sprites a la lista de sprites. Todos se van
-         a pintar al mismo tiempo.
+	  4. [Instanciar la lista de
+         sprites](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group)
+         con
+		 
+		 ```python
+		 self.all_sprites_list = pygame.sprite.Group()
+		 ```
+		 
+	  5. Instanciar la pelota y las 4 paredes.
+	  
+	  6. Añadir todos los sprites a la lista de sprites. Todos se van
+         a pintar al mismo tiempo. Ejemplo:
+		 
+		 ```python
+		 self.all_sprites_list.add(self.ball)
+		 self.all_sprites_list.add(self.lower_wall)
+		 self.all_sprites_list.add(self.left_wall)
+		 self.all_sprites_list.add(self.right_wall)
+		 ```
 	  
   2. Procesar los eventos con:
   
@@ -841,32 +863,42 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
      terminal el número de FPS (Frames Per Second) del juego.
 	 
   3. Para ejecutar un método de una clase en un hilo, hay que:
+  
 	 1. Importar:
-		 ```python
-		 import threading
-		 import time
-		 ```
+	 
+	    ```python
+		import threading
+		import time
+		```
+		
 	 2. Declarar el método. Por ejemplo:
+	 
    		```python
 		def print_FPS(self):
 			while self.running:
 				print(f"FPS={self.FPS:04.2f}", end='\r' )
 				self.process_events()
 				time.sleep(1)
-	     ```
+	    ```
+		
 	 3. Crear el hilo con:
-		 ```python
-		 self.print_FPS__thread = threading.Thread(target = self.print_FPS)
-		 ```
+	 
+	    ```python
+		self.print_FPS__thread = threading.Thread(target = self.print_FPS)
+		```
+
 	 4. Lanzar el hilo:
-		 ``` python
-		 self.print_FPS__thread.start()
-		 ```
+	 
+	    ``` python
+		self.print_FPS__thread.start()
+		```
+		
 	 5. Cuando el módulo haya finalizado, esperar a que el hilo
         finalice también:
-			```python
-			self.print_FPS__thread.join()
-			```
+		
+		```python
+		self.print_FPS__thread.join()
+		```
   
 <!--
 ## <a id="ejer_9"></a>Ejercicio 9: Crea la clase `EmptyDisplayPoll`
