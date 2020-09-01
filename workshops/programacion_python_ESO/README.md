@@ -798,10 +798,10 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
 2. Declarar 4 clases (casi idénticas) con las 4 paredes: `UpperWall`,
    `LowerWall`, `LeftWall` y `RightWall`, todas herederas de
    [`pygame.sprite.Sprite`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite). Ninguna
-   de ellas necesita sobreescribir el método `update()` puesto que no
+   de ellas necesita sobreescribir el método `update()`, puesto que no
    se mueven.
 3. Declarar la clase `Pong_v0(EmptyDisplay)`. Esta:
-   1. En `__init__`:
+   1. En su método `__init__`:
 	  1. Inicializar el mezclador de audio con
 	     ```python
 	     pygame.mixer.pre_init(44100, -16, 1, 512)
