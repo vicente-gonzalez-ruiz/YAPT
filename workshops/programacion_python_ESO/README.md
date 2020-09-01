@@ -748,9 +748,9 @@ paredes. Los 5 elementos son sprites. Necesitaremos:
 3. Declarar la clase `Pong_v0(EmptyDisplay)`. Esta:
    1. En `__init__`:
 	  1. Inicializar el mezclador de audio con
-```python
-pygame.mixer.pre_init(44100, -16, 1, 512)
-```
+	     ```python
+	     pygame.mixer.pre_init(44100, -16, 1, 512)
+	     ```
 	  2. LLamar al constructor de `EmptyDisplay` escribiendo
          `super().__init__(width, height, caption)`.
 	  3. Cargar el sonido de rebote de la pelota con las paredes ():
