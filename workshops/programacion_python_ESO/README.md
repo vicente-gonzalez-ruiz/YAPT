@@ -701,7 +701,7 @@ Para crear un sprite de este tipo debemos heredar la clase
    nuestro caso, hemos elejido el color negro.
    
 5. Indicar la posición del sprite, asignando valores a `self.rect.x` y
-   `self.rect.y`. El objeto [`surface`]((https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect))
+   `self.rect.y`. El objeto [`surface`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect)
    
    ```python
    self.rect = self.image.get_rect()
