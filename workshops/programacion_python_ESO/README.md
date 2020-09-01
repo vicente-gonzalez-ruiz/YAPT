@@ -661,12 +661,23 @@ paredes).
 Para crear un sprite de este tipo debemos heredar la clase
 `pygame.sprite.Sprite` y en nuestra clase hija:
 1. LLamar al constructor de la clase `pygame.sprite.Sprite`
-   escribiendo `super().__init__()`.
-2. Crear la superficie que ocupa el sprite con `self.image =
-   pygame.Surface([width, height])`, donde `width` es el número de
-   pixels del sprite en horizontal y `height` el número de pixels del
-   sprite en vertical. La superficie debe llamarse `self.image`, ya
-   que este objeto se llama así en la clase padre.
+   escribiendo
+   
+   ```python
+   super().__init__()
+   ```
+
+2. Crear la superficie que ocupa el sprite con
+
+   ```python
+   self.image = pygame.Surface([width, height])
+   ```
+   
+   donde `width` es el número de pixels del sprite en horizontal y
+   `height` el número de pixels del sprite en vertical. La superficie
+   debe llamarse `self.image`, ya que este objeto se llama así en la
+   clase padre.
+
 3. Pintar el sprite con el color deseado. Usar:
    [`self.image.fill(color)`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.fill),
    donde color es el color del sprite.
