@@ -113,7 +113,7 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 * [Pong en una máquina arcade de Atari (1972)](https://www.youtube.com/watch?v=YmzH4E3x1_g).
 * [Pong en una consola Super Pong de Atari (1976)](https://www.youtube.com/watch?v=9pSMU20bt2M).
 
-## <a id="ejer_0"></a>Ejercicio 0: Di: "¡Hola Mundo!" en Python
+## <a id="ejer_0"></a>Ejercicio 0. Di: "¡Hola Mundo!" en Python
 
 Pues eso. Todos los programadores comienzan aprendiendo un lenguaje
 nuevo implementando el "Hello World!". Para ello:
@@ -164,7 +164,7 @@ nuevo implementando el "Hello World!". Para ello:
 
 <!-- Primera parada técnica -->
 
-## <a id="ejer_1"></a>Ejercicio 1: Compilación vs Interpretación
+## <a id="ejer_1"></a>Ejercicio 1. Compilación vs Interpretación
 En el [Ejercicio 0](#ejer_0) hemos interpretado el módulo
 `hello_world.py`. Para ello, hemos ejecutado el intérprete ( `python`)
 y a éste le hemos pasado como argumento el nombre del módulo
@@ -205,7 +205,7 @@ de ejecutarlo.
    cuando [exista un intérprete para dicha
    plataforma](https://www.python.org/downloads/)).
 
-## <a id="ejer_2"></a>Ejercicio 2: Averigua si un número natural N es primo
+## <a id="ejer_2"></a>Ejercicio 2. Averigua si un número natural N es primo
 
 Los números primos son la base de la [criptografía
 asimétrica](https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica)
@@ -282,7 +282,7 @@ tienes curiosidad, la Wikipedia nos habla sobre [los números primos más
 grandes
 conocidos](https://es.wikipedia.org/wiki/Mayor_n%C3%BAmero_primo_conocido).
 
-## <a id="ejer_3"></a>Ejercicio 3: Bueno, juguemos un poco ahora ... y ¡averigua el número!
+## <a id="ejer_3"></a>Ejercicio 3. Bueno, juguemos un poco ahora ... y ¡averigua el número!
 Dejemos un poco de lado a las matemáticas y vamos programar juegos
 sencillos. El primero de ellos consiste en adivinar qué número, dentro
 de un rango, ha elegido de forma aleatoria la
@@ -308,7 +308,7 @@ Una posible solución a este ejercicio puede
 encuentrarse
 [aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/guess_the_number.py). Otra implementación podría ser [esta](https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py), que es parte del paquete [freegames](https://pypi.python.org/pypi/freegames).
 
-## <a id="ejer_4"></a>Ejercicio 4: Crear una ventana vacía (empty screen) usando Pygame
+## <a id="ejer_4"></a>Ejercicio 4. Crear una ventana vacía (empty screen) usando Pygame
 El segundo (y último juego) que vamos a implementar en este curso de
 programación con Python es una versión del videojuego Pong. Para
 desarrollarlo más fácilmente, nos vamos a apoyar en el uso del paquete
@@ -346,7 +346,7 @@ Una posible solución está disponible [aquí](https://raw.githubusercontent.com
 puede encontrarse en [Programar Juegos Arcade con Python y
 Pygame](http://programarcadegames.com/).
 
-## <a id="ejer_5"></a>Ejercicio 5: Pintar un par de puntos
+## <a id="ejer_5"></a>Ejercicio 5. Pintar un par de puntos
 Además de aprender cómo dibujar puntos, el objetivo de este ejercicio
 es averiguar cómo se distribuyen las coordenadas en un display de
 Pygame. Implementar:
@@ -463,7 +463,7 @@ animal`, el código que hay en el bloque del `__main__` no se
 ejecuta. Eso es porque cuando hacemos un `import`, la variable
 `__name__` tiene el nombre del módulo.
 
-## <a id="ejer_6"></a>Ejercicio 6: Reimplementamos los Ejercicios [4](#ejer_4) y [5](#ejer_5) usando la OOP
+## <a id="ejer_6"></a>Ejercicio 6. Reimplementamos los Ejercicios [4](#ejer_4) y [5](#ejer_5) usando la OOP
 Vamos a definir 2 clases en 2 módulos (archivos) diferentes:
 1. Una clase padre, llamada `EmptyDisplay`, en la que vamos a definir
    3 métodos:
@@ -534,7 +534,7 @@ Nótese que tenemos:
  +------------+
 ```
 
-## <a id="ejer_7"></a>Ejercicio 7: Pintar un rectángulo
+## <a id="ejer_7"></a>Ejercicio 7. Pintar un rectángulo
 La pelota de nuestro Pong va a ser un cuadrado. Aprendamos a dibujar
 rectángulos:
 
@@ -553,7 +553,7 @@ rectángulos:
 Una posible solución puede encontrarse en
    [`draw_rectangle.py`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/draw_rectangle.py).
 
-## <a id="ejer_8"></a>Ejercicio 8: Rellena un area de colores
+## <a id="ejer_8"></a>Ejercicio 8. Rellena un area de colores
 Vamos a rellenar un cuadrado en el centro de la ventana con píxeles de cientos de colores. Algo como:
 
 ```
@@ -579,7 +579,7 @@ Decide tú el tamaño del cuadrado, pero, que esté centrado horizontal y vertic
 2. Sobreescribir el método `EmptyDisplay.run()` para que pinte el
    cuadrado.
 
-## <a id="ejer_9"></a>Ejercicio 9: Rebota el rectángulo en los lados de la ventana
+## <a id="ejer_9"></a>Ejercicio 9. Rebota el rectángulo en los lados de la ventana
 En nuestro Pong la pelota rebotará en los límites del display. Hagamos
 que el rectángulo se mueva en diagonal, a velocidad constante a razón
 de un pixel en horizontal y otro en vertical por cada frame
@@ -622,7 +622,7 @@ presentado, rebotando en las paredes de la ventana. En concreto:
 Una posible solución a este ejercicio está disponible en
 [`bouncing_ball.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/bouncing_ball.py).
 
-## <a id="ejer_10"></a>Ejercicio 10: Usando sprites. Versión 0 de Pong
+## <a id="ejer_10"></a>Ejercicio 10. Usando sprites (Versión 0 de Pong)
 Básicamente, un
 [sprite](https://www.pygame.org/docs/tut/SpriteIntro.html) es un
 objeto gráfico 2D que cuando se mueve permite detectar colisiones con
