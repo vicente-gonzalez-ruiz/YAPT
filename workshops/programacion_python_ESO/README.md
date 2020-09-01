@@ -922,7 +922,13 @@ elementos son sprites. Necesitaremos:
 		mantenido por
 		[`pygame.time.Clock.tick()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.tick).
 
-## Ejercicio: Usar sprites
+## Ejercicio 11. Añadiendo los jugadores (versón 1 Pong)
+
+En el Pong original, los jugadores son dos humanos. En nuestro pong,
+una de los jugadores será la *CPU*. El *human player* usará el ratón
+para mover la raqueta. El *CPU player* simplemente seguirá (con cierto
+margen de error para que haya algún aliciente para el jugador humano)
+la pelota. Este es más o menos el esquema:
 
 ```
 <---------------------- screen_width ----------------------->
@@ -949,37 +955,7 @@ elementos son sprites. Necesitaremos:
 +-----------------------------------------------------------+ v
 ```
 
-## Ejercicio: Reutilizar el código de la pantalla vacía para pintar puntos
-1. Distribuir el código del Ejercicio 1 en métodos (de una clase
-   llamada `Screen`; llamar al fichero que la contiene `screen.py`),
-   de forma que la clase creada para el Ejercicio 2 pueda reutilizar:
-   (1) la parte de código que crea la ventana, y (2) la parte de
-   código que cierra la ventana y Pygame.
-
-
-```
-main():
-  computer_points_counter = 0
-  human_points_counter = 0
-  while (computer_points_counter < 10) and (humman_points_counter < 10):
-    if ball_coordinate_y < 0:
-	  human_points_counter = human_points_counter + 1
-	else if ball_coordinate_y > screen_height:
-	  computer_points_counter = computer_points_counter + 1
-```
-
-## Open a window
-
-1. [¿Qué es un lenguaje de programación?]().
-2. [¿Qué es Python?]().
-3. [Sistemas donde corre Python]()-
-4. [Un poco de Linux y su consola de comandos]().
-5. [Instalación de Python en Linux]().
-6. [Hello World en Python](http://localhost:8888/notebooks/YAPT/03-hello_world.ipynb#Hello-world!).
-7. [¿Qué es PyGame?](http://localhost:8888/notebooks/YAPT/04-structuring_code.ipynb#Structuring-code).
-
-7. [PacMan](https://github.com/grantjenks/free-python-games/blob/master/freegames/pacman.py) from [Free Python Games](http://www.grantjenks.com/docs/freegames/). See [https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames) at [The Python Package Index](https://pypi.python.org/pypi). Extra info at [Using Turtle graphics: a Tkinter based turtle graphics module for Python](http://localhost:8888/notebooks/YAPT/A3-Turtle.ipynb#Using-Turtle-graphics:-a-Tkinter-based-turtle-graphics-module-for-Python).
-8. [I/O](http://localhost:8888/notebooks/YAPT/18-IO.ipynb).
+Las dos raquetas serán sprites.
 
 ## Apéndice A: Comandos básicos del terminal
 
@@ -1034,7 +1010,18 @@ main():
   rm lib  # Borra el directorio vacío "lib"
   ```
 
-## Apéndice B: Aprovisionamiento
+## Apéndice B: PacMan en Python
+Podemos jugar a
+[PacMan](https://github.com/grantjenks/free-python-games/blob/master/freegames/pacman.py)
+que está dentro del paquete [Free Python
+Games](http://www.grantjenks.com/docs/freegames/). Véase también
+[https://pypi.python.org/pypi/freegames](https://pypi.python.org/pypi/freegames)
+at [The Python Package Index](https://pypi.python.org/pypi).  Hay
+extra info en [Using Turtle graphics: a Tkinter based turtle graphics
+module for
+Python](http://localhost:8888/notebooks/YAPT/A3-Turtle.ipynb#Using-Turtle-graphics:-a-Tkinter-based-turtle-graphics-module-for-Python).
+
+## Apéndice C: Aprovisionamiento de curso
 1. Instalar [Xubuntu 20.04 (Focal
    Fossa)](https://xubuntu.org/download/) en un pendrive de al menos 8
    GB. Xubuntu recién instalado ocupa aproximadamente 5 GB.
