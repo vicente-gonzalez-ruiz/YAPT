@@ -207,7 +207,17 @@ de ejecutarlo.
 
 ## <a id="ejer_2"></a>Ejercicio 2: Averigua si un número natural N es primo
 
-Los números primos son la base de la [criptografía asimétrica](https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica) (también llamados algoritmos criptográficos de clave pública) y son muy importantes para [*esconder* información digital](https://www.lasexta.com/tecnologia-tecnoxplora/ciencia/divulgacion/principios-basicos-encriptacion-entender-como-snowden-jugo-casa-blanca_2013082657fc98e90cf2fd8cc6b0d634.html), desarrollar [firmas](https://academy.binance.com/es/security/what-is-public-key-cryptography) y [monedas](https://es.cointelegraph.com/explained/what-is-asymmetric-cryptography) digitales, desarrollar algoritmos de [hashing](https://es.wikipedia.org/wiki/Tabla_hash), etc.
+Los números primos son la base de la [criptografía
+asimétrica](https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica)
+(también llamados algoritmos criptográficos de clave pública) y son
+muy importantes para [*esconder* información
+digital](https://www.lasexta.com/tecnologia-tecnoxplora/ciencia/divulgacion/principios-basicos-encriptacion-entender-como-snowden-jugo-casa-blanca_2013082657fc98e90cf2fd8cc6b0d634.html),
+desarrollar
+[firmas](https://academy.binance.com/es/security/what-is-public-key-cryptography)
+y
+[monedas](https://es.cointelegraph.com/explained/what-is-asymmetric-cryptography)
+digitales, desarrollar algoritmos de
+[hashing](https://es.wikipedia.org/wiki/Tabla_hash), etc.
 
 Un [número natural](https://es.wikipedia.org/wiki/N%C3%BAmero_natural)
 N es primo si ninguna de las divisiones de N entre los enteros primos
@@ -255,24 +265,22 @@ lo que podemos encontrar en la Wikipedia, debemos:
    En este punto, `primes` contiene la lista de todos los números
    naturales entre 2 y sqrt(N), y que son números primos.
    
-Finalmente, sólo nos queda comprobar si alguno de los números de la
+3. Finalmente, sólo nos queda comprobar si alguno de los números de la
 lista con la criba divide de forma exacta a N:
 
-```python
-N_is_prime = True          # Variable que indicará si N es primo
-for i in primes:           # Para todos los elementos de la lista primes
-    if N % i == 0:         # Si i divide a N
-        N_is_prime = False # Entonces N no es primo
-		break              # Salir del bucle
-```
+	```python
+	N_is_prime = True          # Variable que indicará si N es primo
+	for i in primes:           # Para todos los elementos de la lista primes
+		if N % i == 0:         # Si i divide a N
+			N_is_prime = False # Entonces N no es primo
+			break              # Salir del bucle
+    ```
 
 Una posible solución a este ejercicio puede se encuentra
 [aquí](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/check_prime.py). Si
 tienes curiosidad, la Wikipedia nos habla sobre [los números primos más
 grandes
 conocidos](https://es.wikipedia.org/wiki/Mayor_n%C3%BAmero_primo_conocido).
-
-<!-- día 3 -->
 
 ## <a id="ejer_3"></a>Ejercicio 3: Bueno, juguemos un poco ahora ... y ¡averigua el número!
 Dejemos un poco de lado a las matemáticas y vamos programar juegos
