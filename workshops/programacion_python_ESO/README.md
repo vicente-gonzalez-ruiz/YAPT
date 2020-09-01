@@ -629,7 +629,7 @@ objeto gráfico 2D que cuando se mueve permite detectar colisiones con
 otros objetos. Pygame proporciona la clase
 [`pygame.sprite.Sprite`](https://www.pygame.org/docs/ref/sprite.html)
 con dicha funcionalidad. Lo que vamos a hacer ahora es reescribir el
-[Ejercicio 8](#ejer_8) usando sprites.
+[Ejercicio 9](#ejer_9) usando sprites.
 
 Básicamente nuestro diseño será:
 
@@ -644,9 +644,9 @@ Básicamente nuestro diseño será:
 | t |                                       | h |
 |   |                                       | t |
 |   |                                       |   |
-| w |      +-+                              | w |
-| a |      | |                              | a |
-| l |      +-+                              | l |
+| w |      +---+                            | w |
+| a |      |   | Ball                       | a |
+| l |      +---+                            | l |
 | l |                                       | l |
 |   |                                       |   |
 +---+---------------------------------------+---+
