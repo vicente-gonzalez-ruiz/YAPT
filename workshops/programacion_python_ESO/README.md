@@ -678,29 +678,44 @@ Para crear un sprite de este tipo debemos heredar la clase
    debe llamarse `self.image`, ya que este objeto se llama así en la
    clase padre.
 
-3. Pintar el sprite con el color deseado. Usar:
-   [`self.image.fill(color)`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.fill),
+3. Pintar el sprite con el color
+   deseado. [Usar](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.fill)
+
+   ```python
+   self.image.fill(color)
+   ```
+   
    donde color es el color del sprite.
-4. Indicar el color transparente del sprite usando
-   [`self.image.set_colorkey(color)`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.set_colorkey),
+
+4. Indicar el color transparente del sprite [usando](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.set_colorkey)
+
+   ```python
+   self.image.set_colorkey(color)
+   ```
+   
    donde `color` es el color del sprite que deseamos que sea
    transparente (que no se pinte). La llamada a este método es
    obligatorio o de lo contrario el sprite se pinta pero no se
    detectan las colisiones con él. `color` puede ser cualquier color,
    excepto el color del sprite (o de lo contrario, no se pintará). En
    nuestro caso, hemos elejido el color negro.
+   
 5. Indicar la posición del sprite, asignando valores a `self.rect.x` y
-   `self.rect.y`. El objeto [`self.rect =
-   self.image.get_rect()`](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect)
+   `self.rect.y`. El objeto [`surface`]((https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_rect))
+   
+   ```python
+   self.rect = self.image.get_rect()
+   ```
+   
    debe obtenerse de esta forma, y lo que hace es devolver el
    *bounding box* (esquina superior izquierda y dimensiones) del
    sprite.
 
 ### Moviento un sprite
 Para desplazar un sprite simplemente tenemos que sobreescribir el
-método `update(self)` y especificar los nuevos valores de
-`self.rect.x` y de `self.rect.y`. Pero ojo, esto no tendrá efecto
-hasta que llamemos a los métodos:
+método `update()` y especificar los nuevos valores de
+`self.rect.x` y de `self.rect.y`. Pero ojo, esto sólo tendrá efecto
+tras llamar a los métodos:
 1. [`self.all_sprites_list.update()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update),
    donde [`self.all_sprites_list =
    pygame.sprite.Group()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group).
