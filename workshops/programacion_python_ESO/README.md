@@ -716,14 +716,30 @@ Para desplazar un sprite simplemente tenemos que sobreescribir el
 método `update()` y especificar los nuevos valores de
 `self.rect.x` y de `self.rect.y`. Pero ojo, esto sólo tendrá efecto
 tras llamar a los métodos:
-1. ```python
-   a = 1
+1. [`pygame.sprite.Sprite.update()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update) usando
+
+   ```python
+   self.all_sprites_list.update()
    ```
-   [`self.all_sprites_list.update()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update),
-   donde [`self.all_sprites_list =
-   pygame.sprite.Group()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group).
-2. [`self.all_sprites_list.draw(self.display)`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group.draw).
-3. [`pygame.display.update()`](https://www.pygame.org/docs/ref/display.html#pygame.display.update).
+   
+   [donde](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group)
+   
+   ```python
+   self.all_sprites_list = pygame.sprite.Group()
+   ```
+   
+2. [`pygame.sprite.Group.draw()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group.draw) mediante
+
+   ```python
+   self.all_sprites_list.draw(self.display)
+   ```
+
+3. [`pygame.display.update()`](https://www.pygame.org/docs/ref/display.html#pygame.display.update)
+
+   ```python
+   pygame.display.update()
+   ```
+   
 Los dos primeros métodos deben invocarse cuando queremos que los
 sprites se muevan *en memoria*, y esto debería ocurrir si el
 movimiento es tan rápido que no podría ser apreciado por un ser humano
