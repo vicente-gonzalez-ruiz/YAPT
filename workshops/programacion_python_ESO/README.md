@@ -924,13 +924,13 @@ elementos son sprites. Necesitaremos:
 		mantenido por
 		[`pygame.time.Clock.tick()`](https://www.pygame.org/docs/ref/time.html#pygame.time.Clock.tick).
 
-## Ejercicio 11. Añadiendo los jugadores (versón 1 Pong)
+## Ejercicio 11. Añadiendo los jugadores (versión 1 Pong)
 
 En el Pong original, los jugadores son dos humanos. En nuestro pong,
 una de los jugadores será la *CPU*. El *human player* usará el ratón
 para mover la raqueta. El *CPU player* simplemente seguirá (con cierto
-margen de error para que haya algún aliciente para el jugador humano)
-la pelota. Este es más o menos el esquema:
+margen de error para que haya alguna oportunidad para el jugador
+humano) la pelota. Este es más o menos el esquema:
 
 ```
 +-----------------------------------------------------------+
@@ -962,7 +962,66 @@ Las dos raquetas serán sprites.
 
 [`Pong_v1.py`](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/Pong_v1.py) extiende (hereda) Pong_v0, añadiendo ambas raquetas. Básicamente, vamos a:
 
-1. Crear 
+1. Crear las clases `PlayerRacket` y `CPURacket`, herederas de
+   `pygame.sprite.Sprite`.
+   
+2. El método `PlayerRacket.update()` moverá la raqueta usando el
+   método
+   [`pygame.mouse.get_rel()`](https://www.pygame.org/docs/ref/mouse.html#pygame.mouse.get_rel),
+   que devuelve la posición relativa del ratón (respecto de la última
+   posición conocida en el anterior evento de ratón). También podría
+   usarse
+   [`pygame.mouse.get_pos()`](https://www.pygame.org/docs/ref/mouse.html#pygame.mouse.get_pos),
+   que devuelve la posición absoluta dentro del sistema de ventanas.
+   
+3. El método `CPURacket.update()` mueve la raqueta de la CPU, y
+   debería hacerlo con cierta imprecisión o de lo contrario, no
+   conseguiremos jamás hacer un solo punto. Una forma de conseguir la
+   posición de la pelota es pasar el sprite de la pelota como
+   argumento a `CPURacket.__init__()`. Y para conseguir dicha
+   imprecisión en el movimiento, podemos multiplicar la posición de la
+   pelota `ball.rect.x` por un valor próximo a 1. Si es ligeramente
+   mayor, la CPU desplazará la raqueta más rápido que la pelota, y
+   viceversa. Podemos llamar a dicho valor `speed`, y podría ser
+   recalculado con cierta aleatoriedad cada vez que la CPU golpea la
+   pelota.
+   
+4. Instanciar ambas raquetas y añadirlas a `self.all_sprites_list`.
+
+5. En el lazo principal del juego (en que tiene una frecuencia de 60
+   Hz y controla mismo) ahora debe controlar estas 6 posibles
+   colisiones:
+   
+   1. `CPU_racket` con `left_wall`: si se produce, impediremos que la
+      raqueta atraviese el muro de la izquierda.
+	  
+   2. `CPU_racket` con `right_wall`: lo mismo, pero con el muro de la
+      derecha.
+	  
+   3. `CPU_racket` con `ball`: básicamente lo que debería ocurrir es
+      que la pelota sea devuelta hacia abajo. Además, para darle algo
+      de aliciente al juego, haremos que la dirección x varíe
+      ligeramente y de forma aleatoria (esto mismo ocurrirá con la
+      raqueta del jugador humano).
+	  
+   4. `player_racket` con `left_wall`: idem a colisión 1.
+   
+   5. `player_racket` con `right_wall`: idem a colisión 2.
+   
+   6. `CPU_racket` con `ball`: ahora la pelota rebota hacia arriba, y
+      con cierta aleatoriedad en su componente x.
+	  
+6. La componente aleatoria sumada a al paso de la componente x puede
+   calcularse de muchas formas posibles. Con lo único que deberemos
+   tener cuidado es que dicha aleatoriedad no produzca un paso tan
+   grande que provoque que la pelota atraviese las paredes de la
+   izquierda o de la derecha.
+   
+7. También sería interesante emitir algún sonido cuando las raquetas y
+   la pelota se tocan. Para ello podemos usar el sonido:
+   [`243749__unfa__metronome-1khz-weak-pulse.wav`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/243749__unfa__metronome-1khz-weak-pulse.wav).
+   
+## Ejercicio 12. Contando los puntos (versión 2 Pong)
 
 ## Apéndice A: Comandos básicos del terminal
 
