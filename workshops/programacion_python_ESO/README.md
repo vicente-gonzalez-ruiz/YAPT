@@ -841,8 +841,8 @@ elementos son sprites. Necesitaremos:
 		 
 	  5. Instanciar la pelota y las 4 paredes.
 	  
-	  6. Añadir todos los sprites a la lista de sprites. Todos se van
-         a pintar al mismo tiempo. Ejemplo:
+	  6. Añadir todos los sprites a la lista de sprites (todos forman
+         parte del mismo grupo de colisión). Ejemplo:
 		 
 		 ```python
 		 self.all_sprites_list.add(self.ball)
@@ -866,13 +866,14 @@ elementos son sprites. Necesitaremos:
 	 Esto permitirá cerrar la ventana al pulsar la tecla <Esc> o al
      hacer click en el botón de cerrar la ventana. Dicho método debe
      llamarse con la frecuencia en que los eventos tienen ser
-     procesados. En nuestro caso, como dichos eventos son poco
-     frecuentes y no importa cierta latencia entre dar la orden de
-     cerrar la ventana y que esto ocurra, el método es llamado dentro
-     de un hilo una vez cada segundo y además imprime a través del
-     terminal el número de FPS (Frames Per Second) del juego.
+     procesados. En nuestro caso, como en la siguiente versión de Pong
+     vamos a procesar los eventos generados por el ratón, este método
+     deberá ejecutarse a la misma frecuencia que se muestran los
+     frames (60 Hz).
 	 
-  3. Para ejecutar un método de una clase en un hilo, hay que:
+  3. Crear un hilo para mostrar periódicamente en número de FPS
+	 (Frames Per Second).  Para ejecutar un método de una clase en un
+	 hilo, hay que:
   
 	 1. Importar:
 	 
@@ -887,7 +888,6 @@ elementos son sprites. Necesitaremos:
 		def print_FPS(self):
 			while self.running:
 				print(f"FPS={self.FPS:04.2f}", end='\r' )
-				self.process_events()
 				time.sleep(1)
 	    ```
 		
@@ -909,6 +909,7 @@ elementos son sprites. Necesitaremos:
 		```python
 		self.print_FPS__thread.join()
 		```
+		
 	 6. Como puede apreciarse, el hilo usa la variable de clase
         `self.FPS` que se calcula en el bucle principal del programa
 		

@@ -18,12 +18,13 @@ class PlayerRacket(pygame.sprite.Sprite):
         self.height = height
         self.display_size = display_size
         self.image = pygame.Surface([width, height])
-        self.image.fill(Color.black)                                  
+        #self.image.fill(Color.black)                                  
+        self.image.fill(color)                                  
         self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
-        pygame.draw.rect(self.image,
-                         color,
-                         [self.rect.x, self.rect.y, width, height])
+        #pygame.draw.rect(self.image,
+        #                 color,
+        #                 [self.rect.x, self.rect.y, width, height])
         self.rect.x = pygame.mouse.get_rel()[0]
         self.rect.y = self.display_size[1] - 20
 
@@ -41,12 +42,9 @@ class CPURacket(pygame.sprite.Sprite):
         self.height = height
         self.display_size = display_size
         self.image = pygame.Surface([width, height])
-        self.image.fill(Color.black)                                  
+        self.image.fill(color)                                  
         self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
-        pygame.draw.rect(self.image,
-                         color,
-                         [self.rect.x, self.rect.y, width, height])
         self.rect.x = 300
         self.rect.y = 20
         self.prev_ball_position = 0
