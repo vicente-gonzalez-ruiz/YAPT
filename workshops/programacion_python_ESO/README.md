@@ -50,7 +50,8 @@ Vamos programar sobre un
 con [Linux](https://es.wikipedia.org/wiki/GNU/Linux), en concreto una
 versión de Linux llamada [Xubuntu](https://xubuntu.org/), aunque
 Python puede usarse [casi](https://www.python.org/download/other/) en
-cualquier plataforma actual.
+cualquier plataforma actual, [incluyendo dispositivos
+móviles](https://kivy.org/#home).
 
 ## ¿Qué vamos a programar?
 
