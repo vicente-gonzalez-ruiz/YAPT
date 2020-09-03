@@ -775,7 +775,9 @@ self.all_sprites_list.add(self.ball)
 donde `self.ball` sería el sprite (una instancia de la clase Ball que
 hereda de la clase Sprite) de nuestra pelota.
 
-Podemos detectar la colisión (a nivel de pixel dibujado) entre dos sprites (pongamos, `self.ball` y `self.upper_wall`) usando:
+Podemos detectar la colisión (a nivel de pixel dibujado) entre dos
+sprites (pongamos, `self.ball` y `self.upper_wall`)
+[usando](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.collide_mask):
 
 ```python
 if pygame.sprite.collide_mask(self.ball, self.upper_wall):
@@ -794,7 +796,8 @@ Pygame ofrece el método
 que mantiene un cronómetro y que mide el tiempo transcurrido entre 2
 llamadas consecutivas a este método. Si queremos temporizar el número
 de iteraciones del bucle por segundo (que sería el número de FPS),
-este método debe llamarse dentro del bucle.
+este método debe llamarse dentro del bucle y como parámetro de entrada
+debe indicarse el número de FPS.
 
 ### Pong_v0
 
@@ -806,7 +809,8 @@ elementos son sprites. Necesitaremos:
    [`pygame.sprite.Sprite`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite). Esta
    implementa 2 métodos:
    1. `__init__()`: que crea el sprite.
-   2. `update()`: que indica cómo mover la pelota.
+   2. `update()`: que indica cómo mover la pelota. Puedes probar a
+      mover la pelota sola ...
 2. Declarar 4 clases (casi idénticas) con las 4 paredes: `UpperWall`,
    `LowerWall`, `LeftWall` y `RightWall`, todas herederas de
    [`pygame.sprite.Sprite`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite). Ninguna
