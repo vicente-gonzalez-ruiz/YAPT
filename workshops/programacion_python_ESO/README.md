@@ -1052,6 +1052,8 @@ añadir un contador de puntos a la CPU y otro al jugador.
    fuente de letra por defecto a un tamaño de 74 puntos. El texto
    aparece proximo a las paredes superior (CPU) e inferior (player).
 
+Código ejemplo en [Pong_v2.py](https://raw.githubusercontent.com/vicente-gonzalez-ruiz/YAPT/master/workshops/programacion_python_ESO/Pong_v2.py).
+
 ## Apéndice A: Comandos básicos del terminal
 
 * `cd` (change directory): permite moverse por el sistema de
@@ -1173,4 +1175,4 @@ Python](http://localhost:8888/notebooks/YAPT/A3-Turtle.ipynb#Using-Turtle-graphi
 
 7. Instalar epiphany con `apt install epiphany`.
 
-8. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md . como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).
+8. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).
