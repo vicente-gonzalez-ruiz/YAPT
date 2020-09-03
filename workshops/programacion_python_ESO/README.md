@@ -1023,6 +1023,35 @@ Las dos raquetas serán sprites.
    
 ## Ejercicio 12. Contando los puntos (versión 2 Pong)
 
+Ahora "ya solo nos queda" (podríamos seguir mejorando el juego en
+muchos aspectos, como usar la velocidad de las raquetas para dar
+efecto a la pelota, o premiar al jugador que menos mueve la raqueta)
+añadir un contador de puntos a la CPU y otro al jugador.
+
+1. Crear una clase llamada `Pong_v2` que herede de `Pong_v1`.
+
+2. En ``Pong_v2.__init__()`, declarar los contadores de la CPU y del
+   jugador.
+   
+3. Extender los métodos `Pong_v1.ball_hits_upeer_wall()` y
+   `Pong_v1.ball_hits_upeer_wall()` para que se cuenten los tantos.
+   
+4. Extender el método `Pong_v1.draw_frame()` (o como hayamos llamado a
+   dicho método, que se encarga de renderizar cada frame mostrado al
+   usuario) con el código:
+   
+   ```python
+   font = pygame.font.Font(None, 74)
+   text = font.render(str(int(self.CPU_score)), 1, Color.red)
+   self.display.blit(text, (10, 20))
+   text = font.render(str(int(self.player_score)), 1, Color.red)
+   self.display.blit(text, (10, self.display_size[1] - 60))
+   ```
+   
+   (o algo semejante). Esto mostrará los puntos en rojo, usando la
+   fuente de letra por defecto a un tamaño de 74 puntos. El texto
+   aparece proximo a las paredes superior (CPU) e inferior (player).
+
 ## Apéndice A: Comandos básicos del terminal
 
 * `cd` (change directory): permite moverse por el sistema de

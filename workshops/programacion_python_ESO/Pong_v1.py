@@ -123,6 +123,7 @@ class Pong_v1(Pong_v0):
         if pygame.sprite.collide_mask(self.player_racket, self.left_wall):
             if self.player_racket.rect.x < 1:
                 self.player_racket.rect.x = 1
+
         if pygame.sprite.collide_mask(self.player_racket, self.right_wall):
             if (self.player_racket.rect.x + 128) > self.display_size[1] - 1:
                 self.player_racket.rect.x = self.display_size[0] - 128 - 1
