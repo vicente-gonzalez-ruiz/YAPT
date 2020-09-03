@@ -660,7 +660,8 @@ paredes).
 
 ### Creando un sprite rectangular, homogéneo (sólido) y estático
 Para crear un sprite de este tipo debemos heredar la clase
-`pygame.sprite.Sprite` y en nuestra clase hija:
+`pygame.sprite.Sprite`, y en nuestra clase hija:
+
 1. LLamar al constructor de la clase `pygame.sprite.Sprite`
    escribiendo
    
@@ -714,9 +715,9 @@ Para crear un sprite de este tipo debemos heredar la clase
 
 ### Moviento un sprite
 Para desplazar un sprite simplemente tenemos que sobreescribir el
-método `update()` y especificar los nuevos valores de
-`self.rect.x` y de `self.rect.y`. Pero ojo, esto sólo tendrá efecto
-tras llamar a los métodos:
+método `pygame.sprite.Sprite.update()` y especificar los nuevos
+valores de `self.rect.x` y de `self.rect.y`. Pero ojo, esto sólo
+tendrá efecto tras llamar a los métodos:
 1. [`pygame.sprite.Sprite.update()`](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Sprite.update) usando
 
    ```python
@@ -742,19 +743,19 @@ tras llamar a los métodos:
    ```
    
 Los dos primeros métodos deben invocarse cuando queremos que los
-sprites se muevan *en memoria*, y esto debería ocurrir si el
-movimiento es tan rápido que no podría ser apreciado por un ser humano
-(normalmente, por encima de 60 Hz no aumenta la sensación de
-movimiento). El último método se debe llamar para que todos los
-cambios realizados en el frame sean mostrados.
+sprites se muevan *en memoria*, y esto podría programarse así si para
+que el juego funcionase correctamente debería usarse una frecuencia de
+renderizado superior a la frecuencia de refresco (que normalmente no
+suele ser mayor de 60 Hz porque por encima de esa tasa de refresco no
+aumenta la sensación de movimiento).
 
-Sobre ¿por qué puede ser interesante trabajar con una frecuencia de
+Pero, ¿por qué puede ser interesante trabajar con una frecuencia de
 renderizado mayor que una frecuencia de refresco?, hay algún [vídeo
 interesante](https://www.youtube.com/watch?v=lS_G2XSYVl4) que lo
 explica, aunque básicamente se hace para aumentar la precisión de la
 detección de colisiones entre sprites que se mueven de forma discreta,
 a grandes saltos (puede ocurrir que los sprites *se crucen*, como si
-fueran fantasmas inmateriales, y no se detectarían las colisiones).
+fueran fantasmas inmateriales, no detectándese las colisiones).
 
 En nuestra versión de Pong el paso de movimiento máximo de la pelota
 jamás superará el tamaño de la misma (16x16 pixels), y por tanto, la
