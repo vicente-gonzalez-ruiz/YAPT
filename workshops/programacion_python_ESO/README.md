@@ -669,7 +669,8 @@ Para crear un sprite de este tipo debemos heredar la clase
    super().__init__()
    ```
 
-2. Crear la superficie que ocupa el sprite con
+2. Crear la superficie que ocupa el sprite
+   [con](https://www.pygame.org/docs/ref/surface.html)
 
    ```python
    self.image = pygame.Surface([width, height])
@@ -1178,6 +1179,8 @@ Python](http://localhost:8888/notebooks/YAPT/A3-Turtle.ipynb#Using-Turtle-graphi
 
 6. Instalar xosview con `apt install xosview`.
 
-7. Instalar epiphany con `apt install epiphany`.
+7. Instalar epiphany con `sudo apt install epiphany`.
+
+8. Instalar gpick con `sudo apt install gpick`.
 
 8. Usar https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/README.md como página de inicio de Firefox (Preferences -> Home -> Homepage and new windows -> Custom URL).

@@ -45,12 +45,11 @@ class UpperWall(pygame.sprite.Sprite):
         width = display_size[0] - 2
         height = 1
         self.image = pygame.Surface([width, height])
-        self.image.fill(Color.black)                                  
+        self.image.fill(color)                                  
         self.image.set_colorkey(Color.black)
         self.rect = self.image.get_rect()
         self.rect.x = 1
         self.rect.y = 0
-        pygame.draw.rect(self.image, color, [self.rect.x, self.rect.y, width, height])
 
 class LowerWall(pygame.sprite.Sprite):
     
