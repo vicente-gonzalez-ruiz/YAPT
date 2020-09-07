@@ -1153,6 +1153,11 @@ Python](http://localhost:8888/notebooks/YAPT/A3-Turtle.ipynb#Using-Turtle-graphi
 	  pequeños con espacio libre al comienzo de espacio de
 	  almacenamiento del pendrive, al final y entre las
 	  particiones. Esto no importa y es irremediable.
+	* De forma alternativa al paso anterior, podemos elegir
+      directamente la opción "Erase disk and install Xubuntu". Sin
+      embargo, en este caso no se creará la partición de
+      swapping (lo que no es un gran problema porque siempre
+      podemos hacer swapping sobre un fichero del disco).
     * Usuario: "ion".
 	* Hostname: "sirius".
     * Contraseña: "curso".
