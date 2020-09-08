@@ -838,6 +838,10 @@ elementos son sprites. Necesitaremos:
 	     ```python
 		 self.rebound_sound = pygame.mixer.Sound(file="4391__noisecollector__pongblipf-5.wav")
 		 ```
+		 
+		 Este sonido ha sido descargado de
+         [freesound.org](https://freesound.org/people/NoiseCollector/sounds/4391/).
+		 
 	  4. [Instanciar la lista de
          sprites](https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group)
          con
@@ -1025,8 +1029,10 @@ Las dos raquetas serán sprites.
    
 7. También sería interesante emitir algún sonido cuando las raquetas y
    la pelota se tocan. Para ello podemos usar el sonido:
-   [`243749__unfa__metronome-1khz-weak-pulse.wav`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/243749__unfa__metronome-1khz-weak-pulse.wav).
-   
+   [`243749__unfa__metronome-1khz-weak-pulse.wav`](https://github.com/vicente-gonzalez-ruiz/YAPT/blob/master/workshops/programacion_python_ESO/243749__unfa__metronome-1khz-weak-pulse.wav)
+   que ha sido descargado de
+   [freesound.org](https://freesound.org/people/unfa/sounds/243749/).
+
 ## Ejercicio 12. Contando los puntos (versión 2 Pong)
 
 Ahora "ya solo nos queda" (podríamos seguir mejorando el juego en
