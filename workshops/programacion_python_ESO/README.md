@@ -28,7 +28,7 @@ por ser:
    [NASA](https://code.nasa.gov/)).
 3. Uno de los pocos lenguajes de programación que se podría calificar
    como *democrático*, diseñado por la comunidad de Python para la
-   comunidad de Python que es muy grande y lo [evoluciona
+   comunidad de Python, que es [grande](https://opensource.com/article/18/5/numbers-python-community-trends) y lo [evoluciona
    constantemente](https://www.python.org/dev/peps/).
 4. Un [lenguaje de propósito
    general](http://enciclopedia.us.es/index.php/Lenguaje_de_prop%C3%B3sito_general)
