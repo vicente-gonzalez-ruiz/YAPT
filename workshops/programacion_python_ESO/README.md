@@ -64,7 +64,9 @@ Básicamente, vamos a diseñar e implementar 3 programas:
 2. Una versión personalizada del juego
    [Pong](https://en.wikipedia.org/wiki/Pong), que [no es la primera
    vez que se porta a
-   Python](https://sites.google.com/site/thepythonpongtutorial/home).
+   Python](https://sites.google.com/site/thepythonpongtutorial/home). Otro
+   ejemplo es
+   [este](https://www.mclibre.org/consultar/python/lecciones/pygame-pong.html).
 
 ## Tecnicamente (desde el punto de vista de la programación) aprenderemos ...
 
